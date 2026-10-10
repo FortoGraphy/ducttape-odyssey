@@ -87,6 +87,20 @@ export function bootGame(nowMs: number = Date.now()): BootResult {
   return result;
 }
 
+/**
+ * Development boot for preview routes and screenshots: a deterministic new game that never touches
+ * the real save file. `setup` can shape the state (see src/store/presets.ts).
+ */
+export function bootDev(seed = 12345, setup?: (g: Game) => void, nowMs: number = Date.now()): Game {
+  const g = newGame(content, seed, nowMs);
+  saveBlocked = true;
+  game = g;
+  stepper = createStepper(nowMs);
+  lastSave = nowMs;
+  setup?.(g);
+  return g;
+}
+
 export function getGame(): Game {
   if (!game) throw new Error("game not booted");
   return game;
