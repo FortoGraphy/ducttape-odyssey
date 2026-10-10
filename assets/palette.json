@@ -1,0 +1,15 @@
+{
+  "name": "Night Shift",
+  "note": "Master palette. Every sprite, icon and shader ramp is quantized to these 32 colors. Keys are stable identifiers.",
+  "colors": {
+    "void0": "#05060A", "void1": "#0A0D14", "void2": "#111726", "void3": "#1A2238",
+    "steel0": "#2A2F3C", "steel1": "#444A5A", "steel2": "#6B7284", "steel3": "#9BA1B0",
+    "bone0": "#C9C5B8", "bone1": "#E7E3D8", "bone2": "#F6F3EA",
+    "violet0": "#231A42", "violet1": "#3C2B6E", "violet2": "#6247A6", "violet3": "#9C7BE0",
+    "teal0": "#12303B", "teal1": "#1F5C6B", "teal2": "#36A0A6", "mint": "#7DE0B5",
+    "cobalt0": "#17307E", "cobalt1": "#2F5BD6", "cobalt2": "#7FA4FF",
+    "rust0": "#3B1A14", "rust1": "#7A2E18", "orange": "#FF6A1A", "amber": "#FFA63D", "yellow": "#FFD84A",
+    "red0": "#7C1626", "red1": "#E0344A",
+    "green0": "#1E4A30", "green1": "#43A85F", "lime": "#B5F27A"
+  }
+}

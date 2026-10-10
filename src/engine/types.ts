@@ -945,6 +945,8 @@ export interface Game {
   rates: Rates;
   /** Set by anything that changes modifier or rate inputs. Cleared by the tick. */
   dirty: boolean;
+  /** Incremented every time mods are rebuilt; areas compare it to refresh their own caches (Rates). */
+  rev: number;
   /** Transient events for UI/audio/haptics. Capped; drained by the shell every pulse. */
   outbox: EngineEvent[];
   api: EngineApi;
