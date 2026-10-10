@@ -4,8 +4,12 @@ Updated after every milestone so work can resume after a context reset. Newest s
 
 ## Now
 
-- **Phase 0 (bootstrap and de-risk)**: project skeleton, CI workflow, spike app, contracts, planning docs.
-- CI run 1 failed at the entitlement check (plugin order), fixed. CI run 2 in progress.
+- **Phase 0 gate PASSED**: CI run 38082829110 built both IPAs (full Skia + lite) green.
+  https://github.com/FortoGraphy/ducttape-odyssey/actions/runs/38082829110
+- **Wave 1 running** (10 background agents): engine-core, engine-world, engine-meta, content-economy,
+  content-events, content-narrative, ui-kit, render, assets, audio. Briefs: docs/AGENT_BRIEF.md +
+  the ownership table in docs/ARCHITECTURE.md. Only the orchestrator commits.
+- Orchestrator wrote meanwhile: platform/storage.ts, crashGuard.ts, notifications.ts, store/settings.ts.
 
 ## Done
 
