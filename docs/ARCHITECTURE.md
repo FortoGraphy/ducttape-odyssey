@@ -116,6 +116,15 @@ instead. Only the orchestrator commits to git.
 | `src/minigames/{weld,wire,rhythm,host}/**`, `src/minigames/index.ts`, `src/app/minigames.tsx`, `src/i18n/locales/*/minigames.ts` | minigames-a |
 | `src/minigames/{valves,calibrate,tape}/**`, `src/app/mg-b.tsx` | minigames-b |
 | `src/minigames/{defense,dock,hack}/**`, `src/app/mg-c.tsx`, `tests/minigames/**` | minigames-c |
+| `src/app/_layout.tsx`, `src/app/index.tsx`, `src/ui/shell/**`, `src/i18n/locales/*/{story,world}.ts`, `src/app/dev-shell.tsx` | shell |
+| `src/ui/screens/ship/**`, `src/i18n/locales/*/ship.ts`, `src/app/dev-ship.tsx` | screens-ship |
+| `src/ui/screens/{craft,grid}/**`, `src/i18n/locales/*/{craft,grid}.ts`, `src/app/dev-craft.tsx` | screens-craft |
+| `src/ui/screens/nav/**`, `src/i18n/locales/*/nav.ts`, `src/app/dev-nav.tsx` | screens-nav |
+| `src/ui/screens/crew/**`, `src/i18n/locales/*/crew.ts`, `src/app/dev-crew.tsx` | screens-crew |
+| `src/ui/screens/meta/**`, `src/i18n/locales/*/meta.ts`, `src/app/dev-meta.tsx` | screens-meta |
+| `src/ui/screens/{log,settings}/**`, `src/i18n/locales/*/{log,settings}.ts`, `src/app/dev-log.tsx` | screens-log |
+| `scripts/sim/**` (except smoke.ts), `scripts/validate/**`, `tests/sim/**`, balance numbers in `src/content/economy/**`, engine bug fixes in `src/engine/{core,world,meta}/**` | sim-qa |
+| `src/ui/common/**`, `src/ui/dev/**`, `src/ui/format.ts` | orchestrator |
 
 ## Commands
 

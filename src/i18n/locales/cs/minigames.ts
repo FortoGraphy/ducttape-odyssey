@@ -1,4 +1,61 @@
 // "minigames" namespace (cs). Owned by one agent, see docs/ARCHITECTURE.md. Keys must match the other language.
-const minigames = {} as const;
+const minigames = {
+  host: {
+    kicker: "MINIHRA",
+    tier: "ÚROVEŇ",
+    tierName: { "1": "Rutina", "2": "Oříšek", "3": "Noční můra" },
+    limit: "ČASOVÝ LIMIT",
+    seconds: "{{n}} s",
+    start: "SPUSTIT",
+    auto: "VYŘEŠIT AUTOMATICKY",
+    autoNote: "Šikovné ruce nejsou podmínkou. Automatika to zvládne taky, jen bez elegance.",
+    close: "Zavřít",
+    sticker: "ZÁRUKA PROPADLA",
+    ready: "PŘIPRAV SE",
+    go: "TEĎ!",
+  },
+  result: {
+    kicker: "VÝSLEDEK",
+    quality: "KVALITA",
+    time: "ČAS",
+    success: "ÚSPĚCH",
+    fail: "NEZDAR",
+    perfect: "BEZ CHYBY",
+    continue: "POKRAČOVAT",
+    grade: { "0": "Fušeřina", "1": "Standard", "2": "Slušná práce", "3": "Paráda", "4": "Jako z fabriky" },
+    line: {
+      success0: "Drží to. Nejvíc ze všech se diví KIPP.",
+      success1: "V toleranci. Ta tolerance byla ovšem velkorysá.",
+      success2: "Na takhle starou loď to bohatě stačí.",
+      fail0: "Tohle se nepovedlo. Dobrá zpráva: rozbité to bylo už předtím.",
+      fail1: "KIPP si to založil do složky „cenné zkušenosti“.",
+      fail2: "Loď už přežila horší věci. Většinou tebe.",
+      perfect0: "Bez jediné chybičky. KIPP teď prochází záznamy a hledá, kde jsi švindloval.",
+      perfect1: "Jako z fabriky. Fabrika se ptá, jestli nehledáš práci.",
+    },
+  },
+  error: {
+    title: "Minihra se složila",
+    body: "Tohle jde na náš účet, ne na tvůj. Automatika tu práci dodělá.",
+    retry: "ZKUSIT ZNOVU",
+  },
+  gallery: {
+    title: "Zkušebna miniher",
+    subtitle: "Devět her, každá ve třech úrovních. Ťukni na úroveň a hraj.",
+    last: "POSLEDNÍ VÝSLEDEK",
+    none: "ZATÍM NIC ODEHRÁNO",
+    auto: "VYŘEŠENO AUTOMATICKY",
+    closed: "ZAVŘENO",
+    purpose: "ZKUŠEBNA",
+    seed: "SEED",
+    theme: "PANEL",
+    day: "DEN",
+    night: "NOC",
+    motion: "POHYB",
+    full: "PLNÝ",
+    reduced: "OMEZENÝ",
+    lang: "JAZYK",
+  },
+} as const;
 
 export default minigames;

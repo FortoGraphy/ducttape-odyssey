@@ -1,4 +1,61 @@
 // "minigames" namespace (en). Owned by one agent, see docs/ARCHITECTURE.md. Keys must match the other language.
-const minigames = {} as const;
+const minigames = {
+  host: {
+    kicker: "MINI-GAME",
+    tier: "TIER",
+    tierName: { "1": "Routine", "2": "Tricky", "3": "Nightmare" },
+    limit: "TIME LIMIT",
+    seconds: "{{n}} s",
+    start: "START",
+    auto: "AUTO-RESOLVE",
+    autoNote: "Skill is optional. The automatics will manage too, just without the elegance.",
+    close: "Close",
+    sticker: "WARRANTY VOID",
+    ready: "GET READY",
+    go: "GO!",
+  },
+  result: {
+    kicker: "RESULT",
+    quality: "QUALITY",
+    time: "TIME",
+    success: "SUCCESS",
+    fail: "FAILED",
+    perfect: "PERFECT",
+    continue: "CONTINUE",
+    grade: { "0": "Scrappy", "1": "Standard", "2": "Fine", "3": "Superb", "4": "Pristine" },
+    line: {
+      success0: "It holds. Nobody is more surprised than KIPP.",
+      success1: "Within tolerance. The tolerance was generous.",
+      success2: "Good enough for a ship this old.",
+      fail0: "That did not go well. The good news: it was already broken.",
+      fail1: "KIPP has filed this under learning experiences.",
+      fail2: "The ship has survived worse. Mostly you.",
+      perfect0: "Flawless. KIPP is checking the logs for cheating.",
+      perfect1: "Factory finish. The factory would like a word about hiring you.",
+    },
+  },
+  error: {
+    title: "The mini-game fell over",
+    body: "That one is on us, not on you. The automatics can finish the job.",
+    retry: "TRY AGAIN",
+  },
+  gallery: {
+    title: "Mini-game test bench",
+    subtitle: "Nine games, three tiers each. Tap a tier to play.",
+    last: "LAST RESULT",
+    none: "NOTHING PLAYED YET",
+    auto: "AUTO-RESOLVED",
+    closed: "CLOSED",
+    purpose: "TEST BENCH",
+    seed: "SEED",
+    theme: "PANEL",
+    day: "DAY",
+    night: "NIGHT",
+    motion: "MOTION",
+    full: "FULL",
+    reduced: "REDUCED",
+    lang: "LANGUAGE",
+  },
+} as const;
 
 export default minigames;
