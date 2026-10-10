@@ -1,0 +1,69 @@
+{
+  "expo": {
+    "name": "Duct Tape Odyssey",
+    "slug": "ducttape",
+    "scheme": "ducttape",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#07090F",
+    "ios": {
+      "bundleIdentifier": "cz.johny.ducttape",
+      "supportsTablet": false,
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "UIRequiresFullScreen": true,
+        "CFBundleAllowMixedLocalizations": true,
+        "UIViewControllerBasedStatusBarAppearance": true
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sharing",
+      [
+        "expo-localization",
+        {
+          "supportedLocales": {
+            "ios": ["cs", "en"]
+          }
+        }
+      ],
+      "expo-asset",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 160,
+          "resizeMode": "contain",
+          "backgroundColor": "#07090F"
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": false,
+          "enableBackgroundPlayback": false,
+          "enableBackgroundRecording": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "enableBackgroundRemoteNotifications": false
+        }
+      ],
+      "./plugins/withFreeSigningSafe.js"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
