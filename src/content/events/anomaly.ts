@@ -21,7 +21,7 @@ export const anomaly: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Škrábete trup jako přední sklo v lednu. Led je překvapivě čistý a je ho plný sběrač.",
+              cs: "Škrábeš trup jako přední sklo v lednu. Led je překvapivě čistý a je ho plný sběrač.",
               en: "You scrape the hull like a windscreen in January. The ice is surprisingly clean, and there is a full scoop of it.",
             },
             effects: [{ t: "item", item: "ice", n: 50, scaled: true }],
@@ -89,7 +89,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Dvakrát se bohužel stala i jedna porucha. Aspoň víte přesně, jak ji opravit.",
+              cs: "Dvakrát se bohužel stala i jedna porucha. Aspoň víš přesně, jak ji opravit.",
               en: "Unfortunately one malfunction also happens twice. At least you know exactly how to fix it.",
             },
             effects: [
@@ -108,8 +108,8 @@ export const anomaly: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Stopky naměřily čtyři vteřiny a pak ty samé čtyři vteřiny znovu. Laboratoř slaví, i když neví přesně co.",
-              en: "The stopwatch records four seconds, and then the same four seconds again. The lab celebrates, without knowing quite what.",
+              cs: "Stopky naměřily čtyři vteřiny a pak ty samé čtyři vteřiny znovu. KIPP slaví, i když neví přesně co.",
+              en: "The stopwatch records four seconds, and then the same four seconds again. KIPP celebrates, without knowing quite what.",
             },
             effects: [
               { t: "rp", secs: 60 },
@@ -126,7 +126,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Couváte ven. Pak couváte ven ještě jednou, tentokrát už z donucení.",
+              cs: "Couváš ven. Pak couváš ven ještě jednou, tentokrát už z donucení.",
               en: "You back out. Then you back out once more, this time not by choice.",
             },
             effects: [{ t: "credits", secs: 20 }],
@@ -143,7 +143,7 @@ export const anomaly: EventDef[] = [
     when: { depthMin: 3, feature: "scan" },
     title: { cs: "Gravitační čočka", en: "The Gravity Lens" },
     text: {
-      cs: "Neviditelná hmota tu ohýbá světlo jako dno sklenice. Za ní se na okamžik ukazují soustavy, kam byste jinak letěli celé měsíce.",
+      cs: "Neviditelná hmota tu ohýbá světlo jako dno sklenice. Za ní se na okamžik ukazují soustavy, kam se jinak letí celé měsíce.",
       en: "Unseen mass bends the light here like the bottom of a glass. Beyond it, for a moment, you can see systems that would otherwise take months to reach.",
     },
     choices: [
@@ -155,7 +155,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Ladíte ohnisko na dalekohled velký jako půl soustavy. Stačí se netřást.",
+              cs: "Ladíš ohnisko dalekohledu velkého jako půl soustavy. Stačí se netřást.",
               en: "You tune the focus of a telescope half a system wide. All you have to do is not shake.",
             },
             effects: [
@@ -183,7 +183,7 @@ export const anomaly: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Na pár vteřin vidíte celou cestu před sebou, zmenšenou do kapky. Je delší, než jste čekali, a hezčí.",
+              cs: "Na pár vteřin vidíš celou cestu před sebou, zmenšenou do kapky. Je delší, než se zdálo, a hezčí.",
               en: "For a few seconds you see the whole road ahead, shrunk into a droplet. It is longer than you expected, and prettier.",
             },
             effects: [
@@ -203,7 +203,7 @@ export const anomaly: EventDef[] = [
     when: { depthMin: 6, failure: "none" },
     title: { cs: "Odraz na pravoboku", en: "Reflection to Starboard" },
     text: {
-      cs: "Vedle vás letí druhý Gaffer. Stejné záplaty, stejné škrábance, jen zrcadlově obrácené. U okna stojí někdo, kdo vám mává o půl vteřiny dřív než vy jemu.",
+      cs: "Vedle tebe letí druhý Gaffer. Stejné záplaty, stejné škrábance, jen zrcadlově obrácené. U okna stojí někdo, kdo ti mává o půl vteřiny dřív než ty jemu.",
       en: "A second Gaffer is flying beside you. The same patches, the same scratches, only mirrored. At the window stands someone who waves half a second before you do.",
     },
     choices: [
@@ -216,7 +216,7 @@ export const anomaly: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Mává, vy máváte, on to věděl předem. Pak odraz zmizí a je vám trochu líto, že jste se nezeptali, jak to dopadne.",
+              cs: "Mává, ty máváš, on to věděl předem. Pak odraz zmizí a je ti trochu líto, že nepadla otázka, jak to celé dopadne.",
               en: "It waves, you wave, it knew you would. Then the reflection is gone, and you rather wish you had asked how it all turns out.",
             },
             effects: [{ t: "morale", n: 2 }],
@@ -243,7 +243,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Na druhé straně to někdo zvedl, řekl „Prosím, nezavěšujte“ a zavěsil.",
+              cs: "Na druhé straně to někdo zvedl, řekl „Vyčkejte, prosím“ a zavěsil.",
               en: "Someone on the other side picks up, says “Please hold”, and hangs up.",
             },
             effects: [{ t: "morale", n: -3 }],
@@ -259,7 +259,7 @@ export const anomaly: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Na okamžik jste na obou lodích zároveň. Když to skončí, máte v nákladu věci, které jste nikdy nenaložili.",
+              cs: "Na okamžik jsi na obou lodích zároveň. Když to skončí, leží v nákladu věci, které nikdo nenakládal.",
               en: "For an instant you are aboard both ships at once. When it ends, the hold contains things you never loaded.",
             },
             effects: [
@@ -270,7 +270,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 2,
             text: {
-              cs: "Něco se spletlo a už si nejste jistí, kdo z vás dvou je ten původní. Přístroje taky ne.",
+              cs: "Něco se spletlo a už není jisté, kdo z vás dvou je ten původní. Přístroje to taky nevědí.",
               en: "Something gets crossed, and you are no longer sure which of you is the original. Neither are the instruments.",
             },
             effects: [{ t: "failure", kind: "anomaly" }],
@@ -287,7 +287,7 @@ export const anomaly: EventDef[] = [
     when: { depthMin: 9 },
     title: { cs: "Prázdno, které brumlá", en: "The Humming Dark" },
     text: {
-      cs: "Kus vesmíru před vámi vydává tón. Zvuk se vakuem šířit nemůže, což tomu tónu zjevně nikdo neřekl. Trup se chvěje do rytmu a šroubky taky.",
+      cs: "Kus vesmíru před tebou vydává tón. Zvuk se vakuem šířit nemůže, což tomu tónu zjevně nikdo neřekl. Trup se chvěje do rytmu a šroubky taky.",
       en: "The patch of space ahead is producing a note. Sound cannot travel in a vacuum, which evidently nobody has told the note. The hull trembles in rhythm, and so do the bolts.",
     },
     choices: [
@@ -299,7 +299,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Nastavujete chod lodi podle rytmu, který tu neměl být. KIPP si pobrukuje a tvrdí, že ne.",
+              cs: "Nastavuješ chod lodi podle rytmu, který tu neměl být. KIPP si pobrukuje a tvrdí, že ne.",
               en: "You set the ship's cycles to a rhythm that should not be here. KIPP hums along and claims otherwise.",
             },
             effects: [
@@ -342,7 +342,7 @@ export const anomaly: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Obcházíte loď s klíčem a tón vám udává tempo. Takhle dotažená nebyla od loděnice.",
+              cs: "Obcházíš loď s klíčem a tón ti udává tempo. Takhle dotažená nebyla od loděnice.",
               en: "You go round the ship with a spanner while the note sets the tempo. She has not been this tight since the shipyard.",
             },
             effects: [{ t: "hull", pct: 3 }],
@@ -380,7 +380,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Škvíra se sevřela ve chvíli, kdy jste byli napůl uvnitř. Která půlka je kde, se teď určuje těžko.",
+              cs: "Škvíra se sevřela ve chvíli, kdy byla loď napůl uvnitř. Která půlka je kde, se teď určuje těžko.",
               en: "The gap closes while you are halfway in. Which half is where has become hard to say.",
             },
             effects: [{ t: "failure", kind: "anomaly" }],
@@ -416,7 +416,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Mapa zůstává špatně složená. Někdo po vás se ji určitě pokusí narovnat.",
+              cs: "Mapa zůstává špatně složená. Někdo po tobě se ji určitě pokusí narovnat.",
               en: "The map stays badly folded. Someone after you will surely try to smooth it out.",
             },
             effects: [{ t: "rp", secs: 15 }],
@@ -432,8 +432,8 @@ export const anomaly: EventDef[] = [
     chainOnly: true,
     title: { cs: "Kam se ztrácejí věci", en: "Where Lost Things Go" },
     text: {
-      cs: "Uvnitř záhybu se vznáší všechno, co kdy kdo založil. Liché ponožky, klíče desítky, propisky, deštníky. A taky hrnek s nápisem „Majetek S.S. Gaffer“, ještě vlažný.",
-      en: "Inside the fold floats everything anyone has ever mislaid. Odd socks, ten-millimetre spanners, pens, umbrellas. And a mug marked “Property of S.S. Gaffer”, still lukewarm.",
+      cs: "Uvnitř záhybu se vznáší všechno, co kdy kdo založil. Liché ponožky, ořechy desítky, propisky, deštníky. A taky hrnek s nápisem „Majetek S.S. Gaffer“, ještě vlažný.",
+      en: "Inside the fold floats everything anyone has ever mislaid. Odd socks, 10 mm sockets, pens, umbrellas. And a mug marked “Property of S.S. Gaffer”, still lukewarm.",
     },
     choices: [
       {
@@ -445,7 +445,7 @@ export const anomaly: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Hrnek je vlažný a na dně je čerstvá sedlina. KIPP vás žádá, abyste mu to nevysvětlovali.",
+              cs: "Hrnek je vlažný a na dně je čerstvá sedlina. KIPP žádá, ať mu to nikdo nevysvětluje.",
               en: "The mug is lukewarm, with fresh grounds at the bottom. KIPP asks you not to explain it.",
             },
             effects: [{ t: "log" }, { t: "morale", n: 3 }, { t: "flag", key: "found_warm_mug" }],
@@ -454,15 +454,15 @@ export const anomaly: EventDef[] = [
       },
       {
         id: "spanners",
-        label: { cs: "Nabrat klíče desítky", en: "Grab the spanners" },
+        label: { cs: "Nabrat ořechy desítky", en: "Grab the 10 mm sockets" },
         risk: 0,
         outcomes: [
           {
             weight: 1,
             good: true,
             text: {
-              cs: "Konečně. Všechny klíče desítky, které se kdy komu ztratily, a jsou vaše.",
-              en: "At last. Every ten-millimetre spanner anyone has ever lost, and they are all yours.",
+              cs: "Konečně. Všechny ořechy desítky, které se kdy komu ztratily, jen ten z Gafferu mezi nimi kupodivu není.",
+              en: "At last. Every 10 mm socket anyone has ever lost, although the Gaffer's own, oddly, is not among them.",
             },
             effects: [
               { t: "item", item: "spare_parts", n: 3 },
@@ -488,7 +488,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Zabloudili jste mezi ztracenými deštníky. Ven vás vyvedl až KIPP, a to po zvuku vlastního nadávání.",
+              cs: "Mezi ztracenými deštníky se bloudí velmi snadno. Ven tě vyvede až KIPP, a to po zvuku vlastního nadávání.",
               en: "You get lost among the lost umbrellas. KIPP finally guides you out by the sound of its own swearing.",
             },
             effects: [
@@ -508,7 +508,7 @@ export const anomaly: EventDef[] = [
     when: { depthMin: 4 },
     title: { cs: "Duchové na radaru", en: "Ghosts on the Radar" },
     text: {
-      cs: "Radar ukazuje sedmnáct lodí v těsné formaci kolem vás. Z okna není vidět žádná. KIPP navrhuje buď opravit radar, nebo začít věřit na duchy, podle toho, co vyjde levněji.",
+      cs: "Radar ukazuje sedmnáct lodí v těsné formaci kolem tebe. Z okna není vidět žádná. KIPP navrhuje buď opravit radar, nebo začít věřit na duchy, podle toho, co vyjde levněji.",
       en: "The radar shows seventeen ships in tight formation around you. The window shows none. KIPP suggests either fixing the radar or starting to believe in ghosts, whichever is cheaper.",
     },
     choices: [
@@ -547,7 +547,7 @@ export const anomaly: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Držíte se v řadě s loděmi, které nejsou. Dovedou vás k poli trosek, které je.",
+              cs: "Držíš se v řadě s loděmi, které nejsou. Dovedou tě k poli trosek, které je.",
               en: "You hold your place in line with ships that are not there. They lead you to a debris field that is.",
             },
             effects: [
@@ -558,7 +558,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Formace zatočila doleva. Vy jste zatočili do šutru.",
+              cs: "Formace zatočila doleva. Ty do šutru.",
               en: "The formation turns left. You turn into a rock.",
             },
             effects: [{ t: "hull", pct: -6 }],
@@ -614,7 +614,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Horizont vás chtěl víc, než jste čekali. Loď se vyrvala ven, ale kus skutečnosti zůstal pozadu.",
+              cs: "Horizont tě chtěl víc, než se čekalo. Loď se vyrvala ven, ale kus skutečnosti zůstal pozadu.",
               en: "The horizon wants you more than expected. The ship tears free, but a piece of reality stays behind.",
             },
             effects: [{ t: "failure", kind: "anomaly" }],
@@ -638,7 +638,7 @@ export const anomaly: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Přepočítali jste se ve směru. Venku uběhl týden, káva vystydla a jeden modul stihl zestárnout.",
+              cs: "Výpočet měl chybu ve znaménku. Venku uběhl týden, káva vystydla a jeden modul stihl zestárnout.",
               en: "You got the direction wrong. A week passes outside, the coffee goes cold and one module has time to age.",
             },
             effects: [
@@ -657,7 +657,7 @@ export const anomaly: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Díváte se do tmy a tma se nedívá zpátky. Je to skoro úleva.",
+              cs: "Díváš se do tmy a tma se nedívá zpátky. Je to skoro úleva.",
               en: "You stare into the dark and the dark does not stare back. It is almost a relief.",
             },
             effects: [

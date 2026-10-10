@@ -8,7 +8,7 @@ export const fault: EventDef[] = [
     cooldown: 1500,
     title: { cs: "Kape chladivo", en: "The Coolant Is Dripping" },
     text: {
-      cs: "Z potrubí nad vaší hlavou kape chladivo přímo do hrnku. KIPP hlásí únik 0,3 litru za hodinu a dodává, že kávu to chuťově spíš vylepší.",
+      cs: "Z potrubí nad tvojí hlavou kape chladivo přímo do hrnku. KIPP hlásí únik 0,3 litru za hodinu a dodává, že kávu to chuťově spíš vylepší.",
       en: "Coolant is dripping from the pipe above your head, straight into your mug. KIPP reports a leak of 0.3 litres an hour and adds that it will probably improve the coffee.",
     },
     choices: [
@@ -20,7 +20,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Lezete na štafle s rolí pásky v zubech. Kapka vám mezitím přistane přesně za límcem.",
+              cs: "Lezeš na štafle s rolí pásky v zubech. Kapka ti mezitím přistane přesně za límcem.",
               en: "You climb the stepladder with a roll of tape between your teeth. A drop, meanwhile, lands precisely down your collar.",
             },
             effects: [
@@ -104,7 +104,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Sundáváte kryt. Za ním je čtyřicet let cizích oprav, každá jinou barvou drátu.",
+              cs: "Sundáváš kryt. Za ním je čtyřicet let cizích oprav, každá jinou barvou drátu.",
               en: "You take off the cover. Behind it are forty years of other people's repairs, each in a different colour of wire.",
             },
             effects: [
@@ -142,7 +142,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Světla svítí, zato přestal hrát reproduktor. KIPP vám to teď vyčítá hodně potichu.",
+              cs: "Světla svítí, zato přestal hrát reproduktor. KIPP ti to teď vyčítá hodně potichu.",
               en: "The lights stay on, but the speaker has gone dead. KIPP is now scolding you very quietly.",
             },
             effects: [{ t: "morale", n: -2 }],
@@ -157,7 +157,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Po týdnu přestanete blikání vnímat. Po dvou vám začne chybět, kdykoli přestane.",
+              cs: "Po týdnu přestaneš blikání vnímat. Po dvou ti začne chybět, kdykoli přestane.",
               en: "After a week you stop noticing the flicker. After two you start to miss it whenever it stops.",
             },
             effects: [{ t: "morale", n: -1 }],
@@ -185,7 +185,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Proplétáte se mezi bednami se svářečkou. Bedna číslo sedm vás po celou dobu pronásleduje.",
+              cs: "Proplétáš se mezi bednami se svářečkou. Bedna číslo sedm tě po celou dobu pronásleduje.",
               en: "You weave between the crates with the torch. Crate number seven follows you the entire time.",
             },
             effects: [
@@ -212,7 +212,7 @@ export const fault: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Uzel, který vás naučil děda, drží i ve stavu beztíže. Děda by měl radost.",
+              cs: "Uzel, který tě naučil děda, drží i ve stavu beztíže. Děda by měl radost.",
               en: "The knot your grandfather taught you holds even in zero gravity. He would be pleased.",
             },
             effects: [{ t: "credits", secs: 25 }],
@@ -247,7 +247,7 @@ export const fault: EventDef[] = [
           {
             weight: 2,
             text: {
-              cs: "Bedna tři v cíli nezabrzdila. Stěna to vydržela, bedna a váš vklad ne.",
+              cs: "Bedna tři v cíli nezabrzdila. Stěna to vydržela, bedna a tvůj vklad ne.",
               en: "Crate three fails to brake at the finish. The wall survives, the crate and your stake do not.",
             },
             effects: [
@@ -279,7 +279,7 @@ export const fault: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Výtah uznal vaše argumenty a rozjel se. Dokonce o něco svižněji než předtím.",
+              cs: "Výtah uznal tvoje argumenty a rozjel se. Dokonce o něco svižněji než předtím.",
               en: "The lift accepts your arguments and starts moving. Slightly faster than before, in fact.",
             },
             effects: [{ t: "buff", effect: { stat: "liftRate", mul: 1.3 }, secs: 300 }],
@@ -287,7 +287,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Výtah stojí dál a vás bolí palec. KIPP se ptá, jestli má incident zapsat jako pracovní úraz, nebo jako vandalismus.",
+              cs: "Výtah stojí dál a tebe bolí palec. KIPP se ptá, jestli má incident zapsat jako pracovní úraz, nebo jako vandalismus.",
               en: "The lift stays put and your toe hurts. KIPP asks whether to log the incident as a workplace injury or as vandalism.",
             },
             effects: [
@@ -344,7 +344,7 @@ export const fault: EventDef[] = [
     cooldown: 5400,
     title: { cs: "Svítí kontrolka", en: "A Warning Light Is On" },
     text: {
-      cs: "Na panelu se rozsvítila oranžová kontrolka, kterou jste v životě neviděli. Manuál k ní říká jen: „Viz příloha C.“ Příloha C chybí.",
+      cs: "Na panelu se rozsvítila oranžová kontrolka, kterou tu ještě nikdo neviděl. Manuál k ní říká jen: „Viz příloha C.“ Příloha C chybí.",
       en: "An orange light has come on that you have never seen before. The manual says only: “See Appendix C.” Appendix C is missing.",
     },
     choices: [
@@ -356,7 +356,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Připojujete měřák a hledáte, který obvod si stěžuje. Ručička se chvěje někde mezi „dobré“ a „uvidíme“.",
+              cs: "Připojuješ měřák a hledáš, který obvod si stěžuje. Ručička se chvěje někde mezi „dobré“ a „uvidíme“.",
               en: "You hook up the meter and look for the circuit that is complaining. The needle hovers somewhere between “fine” and “we shall see”.",
             },
             effects: [
@@ -506,7 +506,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Běžíte k reaktoru. Ventily jsou horké, ručičky v červeném a manuál pořád odkazuje na přílohu C.",
+              cs: "Běžíš k reaktoru. Ventily jsou horké, ručičky v červeném a manuál pořád odkazuje na přílohu C.",
               en: "You run to the reactor. The valves are hot, the needles are in the red, and the manual still refers you to Appendix C.",
             },
             effects: [
@@ -591,7 +591,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Otáčíte seřizovacím kolečkem po zlomcích stupně. Horizont se houpe a vy s ním.",
+              cs: "Otáčíš seřizovacím kolečkem po zlomcích stupně. Horizont se houpe a ty s ním.",
               en: "You turn the adjustment wheel by fractions of a degree. The horizon sways, and you sway with it.",
             },
             effects: [
@@ -640,7 +640,7 @@ export const fault: EventDef[] = [
           {
             weight: 3,
             text: {
-              cs: "Po hodině si zvyknete chodit šikmo. Gyroskop se pak srovnal sám a dělá, že o ničem neví.",
+              cs: "Po hodině si zvykneš chodit šikmo. Gyroskop se pak srovnal sám a dělá, že o ničem neví.",
               en: "After an hour you get used to walking at an angle. Then the gyro rights itself and pretends to know nothing.",
             },
             effects: [{ t: "morale", n: -1 }],
@@ -677,7 +677,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Ventily jsou zanesené něčím, co kdysi bývalo chladivo a teď je to spíš názor. Jdete na to.",
+              cs: "Ventily jsou zanesené něčím, co kdysi bývalo chladivo a teď je to spíš názor. Jdeš na to.",
               en: "The valves are clogged with something that used to be coolant and is now more of an opinion. You get to work.",
             },
             effects: [
@@ -719,7 +719,7 @@ export const fault: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Zařvali jste do šachty a reaktor leknutím naskočil na plný výkon. Fyzika to nepopisuje, ale funguje to.",
+              cs: "Stačí zařvat do šachty a reaktor leknutím naskočí na plný výkon. Fyzika to nepopisuje, ale funguje to.",
               en: "You yell down the shaft and the startled reactor jumps to full power. Physics does not cover this, but it works.",
             },
             effects: [{ t: "buff", effect: { stat: "powerOut", mul: 1.3 }, secs: 300 }],
@@ -744,7 +744,7 @@ export const fault: EventDef[] = [
     when: { feature: "nav", failure: "none" },
     title: { cs: "Palivo teče jinudy", en: "Fuel Is Going Elsewhere" },
     text: {
-      cs: "Palivoměr klesá, i když motory stojí. Za lodí se táhne tenká třpytivá stužka a je to ta nejdražší stužka, jakou jste kdy viděli.",
+      cs: "Palivoměr klesá, i když motory stojí. Za lodí se táhne tenká třpytivá stužka a je to ta nejdražší stužka, jaká kdy za touhle lodí vlála.",
       en: "The fuel gauge is dropping although the engines are off. A thin glittering ribbon trails behind the ship, and it is the most expensive ribbon you have ever seen.",
     },
     choices: [
@@ -756,7 +756,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Svařovat palivové potrubí je bezpečné, pokud se to dělá správně. Tu podmínku si v duchu několikrát zopakujete.",
+              cs: "Svařovat palivové potrubí je bezpečné, pokud se to dělá správně. Tu podmínku si v duchu několikrát zopakuješ.",
               en: "Welding a fuel line is safe as long as it is done correctly. You repeat that condition to yourself several times.",
             },
             effects: [
@@ -839,7 +839,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Posloucháte motor jako doktor hrudník. Šestnáct taktů, a jeden z nich přichází pozdě.",
+              cs: "Posloucháš motor jako doktor hrudník. Šestnáct taktů, a jeden z nich přichází pozdě.",
               en: "You listen to the engine like a doctor to a chest. Sixteen beats, and one of them arrives late.",
             },
             effects: [
@@ -865,7 +865,7 @@ export const fault: EventDef[] = [
           {
             weight: 2,
             text: {
-              cs: "Zaklepali jste dvakrát. Motor zaklepal třikrát a pak ztichl, což KIPP odmítá jakkoli vykládat.",
+              cs: "Klepeš dvakrát. Motor zaklepe třikrát a pak ztichne, což KIPP odmítá jakkoli vykládat.",
               en: "You knock twice. The engine knocks three times and falls silent, which KIPP refuses to interpret in any way.",
             },
             effects: [{ t: "rp", secs: 20 }],
@@ -917,7 +917,7 @@ export const fault: EventDef[] = [
     when: { depthMin: 4, failure: "none" },
     title: { cs: "Těsnění to vzdává", en: "The Seal Is Giving Up" },
     text: {
-      cs: "Těsnění přechodové komory syčí a kontrolka tlaku pomalu měkne ze zelené do žluté. Guma je původní, tedy starší než vy.",
+      cs: "Těsnění přechodové komory syčí a kontrolka tlaku pomalu měkne ze zelené do žluté. Guma je původní, tedy starší než ty.",
       en: "The airlock seal is hissing and the pressure light is slowly softening from green to yellow. The rubber is original, which makes it older than you.",
     },
     choices: [
@@ -929,7 +929,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Syčí to ze čtyř míst najednou a každé chce svůj kus pásky. Ruce máte jen dvě.",
+              cs: "Syčí to ze čtyř míst najednou a každé chce svůj kus pásky. Ruce máš jen dvě.",
               en: "It hisses from four places at once and each wants its own strip of tape. You only have two hands.",
             },
             effects: [
@@ -1009,7 +1009,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Stojíte u ventilů vzduchového okruhu se šátkem přes nos. Čím dřív to bude, tím líp pro všechny.",
+              cs: "Stojíš u ventilů vzduchového okruhu se šátkem přes nos. Čím dřív to bude, tím líp pro všechny.",
               en: "You stand at the air loop valves with a scarf over your nose. The sooner this is done, the better for everyone.",
             },
             effects: [
@@ -1037,7 +1037,7 @@ export const fault: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Staré filtry vyndáváte kleštěmi a s omluvou. Vzduch je zase vzduch a posádka vám tleská.",
+              cs: "Staré filtry vyndáváš kleštěmi a s omluvou. Vzduch je zase vzduch a posádka ti tleská.",
               en: "You remove the old filters with tongs and an apology. Air is air again, and the crew applauds.",
             },
             effects: [
@@ -1093,7 +1093,7 @@ export const fault: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Oblek je těžký, průzor se mlží a prasklina je tenčí než svářecí drát. Dýcháte pomalu a počítáte vteřiny.",
+              cs: "Oblek je těžký, průzor se mlží a prasklina je tenčí než svářecí drát. Dýcháš pomalu a počítáš vteřiny.",
               en: "The suit is heavy, the visor fogs up and the crack is thinner than the welding wire. You breathe slowly and count the seconds.",
             },
             effects: [

@@ -32,7 +32,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Jeden kamínek to vzal zkratkou přes lak. KIPP škrábanec zapsal na váš účet.",
+              cs: "Jeden kamínek to vzal zkratkou přes lak. KIPP škrábanec zapsal na tvůj účet.",
               en: "One pebble takes a shortcut through the paintwork. KIPP logs the scratch under your name.",
             },
             effects: [
@@ -130,7 +130,7 @@ export const meteor: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Deset minut jen stojíte u okna. KIPP to do protokolu zapisuje jako údržbu posádky.",
+              cs: "Deset minut jen stojíš u okna. KIPP to do protokolu zapisuje jako údržbu posádky.",
               en: "You stand at the window for ten minutes. KIPP files it as crew maintenance.",
             },
             effects: [
@@ -150,7 +150,7 @@ export const meteor: EventDef[] = [
     when: { depthMin: 1 },
     title: { cs: "Meteorický roj", en: "Meteor Shower" },
     text: {
-      cs: "Radar se rozsvítil jako vánoční stromek. Letí na vás roj kamení a žádný z nich nedává přednost zprava.",
+      cs: "Radar se rozsvítil jako vánoční stromek. Letí na tebe roj kamení a žádný z nich nedává přednost zprava.",
       en: "The radar lights up like a holiday tree. A swarm of rocks is inbound, and not one of them intends to give way.",
     },
     choices: [
@@ -162,7 +162,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Usedáte k obrannému laseru. KIPP vám drží palce, které nemá.",
+              cs: "Usedáš k obrannému laseru. KIPP ti drží palce, které nemá.",
               en: "You take the point-defense seat. KIPP crosses the fingers it does not have.",
             },
             effects: [
@@ -189,7 +189,7 @@ export const meteor: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Roj se vyřádil na asteroidu místo na vás. Když je po všem, jen sesbíráte úlomky.",
+              cs: "Roj se vyřádil na asteroidu místo na tobě. Když je po všem, jen sesbíráš úlomky.",
               en: "The swarm takes it out on the asteroid instead of you. When it is over, you just sweep up the chips.",
             },
             effects: [{ t: "item", item: "silicates", n: 15, scaled: true }],
@@ -205,7 +205,7 @@ export const meteor: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Kameny vás minuly o délku šroubováku. KIPP tvrdí, že to tak plánoval.",
+              cs: "Kameny tě minuly o délku šroubováku. KIPP tvrdí, že to tak plánoval.",
               en: "The rocks miss by the length of a screwdriver. KIPP claims that was the plan.",
             },
             effects: [{ t: "credits", secs: 30 }],
@@ -238,7 +238,7 @@ export const meteor: EventDef[] = [
     when: { depthMin: 3, failure: "none" },
     title: { cs: "Ten tlustý", en: "The Big One" },
     text: {
-      cs: "Kolizním kurzem se k vám valí balvan velký jako obchodní dům. KIPP spočítal šanci na srážku a odmítá vám ji říct, prý kvůli morálce.",
+      cs: "Kolizním kurzem se k tobě valí balvan velký jako obchodní dům. KIPP spočítal šanci na srážku a odmítá ti ji říct, prý kvůli morálce.",
       en: "A boulder the size of a department store is rolling in on a collision course. KIPP has calculated the odds of impact and refuses to share them, citing morale.",
     },
     choices: [
@@ -250,7 +250,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Jeden velký problém měníte na spoustu malých. Teď je ještě potřeba trefit ty malé.",
+              cs: "Jeden velký problém měníš na spoustu malých. Teď je ještě potřeba trefit ty malé.",
               en: "You turn one big problem into many small ones. Now you only have to hit the small ones.",
             },
             effects: [
@@ -296,7 +296,7 @@ export const meteor: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Balvan vás jen líznul bokem. Zůstala po něm rýha a pocit, že vám vesmír něco odpustil.",
+              cs: "Balvan tě jen líznul bokem. Zůstala po něm rýha a pocit, že ti vesmír něco odpustil.",
               en: "The boulder only grazes your flank. It leaves a groove and the feeling that the universe let you off.",
             },
             effects: [{ t: "hull", pct: -5 }],
@@ -394,7 +394,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Proplétáte se jako slon, který se v porcelánu už jednou spálil. Nic jste nerozbili a nic neodnesli.",
+              cs: "Proplétáš se jako slon, který se v porcelánu už jednou spálil. Nic se nerozbilo a nic se neodneslo.",
               en: "You tiptoe through like a bull who has been billed for a china shop before. Nothing broken, nothing taken.",
             },
             effects: [{ t: "morale", n: 1 }],
@@ -411,7 +411,7 @@ export const meteor: EventDef[] = [
     when: { depthMin: 2 },
     title: { cs: "Dírka jako hrášek", en: "A Hole the Size of a Pea" },
     text: {
-      cs: "Mikrometeorit prošel trupem a cestou vzal i váš oběd. Z chodby se ozývá tiché syčení, které manuál označuje slovem „nežádoucí“.",
+      cs: "Mikrometeorit prošel trupem a cestou vzal i tvůj oběd. Z chodby se ozývá tiché syčení, které manuál označuje slovem „nežádoucí“.",
       en: "A micrometeorite went through the hull and took your lunch with it. A soft hiss comes from the corridor, which the manual describes as “undesirable”.",
     },
     choices: [
@@ -423,7 +423,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Berete záplaty a jdete po zvuku. Syčení vás vede jako velmi nepříjemný průvodce.",
+              cs: "Bereš záplaty a jdeš po zvuku. Syčení tě vede jako velmi nepříjemný průvodce.",
               en: "You grab the patches and follow the sound. The hiss guides you like a very unpleasant tour guide.",
             },
             effects: [
@@ -467,7 +467,7 @@ export const meteor: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Žvýkačka zmrzla na kámen a těsní líp než originální díl. KIPP žádá, abyste to nikomu neříkali.",
+              cs: "Žvýkačka zmrzla na kámen a těsní líp než originální díl. KIPP žádá, ať se to nikdo nedozví.",
               en: "The gum freezes rock solid and seals better than the factory part. KIPP asks you never to mention this.",
             },
             effects: [{ t: "morale", n: 2 }],
@@ -505,7 +505,7 @@ export const meteor: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Doháníte ho a ukusujete, co se dá. Palivoměr se tváří dotčeně, nákladový prostor spokojeně.",
+              cs: "Doháníš ho a ukusuješ, co se dá. Palivoměr se tváří dotčeně, nákladový prostor spokojeně.",
               en: "You catch up and bite off what you can. The fuel gauge looks hurt, the hold looks pleased.",
             },
             effects: [
@@ -516,7 +516,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Meteor vám ujel. Palivo taky.",
+              cs: "Meteor ti ujel. Palivo taky.",
               en: "The meteor gets away. So does the fuel.",
             },
             effects: [{ t: "fuel", n: -3 }],
@@ -532,7 +532,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Ladíte paprsek na pohyblivý cíl. KIPP počítá nahlas, což nepomáhá.",
+              cs: "Ladíš paprsek na pohyblivý cíl. KIPP počítá nahlas, což nepomáhá.",
               en: "You tune the beam to a moving target. KIPP counts out loud, which does not help.",
             },
             effects: [
@@ -558,7 +558,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Zamáváte mu. Bohatství letí dál a ani se neohlédne, KIPP si aspoň zapsal jeho dráhu.",
+              cs: "Zamáváš mu. Bohatství letí dál a ani se neohlédne, KIPP si aspoň zapsal jeho dráhu.",
               en: "You wave. The fortune sails on without a backward glance, but KIPP at least logs its orbit.",
             },
             effects: [{ t: "rp", secs: 20 }],
@@ -588,7 +588,7 @@ export const meteor: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Vjíždíte dovnitř a loď drnčí jako plechovka hřebíků. Uprostřed bouře je najednou podezřelé ticho.",
+              cs: "Vjíždíš dovnitř a loď drnčí jako plechovka hřebíků. Uprostřed bouře je najednou podezřelé ticho.",
               en: "You plunge in and the ship rattles like a tin of nails. Deep inside the storm it goes suspiciously quiet.",
             },
             effects: [
@@ -599,7 +599,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Bouře vás po hodině vyplivla zpátky, potlučené a uražené.",
+              cs: "Bouře loď po hodině vyplivla zpátky, potlučenou a uraženou.",
               en: "After an hour the storm spits you back out, battered and offended.",
             },
             effects: [
@@ -617,7 +617,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Sunete se okrajem fronty a odstřelujete všechno větší než pěst. Je toho hodně.",
+              cs: "Suneš se okrajem fronty a odstřeluješ všechno větší než pěst. Je toho hodně.",
               en: "You creep along the edge of the front, shooting anything bigger than a fist. There is a lot of it.",
             },
             effects: [
@@ -643,7 +643,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Tři dny pozorujete bouři z bezpečné dálky. Je to jako dívat se na cizí průšvih.",
+              cs: "Tři dny pozoruješ bouři z bezpečné dálky. Je to jako dívat se na cizí průšvih.",
               en: "For three days you watch the storm from a safe distance. It is like watching someone else's bad day.",
             },
             effects: [{ t: "fuel", n: -3 }],
@@ -672,7 +672,7 @@ export const meteor: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Laser jede naplno a jádro se loupe jako cibule. Odlétáte ve chvíli, kdy se oko začíná zavírat.",
+              cs: "Laser jede naplno a jádro se loupe jako cibule. Odlétáš ve chvíli, kdy se oko začíná zavírat.",
               en: "The laser runs flat out and the core peels like an onion. You leave just as the eye begins to close.",
             },
             effects: [
@@ -683,7 +683,7 @@ export const meteor: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Oko se zavřelo dřív, než jste čekali. Náklad máte, lak už ne.",
+              cs: "Oko se zavřelo dřív, než se čekalo. Náklad máš, lak už ne.",
               en: "The eye closes sooner than expected. You keep the cargo, but not the paint.",
             },
             effects: [
@@ -702,7 +702,7 @@ export const meteor: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Berete si suvenýr a mizíte, než si to bouře rozmyslí. KIPP mezitím to místo zakreslil do map.",
+              cs: "Bereš si suvenýr a mizíš, než si to bouře rozmyslí. KIPP mezitím to místo zakreslil do map.",
               en: "You take a souvenir and slip out before the storm reconsiders. KIPP, meanwhile, puts the place on the charts.",
             },
             effects: [

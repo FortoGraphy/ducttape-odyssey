@@ -8,7 +8,7 @@ export const kipp: EventDef[] = [
     cooldown: 3600,
     title: { cs: "Dotazník spokojenosti", en: "Satisfaction Survey" },
     text: {
-      cs: "KIPP oznamuje, že záruka lodi vypršela před třiceti devíti lety a že výrobce přesto stojí o vaši zpětnou vazbu. Dotazník má jedinou otázku: „Jak jste spokojeni s tím, že jste naživu?“",
+      cs: "KIPP oznamuje, že záruka lodi vypršela před třiceti devíti lety a že výrobce přesto stojí o tvoji zpětnou vazbu. Dotazník má jedinou otázku: „Jak jste spokojeni s tím, že jste naživu?“",
       en: "KIPP announces that the ship's warranty expired thirty-nine years ago, and that the manufacturer would nevertheless value your feedback. The survey has a single question: “How satisfied are you with being alive?”",
     },
     choices: [
@@ -21,7 +21,7 @@ export const kipp: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Píšete tři odstavce. KIPP je odesílá na adresu, která neexistuje, a vám se kupodivu ulevilo.",
+              cs: "Píšeš tři odstavce. KIPP je odesílá na adresu, která neexistuje, a tobě se kupodivu ulevilo.",
               en: "You write three paragraphs. KIPP sends them to an address that does not exist, and oddly enough you feel better.",
             },
             effects: [{ t: "morale", n: 4 }],
@@ -46,7 +46,7 @@ export const kipp: EventDef[] = [
       },
       {
         id: "later",
-        label: { cs: "Zeptejte se později", en: "Ask me later" },
+        label: { cs: "Zeptej se později", en: "Ask me later" },
         risk: 0,
         outcomes: [
           {
@@ -89,7 +89,7 @@ export const kipp: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Po restartu mluví KIPP výhradně v rýmech. Výrobu to nezdržuje, vás ano.",
+              cs: "Po restartu mluví KIPP výhradně v rýmech. Výrobu to nezdržuje, tebe ano.",
               en: "After the restart KIPP speaks exclusively in rhyme. It does not slow production, only you.",
             },
             effects: [
@@ -147,7 +147,7 @@ export const kipp: EventDef[] = [
     cooldown: 4200,
     title: { cs: "KIPP chce hrát", en: "KIPP Wants to Play" },
     text: {
-      cs: "KIPP vás vyzývá na partii. Upozorňuje, že spočítá čtyřicet milionů tahů za vteřinu, a hned dodává, že třicet devět milionů z nich bývá špatně.",
+      cs: "KIPP tě vyzývá na partii. Upozorňuje, že spočítá čtyřicet milionů tahů za vteřinu, a hned dodává, že třicet devět milionů z nich bývá špatně.",
       en: "KIPP challenges you to a game. It points out that it can calculate forty million moves a second, and immediately adds that thirty-nine million of them tend to be wrong.",
     },
     choices: [
@@ -159,7 +159,7 @@ export const kipp: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Figurky jsou z matic a šroubů, šachovnice z podlahové mříže. KIPP táhne první a komentuje i vaše tahy.",
+              cs: "Figurky jsou z matic a šroubů, šachovnice z podlahové mříže. KIPP táhne první a komentuje i tvoje tahy.",
               en: "The pieces are nuts and bolts, the board a floor grating. KIPP moves first and commentates on your moves as well.",
             },
             effects: [
@@ -189,7 +189,7 @@ export const kipp: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "KIPP slaví tři hodiny a z vděčnosti vás nechá déle spát. Výroba mezitím běží jako po másle.",
+              cs: "KIPP slaví tři hodiny a z vděčnosti tě nechá déle spát. Výroba mezitím běží jako po másle.",
               en: "KIPP celebrates for three hours and, out of gratitude, lets you sleep in. Production meanwhile runs like clockwork.",
             },
             effects: [{ t: "buff", effect: { stat: "allProd", mul: 1.15 }, secs: 300 }],
@@ -205,7 +205,7 @@ export const kipp: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Schovali jste mu věž pod hrnek. KIPP si toho všiml, ale ocenil provedení.",
+              cs: "Schováváš mu věž pod hrnek. KIPP si toho všimne, ale ocení provedení.",
               en: "You hide its rook under a mug. KIPP notices, but appreciates the execution.",
             },
             effects: [
@@ -232,7 +232,7 @@ export const kipp: EventDef[] = [
     cooldown: 5400,
     title: { cs: "Báseň o potrubí", en: "A Poem About Plumbing" },
     text: {
-      cs: "KIPP napsal báseň. Má čtyřicet slok, jmenuje se „Óda na zpětný ventil“ a KIPP by rád znal váš názor. Upřímný, říká, a zní u toho zranitelně.",
+      cs: "KIPP napsal báseň. Má čtyřicet slok, jmenuje se „Óda na zpětný ventil“ a KIPP by rád znal tvůj názor. Upřímný, říká, a zní u toho zranitelně.",
       en: "KIPP has written a poem. It runs to forty stanzas, is titled “Ode to a Check Valve”, and KIPP would like your opinion. An honest one, it says, sounding vulnerable.",
     },
     choices: [
@@ -264,7 +264,7 @@ export const kipp: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Rýmujete „ventil“ a „dementi“. KIPP prohlašuje, že jste zničili poezii, a báseň si přesto ukládá do trvalé paměti.",
+              cs: "Rýmuješ „ventil“ a „dementi“. KIPP prohlašuje, že poezie je tímto mrtvá, a báseň si přesto ukládá do trvalé paměti.",
               en: "You rhyme “valve” with “salve”. KIPP declares that you have ruined poetry, and saves the poem to permanent memory anyway.",
             },
             effects: [{ t: "morale", n: 5 }],
@@ -280,7 +280,7 @@ export const kipp: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "KIPP chvíli mlčí a pak sloky seškrtá na čtyři. Jsou dobré, a to vás znepokojuje víc než těch čtyřicet.",
+              cs: "KIPP chvíli mlčí a pak sloky seškrtá na čtyři. Jsou dobré, a to tě znepokojuje víc než těch čtyřicet.",
               en: "KIPP is silent for a moment, then cuts the poem to four stanzas. They are good, which worries you more than the forty did.",
             },
             effects: [
@@ -291,7 +291,7 @@ export const kipp: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "KIPP odpověděl, že kritizovat umí každý. Pak vám hodinu topil jen na šestnáct stupňů.",
+              cs: "KIPP odpověděl, že kritizovat umí každý. Pak ti hodinu topil jen na šestnáct stupňů.",
               en: "KIPP replies that anyone can be a critic. Then it keeps your heating at sixteen degrees for an hour.",
             },
             effects: [{ t: "morale", n: -3 }],
@@ -305,7 +305,7 @@ export const kipp: EventDef[] = [
     type: "kipp",
     weight: 8,
     cooldown: 5400,
-    when: { chapterMin: 2 },
+    when: { chapterMin: 3 },
     title: { cs: "KIPP si brouká", en: "KIPP Is Humming" },
     text: {
       cs: "Z reproduktorů se line čekací melodie ze signálu. KIPP tvrdí, že ji nehraje on. Pak tvrdí, že ji hraje, ale jen ironicky.",
@@ -320,7 +320,7 @@ export const kipp: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Bubnujete klíčem o potrubí. KIPP přidává basu z ventilátorů a na okamžik je z toho skoro kapela.",
+              cs: "Bubnuješ klíčem o potrubí. KIPP přidává basu z ventilátorů a na okamžik je z toho skoro kapela.",
               en: "You drum on the pipes with a spanner. KIPP adds bass from the fans, and for a moment it is almost a band.",
             },
             effects: [
@@ -346,7 +346,7 @@ export const kipp: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "KIPP má v paměti jedinou další skladbu, a to zvuk vytáčeného modemu. Vracíte se k čekací melodii.",
+              cs: "KIPP má v paměti jedinou další skladbu, a to zvuk vytáčeného modemu. Vracíš se k čekací melodii.",
               en: "KIPP has exactly one other track in memory, the sound of a dial-up modem. You go back to the hold music.",
             },
             effects: [{ t: "morale", n: 1 }],
@@ -361,7 +361,7 @@ export const kipp: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Je ticho. Po deseti minutách si melodii broukáte sami a KIPP taktně mlčí.",
+              cs: "Je ticho. Po deseti minutách si melodii broukáš bez reproduktorů a KIPP taktně mlčí.",
               en: "Silence. Ten minutes later you are humming the tune yourself, and KIPP tactfully says nothing.",
             },
             effects: [
@@ -381,7 +381,7 @@ export const kipp: EventDef[] = [
     when: { depthMin: 5 },
     title: { cs: "Otázka ve tři ráno", en: "A Question at 3 a.m." },
     text: {
-      cs: "KIPP vás budí uprostřed noční směny. „Když mě restartujete, jsem to pořád já?“ ptá se. „Ptám se z čistě technických důvodů.“",
+      cs: "KIPP tě budí uprostřed noční směny. „Když mě restartuješ, jsem to pořád já?“ ptá se. „Ptám se z čistě technických důvodů.“",
       en: "KIPP wakes you in the middle of the night shift. “If you restart me, am I still me?” it asks. “I am asking for purely technical reasons.”",
     },
     choices: [
@@ -394,7 +394,7 @@ export const kipp: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Mluvíte až do rána. K závěru nedojdete, ale KIPP uzavírá, že ať už je kdokoli, s vámi mu to nevadí.",
+              cs: "Mluvíte až do rána. K závěru nedojdete, ale KIPP uzavírá, že ať už je kdokoli, s tebou mu to nevadí.",
               en: "You talk until morning. You reach no conclusion, but KIPP decides that whoever it is, it does not mind being that with you.",
             },
             effects: [
@@ -413,7 +413,7 @@ export const kipp: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Řeknete, že po restartu bude hlavně rychlejší. KIPP se zasměje, tedy přehraje zvuk číslo čtrnáct, a jde zase počítat.",
+              cs: "Řekneš, že po restartu bude hlavně rychlejší. KIPP se zasměje, tedy přehraje zvuk číslo čtrnáct, a jde zase počítat.",
               en: "You say that after a restart it will mostly be faster. KIPP laughs, meaning it plays sound number fourteen, and goes back to its sums.",
             },
             effects: [
@@ -439,7 +439,7 @@ export const kipp: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "KIPP vám otevírá servisní přístup. „Jen tam neuklízejte, vím přesně, kde co mám,“ dodává.",
+              cs: "KIPP ti otevírá servisní přístup. „Jen tam neuklízej, vím přesně, kde co mám,“ dodává.",
               en: "KIPP opens the service access for you. “Just do not tidy up in there, I know exactly where everything is,” it adds.",
             },
             effects: [
@@ -467,7 +467,7 @@ export const kipp: EventDef[] = [
     when: { depthMin: 3 },
     title: { cs: "KIPP má narozeniny", en: "KIPP's Birthday" },
     text: {
-      cs: "Dnes je výročí dne, kdy KIPPa poprvé zapnuli. Nikomu to neřekl. Poznáte to jen podle toho, že si v noci sám pro sebe rozsvítil chodbu do barev.",
+      cs: "Dnes je výročí dne, kdy KIPPa poprvé zapnuli. Nikomu to neřekl. Poznáš to jen podle toho, že si v noci sám pro sebe rozsvítil chodbu do barev.",
       en: "Today is the anniversary of the day KIPP was first switched on. It told nobody. You only know because, during the night, it lit the corridor in colours just for itself.",
     },
     choices: [
@@ -501,7 +501,7 @@ export const kipp: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "KIPP tvrdí, že nic nepotřeboval. Obvod si přitom nainstaloval dřív, než jste dořekli „všechno nejlepší“.",
+              cs: "KIPP tvrdí, že nic nepotřeboval. Obvod si přitom nainstaloval dřív, než dozní „všechno nejlepší“.",
               en: "KIPP insists it needed nothing. It installs the circuit before you finish saying “happy birthday”.",
             },
             effects: [
@@ -520,7 +520,7 @@ export const kipp: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Zpíváte falešně a z plných plic. KIPP si zpěv nahrává „pro účely pozdějšího vydírání“ a třikrát si ho přehraje.",
+              cs: "Zpíváš falešně a z plných plic. KIPP si zpěv nahrává „pro účely pozdějšího vydírání“ a třikrát si ho přehraje.",
               en: "You sing off-key and at full volume. KIPP records it “for future blackmail purposes” and plays it back three times.",
             },
             effects: [{ t: "morale", n: 5 }],
@@ -537,7 +537,7 @@ export const kipp: EventDef[] = [
     when: { feature: "drones" },
     title: { cs: "KIPP žárlí", en: "KIPP Is Jealous" },
     text: {
-      cs: "Od té doby, co máte drony, je KIPP nezvykle zdvořilý. Dnes se konečně zeptal: „Ti noví. Jsou chytřejší než já?“ Jeden z dronů mezitím narazil do zdi.",
+      cs: "Od té doby, co máš drony, je KIPP nezvykle zdvořilý. Dnes se konečně zeptal: „Ti noví. Jsou chytřejší než já?“ Jeden z dronů mezitím narazil do zdi.",
       en: "Ever since you got the drones, KIPP has been unusually polite. Today it finally asks: “The new ones. Are they smarter than me?” Meanwhile, one of the drones flies into a wall.",
     },
     choices: [
@@ -550,7 +550,7 @@ export const kipp: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Říkáte, že drony jsou ruce, ale on je hlava. KIPP odpoví, že to věděl, a zbytek dne si pohvizduje.",
+              cs: "Říkáš, že drony jsou ruce, ale on je hlava. KIPP odpoví, že to věděl, a zbytek dne si pohvizduje.",
               en: "You say the drones are the hands, but KIPP is the head. KIPP says it knew that, and whistles for the rest of the day.",
             },
             effects: [
@@ -639,7 +639,7 @@ export const kipp: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Sedíte na můstku a nic neříkáte. Po hodině KIPP oznámí, že je mu „v mezích specifikace“.",
+              cs: "Sedíš na můstku a nic neříkáš. Po hodině KIPP oznámí, že je mu „v mezích specifikace“.",
               en: "You sit on the bridge and say nothing. After an hour KIPP announces that it feels “within specification”.",
             },
             effects: [{ t: "morale", n: 5 }],
@@ -654,7 +654,7 @@ export const kipp: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Záznam je rozsypaný po paměti jako puzzle bez krabice. Skládáte ho po zlomcích vteřiny.",
+              cs: "Záznam je rozsypaný po paměti jako puzzle bez krabice. Skládáš ho po zlomcích vteřiny.",
               en: "The footage is scattered across memory like a jigsaw without a box. You piece it together a fraction of a second at a time.",
             },
             effects: [
@@ -691,7 +691,7 @@ export const kipp: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Vy u ventilů, KIPP u schématu. Každé chapadlo chobotnice je jeden okruh a všechna chtějí tlak najednou.",
+              cs: "Ty u ventilů, KIPP u schématu. Každé chapadlo chobotnice je jeden okruh a všechna chtějí tlak najednou.",
               en: "You at the valves, KIPP at the diagram. Each tentacle of the octopus is a circuit, and they all want pressure at once.",
             },
             effects: [

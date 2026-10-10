@@ -8,7 +8,7 @@ export const merchant: EventDef[] = [
     cooldown: 1800,
     title: { cs: "Podomní obchodník", en: "The Door-to-Door Trader" },
     text: {
-      cs: "Na přechodovou komoru někdo klepe. Zvenku. Stojí tam mužík ve skafandru polepeném samolepkami a ptá se, jestli máte chvilku na izolepu.",
+      cs: "Na přechodovou komoru někdo klepe. Zvenku. Stojí tam mužík ve skafandru polepeném samolepkami a ptá se, jestli by se nenašla chvilka na izolepu.",
       en: "Someone is knocking on the airlock. From outside. A small man in a sticker-covered suit asks whether you have a moment to talk about duct tape.",
     },
     choices: [
@@ -39,7 +39,7 @@ export const merchant: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Šrot váží na ruční váze a mhouří u toho oko. Dostáváte dvě role a pocit, že vás vzal na hůl jen trochu.",
+              cs: "Šrot váží na ruční váze a mhouří u toho oko. Dostáváš dvě role a pocit, že tě vzal na hůl jen trochu.",
               en: "He weighs the scrap on a hand scale, squinting. You get two rolls and the feeling you were only slightly fleeced.",
             },
             effects: [{ t: "item", item: "duct_tape", n: 2 }],
@@ -55,7 +55,7 @@ export const merchant: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Půl hodiny probíráte ceny šroubů. Je to nejlepší rozhovor za poslední roky s někým, kdo nemá sériové číslo.",
+              cs: "Půl hodiny probíráte ceny šroubů. Je to tvůj nejlepší rozhovor za poslední roky s někým, kdo nemá sériové číslo.",
               en: "You discuss screw prices for half an hour. It is the best conversation in years with someone who has no serial number.",
             },
             effects: [{ t: "morale", n: 3 }],
@@ -64,7 +64,7 @@ export const merchant: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Na rozloučenou vám vtiskne do ruky vzorek zdarma. „Až dojde, víte, kde mě najdete,“ říká, i když to nevíte.",
+              cs: "Na rozloučenou ti vtiskne do ruky vzorek zdarma. „Až dojde, víte, kde mě najdete,“ říká, i když to nevíš.",
               en: "On his way out he presses a free sample into your hand. “When it runs out, you know where to find me,” he says, although you do not.",
             },
             effects: [
@@ -97,7 +97,7 @@ export const merchant: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Automat zavrčel a vydal balíček náhradních dílů. Datum spotřeby raději nečtete.",
+              cs: "Automat zavrčel a vydal balíček náhradních dílů. Datum spotřeby radši nečteš.",
               en: "The machine growls and delivers a pack of spare parts. You choose not to read the best-before date.",
             },
             effects: [{ t: "item", item: "spare_parts", n: 1 }],
@@ -145,7 +145,7 @@ export const merchant: EventDef[] = [
           {
             weight: 2,
             text: {
-              cs: "Automat se bránil. Nevíte jak, ale příď je odřená a on svítí o něco spokojeněji.",
+              cs: "Automat se bránil. Nevíš jak, ale příď je odřená a on svítí o něco spokojeněji.",
               en: "The machine fights back. You are not sure how, but the bow is scuffed and it glows a little more smugly.",
             },
             effects: [{ t: "hull", pct: -2 }],
@@ -191,7 +191,7 @@ export const merchant: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Tankují vám z konve, která vypadá jako starožitnost. Palivo je ale čisté a ještě vám umyli okno.",
+              cs: "Tankují ti z konve, která vypadá jako starožitnost. Palivo je ale čisté a ještě ti umyli okno.",
               en: "They fill you up from a can that looks like an antique. The fuel is clean, though, and they even wash your window.",
             },
             effects: [
@@ -210,7 +210,7 @@ export const merchant: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Berou i to, co jste chtěli vyhodit. Hlavně to, co jste chtěli vyhodit.",
+              cs: "Berou i to, co bylo na vyhození. Hlavně to, co bylo na vyhození.",
               en: "They take even the things you meant to throw away. Especially the things you meant to throw away.",
             },
             effects: [
@@ -230,7 +230,7 @@ export const merchant: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Smlouváte tak dlouho, až vám přidají lucernu, jen abyste už šli. Svítí hezky a účet taky.",
+              cs: "Smlouváš tak dlouho, až ti přidají lucernu, jen aby byl klid. Svítí hezky a účet taky.",
               en: "You haggle for so long that they throw in a lantern just to make you leave. It glows nicely, and so does the invoice.",
             },
             effects: [
@@ -241,7 +241,7 @@ export const merchant: EventDef[] = [
           {
             weight: 2,
             text: {
-              cs: "Vedoucí karavany smlouvá déle, než vy žijete. Odlétáte s horší cenou a s cennou lekcí.",
+              cs: "Vedoucí karavany smlouvá déle, než jsi na světě. Odlétáš s horší cenou a s cennou lekcí.",
               en: "The caravan master has been haggling longer than you have been alive. You leave with a worse price and a valuable lesson.",
             },
             effects: [
@@ -262,7 +262,7 @@ export const merchant: EventDef[] = [
     when: { feature: "crew" },
     title: { cs: "Pašerák kávy", en: "The Coffee Smuggler" },
     text: {
-      cs: "Nenápadná loď bliká smluveným signálem, který neznáte. Muž s kruhy pod očima šeptá do vysílačky: „Mám zrna. Pravá, žádnou cikorku.“",
+      cs: "Nenápadná loď bliká smluveným signálem, který neznáš. Muž s kruhy pod očima šeptá do vysílačky: „Mám zrna. Pravá, žádnou cikorku.“",
       en: "An unremarkable ship flashes a secret signal you do not know. A man with shadows under his eyes whispers over the radio: “I have beans. The real thing, no chicory.”",
     },
     choices: [
@@ -276,7 +276,7 @@ export const merchant: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Pytel voní tak, že se z ubikací ozývá potlesk. Pašerák mizí dřív, než stihnete říct „účtenka“.",
+              cs: "Pytel voní tak, že se z ubikací ozývá potlesk. Pašerák mizí dřív, než stihneš říct „účtenka“.",
               en: "The sack smells so good that applause breaks out in the quarters. The smuggler is gone before you can say “receipt”.",
             },
             effects: [
@@ -295,7 +295,7 @@ export const merchant: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Ochutnávka je tak silná, že chvíli vidíte zvuky. Pašerák se směje a přihodí pytlík na cestu.",
+              cs: "Ochutnávka je tak silná, že chvíli vidíš zvuky. Pašerák se směje a přihodí pytlík na cestu.",
               en: "The sample is so strong that you briefly see sounds. The smuggler laughs and tosses in a bag for the road.",
             },
             effects: [
@@ -315,13 +315,13 @@ export const merchant: EventDef[] = [
       },
       {
         id: "report",
-        label: { cs: "Nahlásit ho Tiché knize", en: "Report him to the Ledger" },
+        label: { cs: "Nahlásit ho Tiché účtárně", en: "Report him to the Ledger" },
         risk: 0,
         outcomes: [
           {
             weight: 1,
             text: {
-              cs: "Tichá kniha děkuje za spolupráci formulářem o šesti stranách. Posádka se dozvěděla, kdo za to může, a mlčí velmi hlasitě.",
+              cs: "Tichá účtárna děkuje za spolupráci formulářem o šesti stranách. Posádka se dozvěděla, kdo za to může, a mlčí velmi hlasitě.",
               en: "The Quiet Ledger thanks you with a six-page form. The crew has found out who is responsible and is being silent very loudly.",
             },
             effects: [
@@ -342,7 +342,7 @@ export const merchant: EventDef[] = [
     when: { depthMin: 6, feature: "station" },
     title: { cs: "Dobrovolný audit", en: "A Voluntary Audit" },
     text: {
-      cs: "Šedá loď Tiché knihy se zařadila vedle vás bez jediného zvuku. Auditorka nabízí dobrovolnou kontrolu účetnictví. Slovo „dobrovolnou“ vyslovuje velmi pečlivě.",
+      cs: "Šedá loď Tiché účtárny se zařadila vedle tebe bez jediného zvuku. Auditorka nabízí dobrovolnou kontrolu účetnictví. Slovo „dobrovolnou“ vyslovuje velmi pečlivě.",
       en: "A grey ship of the Quiet Ledger slides alongside without a sound. The auditor offers a voluntary inspection of your books. She pronounces “voluntary” very carefully.",
     },
     choices: [
@@ -355,7 +355,7 @@ export const merchant: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Našla přeplatek z dob původní posádky. Vrací vám ho i s úrokem a tváří se, že ji to fyzicky bolí.",
+              cs: "Našla přeplatek z dob původní posádky. Vrací ti ho i s úrokem a tváří se, že ji to fyzicky bolí.",
               en: "She finds an overpayment from the original crew's time. She refunds it with interest and looks physically pained.",
             },
             effects: [
@@ -366,7 +366,7 @@ export const merchant: EventDef[] = [
           {
             weight: 2,
             text: {
-              cs: "Našla nedoplatek z dob původní posádky. Platíte za cizí hříchy, ale aspoň máte čistý štít.",
+              cs: "Našla nedoplatek z dob původní posádky. Platíš za cizí hříchy, ale aspoň máš čistý štít.",
               en: "She finds an underpayment from the original crew's time. You pay for someone else's sins, but at least your record is clean.",
             },
             effects: [
@@ -421,7 +421,7 @@ export const merchant: EventDef[] = [
     when: { depthMin: 4, feature: "crafting" },
     title: { cs: "Plány pod rukou", en: "Plans Under the Counter" },
     text: {
-      cs: "Obchodník s plány rozevírá kabát plný datových karet jako prodavač hodinek v podchodu. „Všechno originál,“ ujišťuje vás. „Skoro.“",
+      cs: "Obchodník s plány rozevírá kabát plný datových karet jako prodavač hodinek v podchodu. „Všechno originál,“ ujišťuje tě. „Skoro.“",
       en: "A blueprint dealer opens a coat lined with data cards, like a man selling watches in an underpass. “All originals,” he assures you. “Almost.”",
     },
     choices: [
@@ -468,7 +468,7 @@ export const merchant: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Prohlížíte si zboží tak dlouho, až si pár schémat zapamatujete. Obchodník to ví a tváří se dotčeně.",
+              cs: "Prohlížíš si zboží tak dlouho, až si pár schémat zapamatuješ. Obchodník to ví a tváří se dotčeně.",
               en: "You browse for so long that you memorise a few schematics. The dealer knows it and looks wounded.",
             },
             effects: [{ t: "rp", secs: 40 }],
@@ -538,7 +538,7 @@ export const merchant: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Vyprávíte o lístku „Jsme zpátky za 5 minut“. Smějí se tak, že vám jeden díl dají zadarmo.",
+              cs: "Vyprávíš o lístku „Za pět minut jsme zpátky“. Smějí se tak, že ti jeden díl dají zadarmo.",
               en: "You tell them about the note that says “Back in 5 minutes”. They laugh so hard that they give you a part for free.",
             },
             effects: [
@@ -550,7 +550,7 @@ export const merchant: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Stará svářečka uprostřed historky zmlkne. Pak vám podá datový krystal, který tu prý kdysi někdo z Gafferu zapomněl.",
+              cs: "Stará svářečka uprostřed historky zmlkne. Pak ti podá datový krystal, který tu prý kdysi někdo z Gafferu zapomněl.",
               en: "An old welder goes quiet halfway through your story. Then she hands you a data crystal that someone from the Gaffer supposedly left here long ago.",
             },
             effects: [{ t: "log" }, { t: "rep", faction: "rustborn", n: 1 }],
@@ -619,7 +619,7 @@ export const merchant: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Uvnitř něco chrastí, něco šplouchá a něco zatřese zpátky. Bednu opatrně vracíte na místo.",
+              cs: "Uvnitř něco chrastí, něco šplouchá a něco zatřese zpátky. Bednu opatrně vracíš na místo.",
               en: "Something rattles inside, something sloshes, and something shakes back. You put the crate down carefully.",
             },
             effects: [{ t: "morale", n: 1 }],
@@ -667,7 +667,7 @@ export const merchant: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Čočky si nasazuje jako monokl a dlouze si vás prohlíží. Pak z alba vytáhne těžařskou kartu, kterou má čtyřikrát.",
+              cs: "Čočku si nasazuje jako monokl a dlouze si tě prohlíží. Pak z alba vytáhne těžařskou kartu, kterou má čtyřikrát.",
               en: "He wears a lens like a monocle and inspects you at length. Then he pulls out a mining card he owns four times over.",
             },
             effects: [{ t: "card", deck: "mining" }],
@@ -683,7 +683,7 @@ export const merchant: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "V albu je i karta vaší lodi. V kolonce „stav“ stojí: pohřešována, nikomu nechybí.",
+              cs: "V albu je i karta tvojí lodi. V kolonce „stav“ stojí: pohřešována, nikomu nechybí.",
               en: "The album even has a card for your ship. Under “status” it says: missing, not missed.",
             },
             effects: [

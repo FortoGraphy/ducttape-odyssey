@@ -8,7 +8,7 @@ export const flare: EventDef[] = [
     cooldown: 1800,
     title: { cs: "Sluneční kýchnutí", en: "A Solar Sneeze" },
     text: {
-      cs: "Místní hvězda si odkašlala a směrem k vám letí vlna nabitých částic. Nic vážného, říká KIPP. Jen prý nemáte sahat na nic kovového, tedy na loď.",
+      cs: "Místní hvězda si odkašlala a směrem k tobě letí vlna nabitých částic. Nic vážného, říká KIPP. Jen prý nemáš sahat na nic kovového, tedy na loď.",
       en: "The local star clears its throat and a wave of charged particles heads your way. Nothing serious, says KIPP. Just avoid touching anything metal, meaning the ship.",
     },
     choices: [
@@ -83,7 +83,7 @@ export const flare: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Stojíte u ventilů a čekáte na vlnu. Tlakoměry se chvějí, jako by věděly, co přijde.",
+              cs: "Stojíš u ventilů a čekáš na vlnu. Tlakoměry se chvějí, jako by věděly, co přijde.",
               en: "You stand at the valves and wait for the wave. The pressure gauges tremble as if they knew what was coming.",
             },
             effects: [
@@ -113,7 +113,7 @@ export const flare: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Zaparkovali jste za nejbližší skálu a přečkali to. Trochu paliva je pryč, zato vám nesvítí zuby.",
+              cs: "Parkuješ za nejbližší skálou a čekáš, až to přejde. Trochu paliva je pryč, zato ti nesvítí zuby.",
               en: "You park behind the nearest rock and wait it out. Some fuel is gone, but at least your teeth do not glow.",
             },
             effects: [{ t: "fuel", n: -1 }],
@@ -140,7 +140,7 @@ export const flare: EventDef[] = [
           {
             weight: 2,
             text: {
-              cs: "Půlka kontrolek zhasla a druhá půlka svítí barvou, kterou v manuálu nenajdete.",
+              cs: "Půlka kontrolek zhasla a druhá půlka svítí barvou, kterou v manuálu nenajdeš.",
               en: "Half the indicator lights go out and the other half glow a colour that is not in the manual.",
             },
             effects: [
@@ -151,7 +151,7 @@ export const flare: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Stínění se vzdalo bez boje. Dozimetr hraje jednu dlouhou notu a KIPP vás prosí, abyste nesvítili na chodbě.",
+              cs: "Stínění se vzdalo bez boje. Dozimetr hraje jednu dlouhou notu a KIPP tě prosí, ať nesvítíš na chodbě.",
               en: "The shielding surrenders without a fight. The dosimeter plays one long note and KIPP asks you not to glow in the corridor.",
             },
             effects: [{ t: "failure", kind: "radiation" }],
@@ -240,7 +240,7 @@ export const flare: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Stahujete všechno, co stáhnout jde. Na lodi je šero, klid a nikdo se neopaluje.",
+              cs: "Stahuješ všechno, co stáhnout jde. Na lodi je šero, klid a nikdo se neopaluje.",
               en: "You draw everything that can be drawn. The ship is dim and calm, and nobody gets a tan.",
             },
             effects: [{ t: "morale", n: 1 }],
@@ -257,7 +257,7 @@ export const flare: EventDef[] = [
     when: { star: ["neutron"], failure: "none" },
     title: { cs: "Tep mrtvé hvězdy", en: "Pulse of a Dead Star" },
     text: {
-      cs: "Neutronová hvězda se otáčí třicetkrát za vteřinu a s každou otáčkou vás přejede paprsek rádiových vln. Elektronika na palubě začíná blikat do taktu.",
+      cs: "Neutronová hvězda se otáčí třicetkrát za vteřinu a s každou otáčkou tě přejede paprsek rádiových vln. Elektronika na palubě začíná blikat do taktu.",
       en: "The neutron star spins thirty times a second, and with every turn a beam of radio waves sweeps across you. The electronics on board begin to blink in time.",
     },
     choices: [
@@ -269,7 +269,7 @@ export const flare: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Otevíráte rozvaděč. Dráty v něm tepou jako žíly a žádný nemá barvu, jakou by měl mít.",
+              cs: "Otevíráš rozvaděč. Dráty v něm tepou jako žíly a žádný nemá barvu, jakou by měl mít.",
               en: "You open the junction box. The wires pulse like veins, and not one is the colour it ought to be.",
             },
             effects: [
@@ -307,7 +307,7 @@ export const flare: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Poslouchali jste moc dlouho a jeden jistič to vzdal dřív než vy.",
+              cs: "Poslech se protáhl a jeden jistič to vzdal dřív než ty.",
               en: "You listen for too long, and one circuit breaker gives up before you do.",
             },
             effects: [{ t: "moduleDamage", pct: 10, count: 1 }],
@@ -322,7 +322,7 @@ export const flare: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Loď na hodinu potemněla a přežila to bez úhony. Vy jste hodinu seděli potmě a bilancovali.",
+              cs: "Loď na hodinu potemněla a přežila to bez úhony. Ty mezitím sedíš potmě a bilancuješ.",
               en: "The ship goes dark for an hour and comes through unharmed. You spend the hour sitting in the dark, taking stock.",
             },
             effects: [{ t: "morale", n: -1 }],
@@ -352,7 +352,7 @@ export const flare: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Zhasínáte a díváte se. KIPP mlčí, což je od něj největší poklona, jakou umí.",
+              cs: "Zhasínáš a díváš se. KIPP mlčí, což je od něj největší poklona, jakou umí.",
               en: "You kill the lights and watch. KIPP stays silent, which is the highest compliment it knows.",
             },
             effects: [
@@ -412,7 +412,7 @@ export const flare: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Rozpálený asteroid se těží jako máslo. Laser si pochvaluje, vy taky.",
+              cs: "Rozpálený asteroid se těží jako máslo. Laser si pochvaluje, ty taky.",
               en: "The heated asteroid mines like butter. The laser is pleased, and so are you.",
             },
             effects: [{ t: "buff", effect: { stat: "mineRate", mul: 1.4 }, secs: 300 }],
@@ -420,7 +420,7 @@ export const flare: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Děda vynadal i vám. Lak na osvětlené straně se loupe.",
+              cs: "Děda vynadal i tobě. Lak na osvětlené straně se loupe.",
               en: "Grandfather tells you off as well. The paint on the sunward side is peeling.",
             },
             effects: [{ t: "hull", pct: -4 }],
@@ -455,7 +455,7 @@ export const flare: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Planeta to schytala za vás. Poděkovali jste jí, i když je neobydlená.",
+              cs: "Planeta to schytala za tebe. Děkuješ jí, i když je neobydlená.",
               en: "The planet takes it all for you. You thank it, although it is uninhabited.",
             },
             effects: [{ t: "fuel", n: -1 }],
@@ -472,7 +472,7 @@ export const flare: EventDef[] = [
     when: { star: ["binary"] },
     title: { cs: "Dvě slunce, jedna hádka", en: "Two Suns, One Argument" },
     text: {
-      cs: "Dvojhvězda si mezi sebou přehazuje proud žhavého plynu jako horký brambor. Vy jste zrovna uprostřed.",
+      cs: "Dvojhvězda si mezi sebou přehazuje proud žhavého plynu jako horký brambor. Ty jsi zrovna uprostřed.",
       en: "The binary pair tosses a stream of hot gas back and forth like a hot potato. You happen to be in the middle.",
     },
     choices: [
@@ -484,7 +484,7 @@ export const flare: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Berete řízení do ruky. Dva gravitační tahy, jeden proud plynu a žádné místo na chyby.",
+              cs: "Bereš řízení do ruky. Dva gravitační tahy, jeden proud plynu a žádné místo na chyby.",
               en: "You take the controls by hand. Two gravity wells, one stream of gas and no room for mistakes.",
             },
             effects: [
@@ -522,7 +522,7 @@ export const flare: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Jedno ze sluncí si všimlo. Odlétáte s opálenou zádí.",
+              cs: "Jedno ze sluncí si všimlo. Odlétáš s opálenou zádí.",
               en: "One of the suns noticed. You leave with a sunburnt stern.",
             },
             effects: [{ t: "hull", pct: -4 }],
@@ -537,7 +537,7 @@ export const flare: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Do cizích hádek se nepleťte, zvlášť když jedna strana váží víc než celá soustava. Couváte se vší zdvořilostí.",
+              cs: "Do cizích hádek se nepleť, zvlášť když jedna strana váží víc než celá soustava. Couváš se vší zdvořilostí.",
               en: "Never get into other people's arguments, especially when one side outweighs a whole system. You back away with every courtesy.",
             },
             effects: [{ t: "morale", n: 1 }],

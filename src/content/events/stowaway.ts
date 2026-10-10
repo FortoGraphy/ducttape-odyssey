@@ -21,7 +21,7 @@ export const stowaway: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Po hodině honičky je máte všechny v krabici. Vysadíte je na příští stanici, slíbili jste jim to.",
+              cs: "Po hodině honičky je máš všechny v krabici. Na příští stanici je vysadíš, slib je slib.",
               en: "After an hour's chase you have them all in a box. You will drop them at the next station, as promised.",
             },
             effects: [
@@ -32,7 +32,7 @@ export const stowaway: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Chytili jste dvě. Zbylých devět si mezitím přestěhovalo hnízdo do kabeláže.",
+              cs: "V krabici skončily dvě. Zbylých devět si mezitím přestěhovalo hnízdo do kabeláže.",
               en: "You catch two. The other nine have meanwhile moved the nest into the wiring.",
             },
             effects: [{ t: "hull", pct: -2 }],
@@ -96,7 +96,7 @@ export const stowaway: EventDef[] = [
     when: { depthMin: 1, flagNot: "ship_pet" },
     title: { cs: "Tohle není kočka", en: "This Is Not a Cat" },
     text: {
-      cs: "Ve větrací šachtě svítí dvě oči. Tvor, který z ní vyleze, má šest nohou, přede a otírá se vám o lýtka. KIPP ho eviduje jako „nelicencovanou biomasu“.",
+      cs: "Ve větrací šachtě svítí dvě oči. Tvor, který z ní vyleze, má šest nohou, přede a otírá se ti o lýtka. KIPP ho eviduje jako „nelicencovanou biomasu“.",
       en: "Two eyes glow in the ventilation shaft. The creature that climbs out has six legs, purrs, and rubs against your shins. KIPP registers it as “unlicensed biomass”.",
     },
     choices: [
@@ -131,7 +131,7 @@ export const stowaway: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Najedla se, olízla vám ruku a zmizela v šachtě. Od té doby občas najdete na polštáři ulovený šroub.",
+              cs: "Najedla se, olízla ti ruku a zmizela v šachtě. Od té doby občas najdeš na polštáři ulovený šroub.",
               en: "It eats, licks your hand and vanishes into the shaft. Ever since, you occasionally find a freshly hunted bolt on your pillow.",
             },
             effects: [
@@ -150,7 +150,7 @@ export const stowaway: EventDef[] = [
           {
             weight: 2,
             text: {
-              cs: "Odešla s výrazem, který si budete pamatovat. KIPP výjimečně mlčí, a o to je to horší.",
+              cs: "Odešla s výrazem, který si budeš pamatovat. KIPP výjimečně mlčí, a o to je to horší.",
               en: "It leaves with an expression you will remember. KIPP, for once, says nothing, which makes it worse.",
             },
             effects: [{ t: "morale", n: -2 }],
@@ -159,7 +159,7 @@ export const stowaway: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Nevyhnali jste ji. Jen teď bydlí v šachtě nad vaší postelí a v noci přede naschvál.",
+              cs: "Vyhnat se nedala. Jen teď bydlí v šachtě nad tvojí postelí a v noci přede naschvál.",
               en: "You do not shoo it away. It simply lives in the shaft above your bunk now and purrs at night out of spite.",
             },
             effects: [
@@ -207,7 +207,7 @@ export const stowaway: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Na nejbližší stanici si ho převzala teta, která vypadala připravená na všechno. Vám poděkovala a jemu slíbila pohovor.",
+              cs: "Na nejbližší stanici si ho převzala teta, která vypadala připravená na všechno. Tobě poděkovala a jemu slíbila pohovor.",
               en: "At the nearest station an aunt who looks ready for anything takes over. She thanks you, and promises the kid a talk.",
             },
             effects: [
@@ -226,8 +226,8 @@ export const stowaway: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Za týden vydrhl strojovnu a opravil čerpadlo, o kterém jste ani nevěděli. Vystoupil s doporučením v kapse.",
-              en: "Within a week the engine room is scrubbed and a pump you never knew about is fixed. The kid leaves with a reference in one pocket.",
+              cs: "Za týden vydrhl strojovnu a opravil čerpadlo, o kterém nevěděl ani KIPP. Vystoupil s doporučením v kapse.",
+              en: "Within a week the engine room is scrubbed and a pump even KIPP did not know about is fixed. The kid leaves with a reference in one pocket.",
             },
             effects: [
               { t: "credits", secs: 120 },
@@ -257,7 +257,7 @@ export const stowaway: EventDef[] = [
     when: { depthMin: 5, modulesMin: 1 },
     title: { cs: "Někdo tu opravuje", en: "Someone Is Fixing Things" },
     text: {
-      cs: "Poslední týden se na lodi samy od sebe spravují věci. Dnes jste viníka načapali: stará Rezavá s čelovkou sedí ve strojovně a nadává na vaše svary.",
+      cs: "Poslední týden se na lodi samy od sebe spravují věci. Dnes je viník dopaden: stará Rezavá s čelovkou sedí ve strojovně a nadává na tvoje svary.",
       en: "For the past week, things on the ship have been repairing themselves. Today you caught the culprit: an old Rustborn woman with a headlamp, sitting in the engine room and cursing your welds.",
     },
     choices: [
@@ -287,7 +287,7 @@ export const stowaway: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Vypila tři hrnky, dodělala, co zbývalo, a na příští zastávce vystoupila. Nechala vám seznam věcí, které děláte špatně.",
+              cs: "Vypila tři hrnky, dodělala, co zbývalo, a na příští zastávce vystoupila. Nechala ti seznam věcí, které děláš špatně.",
               en: "She drinks three mugs, finishes what was left, and gets off at the next stop. She leaves you a list of things you do wrong.",
             },
             effects: [
@@ -355,7 +355,7 @@ export const stowaway: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Na stanici dostala kabát a jízdenku. Vám zaplatila poukázkou té zaniklé společnosti, kterou kupodivu ještě někdo proplácí.",
+              cs: "Na stanici dostala kabát a jízdenku. Tobě zaplatila poukázkou té zaniklé společnosti, kterou kupodivu ještě někdo proplácí.",
               en: "At the station she is given a coat and a ticket. She pays you with a voucher from the defunct line, which someone, oddly, still honours.",
             },
             effects: [
@@ -374,7 +374,7 @@ export const stowaway: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Sedí s hrnkem u okna a dívá se ven. Než vystoupí, nechá vám plánek, který čtyřicet let nosila v kapse pyžama.",
+              cs: "Sedí s hrnkem u okna a dívá se ven. Než vystoupí, nechá ti plánek, který čtyřicet let nosila v kapse pyžama.",
               en: "She sits by the window with a mug, looking out. Before she leaves, she gives you a blueprint she carried in her pyjama pocket for forty years.",
             },
             effects: [{ t: "blueprint" }, { t: "morale", n: 4 }],
@@ -391,7 +391,7 @@ export const stowaway: EventDef[] = [
     when: { depthMin: 3 },
     title: { cs: "Život v lednici", en: "Life in the Fridge" },
     text: {
-      cs: "Plíseň v zadní části lednice minulý týden objevila oheň. Dnes ráno jste na vnitřní straně dveří našli drobné malby, na kterých obří ruka bere jogurt.",
+      cs: "Plíseň v zadní části lednice minulý týden objevila oheň. Dnes ráno jsou na vnitřní straně dveří drobné malby, na kterých obří ruka bere jogurt.",
       en: "The mould at the back of the fridge discovered fire last week. This morning you found tiny paintings on the inside of the door, showing a giant hand taking a yoghurt.",
     },
     choices: [
@@ -404,8 +404,8 @@ export const stowaway: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Za tři dny pozorování zvládli kolo a daně. Laboratoř žádá o větší lednici.",
-              en: "In three days of observation they master the wheel and taxation. The lab requests a bigger fridge.",
+              cs: "Za tři dny pozorování zvládli kolo a daně. KIPP žádá o větší lednici.",
+              en: "In three days of observation they master the wheel and taxation. KIPP requests a bigger fridge.",
             },
             effects: [
               { t: "rp", secs: 90 },
@@ -423,7 +423,7 @@ export const stowaway: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Na dveřích přibyla nová malba: obří ruka jogurt dává. Zdá se, že máte vlastní náboženství.",
+              cs: "Na dveřích přibyla nová malba: obří ruka jogurt dává. Zdá se, že máš vlastní náboženství.",
               en: "A new painting appears on the door: the giant hand giving a yoghurt. It seems you now have a religion of your own.",
             },
             effects: [
@@ -434,7 +434,7 @@ export const stowaway: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Jogurt přijali a do rána rozšířili území o mrazák. Zmrzlinu od teď berte jako ztracenou.",
+              cs: "Jogurt přijali a do rána rozšířili území o mrazák. Zmrzlinu od teď ber jako ztracenou.",
               en: "They accept the yoghurt and by morning have annexed the freezer. Consider the ice cream lost.",
             },
             effects: [
@@ -452,7 +452,7 @@ export const stowaway: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Civilizace skončila houbičkou a octem. Lednice je čistá a vy máte pocit, že jste do dějin vstoupili jako ten zlý.",
+              cs: "Civilizace skončila houbičkou a octem. Lednice je čistá a ty máš pocit, že do dějin vstupuješ jako ten zlý.",
               en: "A civilisation ends with a sponge and vinegar. The fridge is clean, and you feel you have entered history as the villain.",
             },
             effects: [
@@ -472,7 +472,7 @@ export const stowaway: EventDef[] = [
     when: { depthMin: 8 },
     title: { cs: "Dron, který počítá", en: "The Drone That Counts" },
     text: {
-      cs: "V nákladu se schovává dron Tiché knihy velký jako švestka a potichu počítá všechno, co vidí. Když ho najdete, předstírá, že je šroub. Šrouby ovšem neblikají.",
+      cs: "V nákladu se schovává dron Tiché účtárny velký jako švestka a potichu počítá všechno, co vidí. Když ho najdeš, předstírá, že je šroub. Šrouby ovšem neblikají.",
       en: "A Quiet Ledger drone the size of a plum is hiding in the cargo, quietly counting everything it sees. When you find it, it pretends to be a bolt. Bolts, however, do not blink.",
     },
     choices: [
@@ -485,7 +485,7 @@ export const stowaway: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Poslali jste ho domů v krabičce s mašlí. Tichá kniha odpověděla, že o žádném dronu neví a že děkuje za jeho vrácení.",
+              cs: "Posíláš ho domů v krabičce s mašlí. Tichá účtárna odpoví, že o žádném dronu neví a že děkuje za jeho vrácení.",
               en: "You send it home in a box with a bow. The Quiet Ledger replies that it knows of no drone, and thanks you for returning it.",
             },
             effects: [{ t: "rep", faction: "ledger", n: 4 }],
@@ -500,7 +500,7 @@ export const stowaway: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Dron má šifrování jako banka a tvrdohlavost jako úředník. Sedáte si k němu s pinzetou.",
+              cs: "Dron má šifrování jako banka a tvrdohlavost jako úředník. Sedáš si k němu s pinzetou.",
               en: "The drone has a bank's encryption and a clerk's stubbornness. You sit down beside it with tweezers.",
             },
             effects: [
@@ -527,7 +527,7 @@ export const stowaway: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Když už počítá, ať počítá pro vás. Inventura na téhle lodi ještě nikdy nebyla tak přesná.",
+              cs: "Když už počítá, ať počítá pro tebe. Inventura na téhle lodi ještě nikdy nebyla tak přesná.",
               en: "If it insists on counting, it may as well count for you. The inventory on this ship has never been so accurate.",
             },
             effects: [

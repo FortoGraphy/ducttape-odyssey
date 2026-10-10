@@ -1,0 +1,658 @@
+{
+  "version": 1,
+  "generator": "scripts/audio/build_audio.py",
+  "format": "wav/pcm_s16le/mono",
+  "sampleRate": 22050,
+  "minigameBpm": 120,
+  "totalBytes": 11317456,
+  "sfx": [
+    {
+      "id": "keyDown",
+      "file": "sfx/keyDown.wav",
+      "duration": 0.062,
+      "samples": 1366,
+      "peakDb": -5.89,
+      "rmsDb": -22.91,
+      "loudDb": -18.5,
+      "bytes": 2776
+    },
+    {
+      "id": "keyUp",
+      "file": "sfx/keyUp.wav",
+      "duration": 0.047,
+      "samples": 1036,
+      "peakDb": -9.16,
+      "rmsDb": -25.91,
+      "loudDb": -22.0,
+      "bytes": 2116
+    },
+    {
+      "id": "knobTick",
+      "file": "sfx/knobTick.wav",
+      "duration": 0.0393,
+      "samples": 866,
+      "peakDb": -7.93,
+      "rmsDb": -27.18,
+      "loudDb": -22.0,
+      "bytes": 1776
+    },
+    {
+      "id": "toggle",
+      "file": "sfx/toggle.wav",
+      "duration": 0.127,
+      "samples": 2800,
+      "peakDb": -5.82,
+      "rmsDb": -23.02,
+      "loudDb": -18.5,
+      "bytes": 5644
+    },
+    {
+      "id": "tab",
+      "file": "sfx/tab.wav",
+      "duration": 0.0589,
+      "samples": 1299,
+      "peakDb": -15.5,
+      "rmsDb": -22.95,
+      "loudDb": -18.5,
+      "bytes": 2642
+    },
+    {
+      "id": "uiOpen",
+      "file": "sfx/uiOpen.wav",
+      "duration": 0.1519,
+      "samples": 3350,
+      "peakDb": -16.48,
+      "rmsDb": -22.02,
+      "loudDb": -18.5,
+      "bytes": 6744
+    },
+    {
+      "id": "uiClose",
+      "file": "sfx/uiClose.wav",
+      "duration": 0.1419,
+      "samples": 3129,
+      "peakDb": -16.37,
+      "rmsDb": -22.46,
+      "loudDb": -18.5,
+      "bytes": 6302
+    },
+    {
+      "id": "buy",
+      "file": "sfx/buy.wav",
+      "duration": 0.397,
+      "samples": 8753,
+      "peakDb": -2.61,
+      "rmsDb": -19.96,
+      "loudDb": -14.5,
+      "bytes": 17550
+    },
+    {
+      "id": "buyMax",
+      "file": "sfx/buyMax.wav",
+      "duration": 0.612,
+      "samples": 13494,
+      "peakDb": -1.94,
+      "rmsDb": -14.3,
+      "loudDb": -12.51,
+      "bytes": 27032
+    },
+    {
+      "id": "milestone",
+      "file": "sfx/milestone.wav",
+      "duration": 0.732,
+      "samples": 16140,
+      "peakDb": -4.35,
+      "rmsDb": -19.42,
+      "loudDb": -12.5,
+      "bytes": 32324
+    },
+    {
+      "id": "deny",
+      "file": "sfx/deny.wav",
+      "duration": 0.2095,
+      "samples": 4620,
+      "peakDb": -6.3,
+      "rmsDb": -16.12,
+      "loudDb": -15.5,
+      "bytes": 9284
+    },
+    {
+      "id": "coin",
+      "file": "sfx/coin.wav",
+      "duration": 0.2619,
+      "samples": 5774,
+      "peakDb": -14.86,
+      "rmsDb": -22.56,
+      "loudDb": -17.5,
+      "bytes": 11592
+    },
+    {
+      "id": "collect",
+      "file": "sfx/collect.wav",
+      "duration": 0.1287,
+      "samples": 2837,
+      "peakDb": -11.36,
+      "rmsDb": -23.71,
+      "loudDb": -18.5,
+      "bytes": 5718
+    },
+    {
+      "id": "craftStart",
+      "file": "sfx/craftStart.wav",
+      "duration": 0.4019,
+      "samples": 8862,
+      "peakDb": -5.01,
+      "rmsDb": -17.25,
+      "loudDb": -15.5,
+      "bytes": 17768
+    },
+    {
+      "id": "craftDone",
+      "file": "sfx/craftDone.wav",
+      "duration": 0.502,
+      "samples": 11068,
+      "peakDb": -10.14,
+      "rmsDb": -21.48,
+      "loudDb": -15.5,
+      "bytes": 22180
+    },
+    {
+      "id": "moduleInstall",
+      "file": "sfx/moduleInstall.wav",
+      "duration": 0.4716,
+      "samples": 10399,
+      "peakDb": -1.84,
+      "rmsDb": -15.55,
+      "loudDb": -12.5,
+      "bytes": 20842
+    },
+    {
+      "id": "moduleBreak",
+      "file": "sfx/moduleBreak.wav",
+      "duration": 0.5548,
+      "samples": 12234,
+      "peakDb": -4.15,
+      "rmsDb": -17.0,
+      "loudDb": -12.5,
+      "bytes": 24512
+    },
+    {
+      "id": "repairTick",
+      "file": "sfx/repairTick.wav",
+      "duration": 0.062,
+      "samples": 1366,
+      "peakDb": -7.13,
+      "rmsDb": -24.49,
+      "loudDb": -20.5,
+      "bytes": 2776
+    },
+    {
+      "id": "repairDone",
+      "file": "sfx/repairDone.wav",
+      "duration": 0.6358,
+      "samples": 14020,
+      "peakDb": -9.4,
+      "rmsDb": -23.19,
+      "loudDb": -15.5,
+      "bytes": 28084
+    },
+    {
+      "id": "weld",
+      "file": "sfx/weld.wav",
+      "duration": 0.4319,
+      "samples": 9524,
+      "peakDb": -7.91,
+      "rmsDb": -18.39,
+      "loudDb": -17.0,
+      "bytes": 19092
+    },
+    {
+      "id": "zap",
+      "file": "sfx/zap.wav",
+      "duration": 0.1793,
+      "samples": 3953,
+      "peakDb": -7.41,
+      "rmsDb": -24.47,
+      "loudDb": -15.5,
+      "bytes": 7950
+    },
+    {
+      "id": "tape",
+      "file": "sfx/tape.wav",
+      "duration": 0.3518,
+      "samples": 7758,
+      "peakDb": -8.12,
+      "rmsDb": -23.81,
+      "loudDb": -15.5,
+      "bytes": 15560
+    },
+    {
+      "id": "valve",
+      "file": "sfx/valve.wav",
+      "duration": 0.422,
+      "samples": 9305,
+      "peakDb": -8.1,
+      "rmsDb": -22.73,
+      "loudDb": -16.5,
+      "bytes": 18654
+    },
+    {
+      "id": "beepGood",
+      "file": "sfx/beepGood.wav",
+      "duration": 0.1489,
+      "samples": 3284,
+      "peakDb": -17.34,
+      "rmsDb": -23.39,
+      "loudDb": -18.5,
+      "bytes": 6612
+    },
+    {
+      "id": "beepBad",
+      "file": "sfx/beepBad.wav",
+      "duration": 0.2068,
+      "samples": 4560,
+      "peakDb": -12.75,
+      "rmsDb": -21.7,
+      "loudDb": -18.5,
+      "bytes": 9164
+    },
+    {
+      "id": "stepHit",
+      "file": "sfx/stepHit.wav",
+      "duration": 0.104,
+      "samples": 2293,
+      "peakDb": -11.69,
+      "rmsDb": -23.4,
+      "loudDb": -17.5,
+      "bytes": 4630
+    },
+    {
+      "id": "stepMiss",
+      "file": "sfx/stepMiss.wav",
+      "duration": 0.1176,
+      "samples": 2594,
+      "peakDb": -9.94,
+      "rmsDb": -22.85,
+      "loudDb": -18.5,
+      "bytes": 5232
+    },
+    {
+      "id": "laser",
+      "file": "sfx/laser.wav",
+      "duration": 0.22,
+      "samples": 4851,
+      "peakDb": -10.67,
+      "rmsDb": -24.4,
+      "loudDb": -15.5,
+      "bytes": 9746
+    },
+    {
+      "id": "explosion",
+      "file": "sfx/explosion.wav",
+      "duration": 0.9,
+      "samples": 19845,
+      "peakDb": -3.36,
+      "rmsDb": -12.93,
+      "loudDb": -9.5,
+      "bytes": 39734
+    },
+    {
+      "id": "impact",
+      "file": "sfx/impact.wav",
+      "duration": 0.352,
+      "samples": 7761,
+      "peakDb": -4.59,
+      "rmsDb": -15.11,
+      "loudDb": -12.5,
+      "bytes": 15566
+    },
+    {
+      "id": "alarm",
+      "file": "sfx/alarm.wav",
+      "duration": 0.7932,
+      "samples": 17490,
+      "peakDb": -11.33,
+      "rmsDb": -13.36,
+      "loudDb": -12.5,
+      "bytes": 35024
+    },
+    {
+      "id": "alert",
+      "file": "sfx/alert.wav",
+      "duration": 0.3869,
+      "samples": 8531,
+      "peakDb": -10.67,
+      "rmsDb": -18.77,
+      "loudDb": -15.5,
+      "bytes": 17106
+    },
+    {
+      "id": "notify",
+      "file": "sfx/notify.wav",
+      "duration": 0.562,
+      "samples": 12392,
+      "peakDb": -12.6,
+      "rmsDb": -23.18,
+      "loudDb": -16.5,
+      "bytes": 24828
+    },
+    {
+      "id": "jumpCharge",
+      "file": "sfx/jumpCharge.wav",
+      "duration": 0.8919,
+      "samples": 19666,
+      "peakDb": -6.04,
+      "rmsDb": -18.77,
+      "loudDb": -12.5,
+      "bytes": 39376
+    },
+    {
+      "id": "jumpGo",
+      "file": "sfx/jumpGo.wav",
+      "duration": 1.9118,
+      "samples": 42156,
+      "peakDb": -2.79,
+      "rmsDb": -12.49,
+      "loudDb": -9.5,
+      "bytes": 84356
+    },
+    {
+      "id": "arrive",
+      "file": "sfx/arrive.wav",
+      "duration": 0.8419,
+      "samples": 18564,
+      "peakDb": -2.19,
+      "rmsDb": -18.23,
+      "loudDb": -12.5,
+      "bytes": 37172
+    },
+    {
+      "id": "scanPing",
+      "file": "sfx/scanPing.wav",
+      "duration": 0.772,
+      "samples": 17022,
+      "peakDb": -13.36,
+      "rmsDb": -27.17,
+      "loudDb": -15.5,
+      "bytes": 34088
+    },
+    {
+      "id": "discovery",
+      "file": "sfx/discovery.wav",
+      "duration": 0.9,
+      "samples": 19845,
+      "peakDb": -5.45,
+      "rmsDb": -18.46,
+      "loudDb": -12.5,
+      "bytes": 39734
+    },
+    {
+      "id": "eventOpen",
+      "file": "sfx/eventOpen.wav",
+      "duration": 0.352,
+      "samples": 7761,
+      "peakDb": -15.1,
+      "rmsDb": -21.4,
+      "loudDb": -15.5,
+      "bytes": 15566
+    },
+    {
+      "id": "choice",
+      "file": "sfx/choice.wav",
+      "duration": 0.0917,
+      "samples": 2022,
+      "peakDb": -12.11,
+      "rmsDb": -23.04,
+      "loudDb": -18.5,
+      "bytes": 4088
+    },
+    {
+      "id": "success",
+      "file": "sfx/success.wav",
+      "duration": 0.852,
+      "samples": 18786,
+      "peakDb": -3.04,
+      "rmsDb": -19.77,
+      "loudDb": -12.5,
+      "bytes": 37616
+    },
+    {
+      "id": "fail",
+      "file": "sfx/fail.wav",
+      "duration": 0.7614,
+      "samples": 16788,
+      "peakDb": -7.6,
+      "rmsDb": -13.81,
+      "loudDb": -12.5,
+      "bytes": 33620
+    },
+    {
+      "id": "overdrive",
+      "file": "sfx/overdrive.wav",
+      "duration": 0.642,
+      "samples": 14155,
+      "peakDb": -5.22,
+      "rmsDb": -14.82,
+      "loudDb": -11.5,
+      "bytes": 28354
+    },
+    {
+      "id": "overheat",
+      "file": "sfx/overheat.wav",
+      "duration": 0.6719,
+      "samples": 14816,
+      "peakDb": -7.73,
+      "rmsDb": -15.14,
+      "loudDb": -12.5,
+      "bytes": 29676
+    },
+    {
+      "id": "levelUp",
+      "file": "sfx/levelUp.wav",
+      "duration": 0.872,
+      "samples": 19227,
+      "peakDb": -5.05,
+      "rmsDb": -20.76,
+      "loudDb": -12.5,
+      "bytes": 38498
+    },
+    {
+      "id": "achievement",
+      "file": "sfx/achievement.wav",
+      "duration": 0.9,
+      "samples": 19845,
+      "peakDb": -4.88,
+      "rmsDb": -18.12,
+      "loudDb": -12.5,
+      "bytes": 39734
+    },
+    {
+      "id": "chapter",
+      "file": "sfx/chapter.wav",
+      "duration": 1.9999,
+      "samples": 44097,
+      "peakDb": -2.44,
+      "rmsDb": -14.62,
+      "loudDb": -9.5,
+      "bytes": 88238
+    },
+    {
+      "id": "kippBlip",
+      "file": "sfx/kippBlip.wav",
+      "duration": 0.071,
+      "samples": 1566,
+      "peakDb": -12.96,
+      "rmsDb": -23.92,
+      "loudDb": -21.0,
+      "bytes": 3176
+    },
+    {
+      "id": "dock",
+      "file": "sfx/dock.wav",
+      "duration": 0.5919,
+      "samples": 13052,
+      "peakDb": -1.66,
+      "rmsDb": -13.58,
+      "loudDb": -12.55,
+      "bytes": 26148
+    },
+    {
+      "id": "thruster",
+      "file": "sfx/thruster.wav",
+      "duration": 0.281,
+      "samples": 6195,
+      "peakDb": -8.16,
+      "rmsDb": -21.97,
+      "loudDb": -16.5,
+      "bytes": 12434
+    },
+    {
+      "id": "towArrive",
+      "file": "sfx/towArrive.wav",
+      "duration": 0.7601,
+      "samples": 16760,
+      "peakDb": -5.44,
+      "rmsDb": -14.98,
+      "loudDb": -12.5,
+      "bytes": 33564
+    },
+    {
+      "id": "prestige",
+      "file": "sfx/prestige.wav",
+      "duration": 1.992,
+      "samples": 43923,
+      "peakDb": -2.33,
+      "rmsDb": -12.16,
+      "loudDb": -9.5,
+      "bytes": 87890
+    }
+  ],
+  "music": [
+    {
+      "id": "drift",
+      "bpm": 72,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "loopSamples": 588000,
+      "duration": 26.666667,
+      "sumPeakDb": -6.79,
+      "base": {
+        "file": "music/drift_base.wav",
+        "peakDb": -9.13,
+        "rmsDb": -21.93,
+        "bytes": 1176044
+      },
+      "layer": {
+        "file": "music/drift_layer.wav",
+        "peakDb": -11.54,
+        "rmsDb": -26.91,
+        "bytes": 1176044
+      }
+    },
+    {
+      "id": "work",
+      "bpm": 105,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "loopSamples": 403200,
+      "duration": 18.285714,
+      "sumPeakDb": -4.26,
+      "base": {
+        "file": "music/work_base.wav",
+        "peakDb": -5.23,
+        "rmsDb": -19.79,
+        "bytes": 806444
+      },
+      "layer": {
+        "file": "music/work_layer.wav",
+        "peakDb": -9.82,
+        "rmsDb": -27.48,
+        "bytes": 806444
+      }
+    },
+    {
+      "id": "tension",
+      "bpm": 108,
+      "bars": 6,
+      "beatsPerBar": 4,
+      "loopSamples": 294000,
+      "duration": 13.333333,
+      "sumPeakDb": -2.56,
+      "base": {
+        "file": "music/tension_base.wav",
+        "peakDb": -6.63,
+        "rmsDb": -18.86,
+        "bytes": 588044
+      },
+      "layer": {
+        "file": "music/tension_layer.wav",
+        "peakDb": -9.12,
+        "rmsDb": -24.74,
+        "bytes": 588044
+      }
+    },
+    {
+      "id": "wonder",
+      "bpm": 90,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "loopSamples": 470400,
+      "duration": 21.333333,
+      "sumPeakDb": -7.77,
+      "base": {
+        "file": "music/wonder_base.wav",
+        "peakDb": -9.92,
+        "rmsDb": -21.99,
+        "bytes": 940844
+      },
+      "layer": {
+        "file": "music/wonder_layer.wav",
+        "peakDb": -11.05,
+        "rmsDb": -25.75,
+        "bytes": 940844
+      }
+    },
+    {
+      "id": "station",
+      "bpm": 100,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "loopSamples": 423360,
+      "duration": 19.2,
+      "sumPeakDb": -3.8,
+      "base": {
+        "file": "music/station_base.wav",
+        "peakDb": -5.37,
+        "rmsDb": -19.92,
+        "bytes": 846764
+      },
+      "layer": {
+        "file": "music/station_layer.wav",
+        "peakDb": -10.45,
+        "rmsDb": -23.22,
+        "bytes": 846764
+      }
+    },
+    {
+      "id": "minigame",
+      "bpm": 120,
+      "bars": 8,
+      "beatsPerBar": 4,
+      "loopSamples": 352800,
+      "duration": 16.0,
+      "sumPeakDb": -3.42,
+      "base": {
+        "file": "music/minigame_base.wav",
+        "peakDb": -5.55,
+        "rmsDb": -17.52,
+        "bytes": 705644
+      },
+      "layer": {
+        "file": "music/minigame_layer.wav",
+        "peakDb": -9.94,
+        "rmsDb": -24.49,
+        "bytes": 705644
+      }
+    }
+  ]
+}

@@ -21,7 +21,7 @@ export const derelict: EventDef[] = [
             weight: 4,
             good: true,
             text: {
-              cs: "Uvnitř jsou úhledně srovnané slitky. Někdo si dal práci a vy mu za to v duchu děkujete.",
+              cs: "Uvnitř jsou úhledně srovnané slitky. Někdo si dal práci a ty mu za to v duchu děkuješ.",
               en: "Inside are neatly stacked ingots. Somebody went to a lot of trouble, and you thank them silently.",
             },
             effects: [
@@ -32,7 +32,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Uvnitř bylo čtyřicet let stlačeného vzduchu. Víko vás minulo, příď ne.",
+              cs: "Uvnitř bylo čtyřicet let stlačeného vzduchu. Víko tě minulo, příď ne.",
               en: "Inside were forty years of compressed air. The lid misses you, but not the bow.",
             },
             effects: [
@@ -67,7 +67,7 @@ export const derelict: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Makléř ho bere i s promáčklinou. Co bylo uvnitř, se už nikdy nedozvíte, a je vám to skoro jedno.",
+              cs: "Makléř ho bere i s promáčklinou. Co bylo uvnitř, se už nikdy nedozvíš, a je ti to skoro jedno.",
               en: "The broker takes it, dent and all. You will never know what was inside, and you almost do not mind.",
             },
             effects: [{ t: "credits", secs: 55 }],
@@ -83,7 +83,7 @@ export const derelict: EventDef[] = [
     cooldown: 2400,
     title: { cs: "Zapomenutá sonda", en: "The Forgotten Probe" },
     text: {
-      cs: "Průzkumná sonda tu obíhá už celé století a pořád poctivě měří. Když zachytí váš signál, spustí uvítací zprávu pro vědce, kteří jsou dávno v důchodu.",
+      cs: "Průzkumná sonda tu obíhá už celé století a pořád poctivě měří. Když zachytí tvůj signál, spustí uvítací zprávu pro vědce, kteří jsou dávno v důchodu.",
       en: "A survey probe has been orbiting here for a century, still dutifully taking measurements. When it picks up your signal, it plays a welcome message for scientists who retired long ago.",
     },
     choices: [
@@ -115,7 +115,7 @@ export const derelict: EventDef[] = [
             weight: 4,
             good: true,
             text: {
-              cs: "Sonda se nebrání. Jen vám během rozebírání ohlásí poslední naměřenou teplotu.",
+              cs: "Sonda se nebrání. Jen ti během rozebírání ohlásí poslední naměřenou teplotu.",
               en: "The probe does not resist. It only reports one last temperature reading while you take it apart.",
             },
             effects: [
@@ -146,7 +146,7 @@ export const derelict: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Představíte se jako celý vědecký tým. Sonda je spokojená a měří dál.",
+              cs: "Představíš se jako celý vědecký tým. Sonda je spokojená a měří dál.",
               en: "You introduce yourself as the entire science team. The probe is satisfied and goes on measuring.",
             },
             effects: [
@@ -178,7 +178,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Berete svářečku a jdete na to. Vrták se točí dál, takže to bude chtít pevnou ruku.",
+              cs: "Bereš svářečku a jdeš na to. Vrták se točí dál, takže to bude chtít pevnou ruku.",
               en: "You grab the torch and get to it. The drill keeps spinning, so this will take a steady hand.",
             },
             effects: [
@@ -244,8 +244,8 @@ export const derelict: EventDef[] = [
     when: { depthMin: 4 },
     title: { cs: "Tichý nákladák", en: "The Silent Freighter" },
     text: {
-      cs: "Nákladní loď třídy, která se přestala vyrábět před vaším narozením, visí v prostoru se zhasnutými světly. Přechodová komora je otevřená. KIPP poznamenává, že takhle začínají všechny příběhy, které špatně končí.",
-      en: "A freighter of a class discontinued before you were born hangs in space with its lights off. The airlock is open. KIPP remarks that this is how all the stories with bad endings begin.",
+      cs: "Nákladní loď třídy, která se nevyrábí už sto let, visí v prostoru se zhasnutými světly. Přechodová komora je otevřená. KIPP poznamenává, že takhle začínají všechny příběhy, které špatně končí.",
+      en: "A freighter of a class discontinued a century ago hangs in space with its lights off. The airlock is open. KIPP remarks that this is how all the stories with bad endings begin.",
     },
     choices: [
       {
@@ -272,7 +272,7 @@ export const derelict: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Odmontujete, co jde odmontovat bez vstupu dovnitř. Otevřená komora se na vás celou dobu dívá.",
+              cs: "Odmontuješ, co jde odmontovat bez vstupu dovnitř. Otevřená komora se na tebe celou dobu dívá.",
               en: "You unbolt everything that can be unbolted without going in. The open airlock watches you the whole time.",
             },
             effects: [
@@ -319,7 +319,7 @@ export const derelict: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Stěhujete bedny a snažíte se nedívat na ty stopy. Daří se vám to asi tak napůl.",
+              cs: "Stěhuješ bedny a snažíš se nedívat na ty stopy. Daří se ti to asi tak napůl.",
               en: "You haul crates and try not to look at the footprints. You manage about half the time.",
             },
             effects: [
@@ -339,7 +339,7 @@ export const derelict: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Elektronika, pořád v původním obalu, a k tomu něčí zásoba kávy. Bedny potom zase úhledně srovnáte, kdoví proč.",
+              cs: "Elektronika, pořád v původním obalu, a k tomu něčí zásoba kávy. Bedny potom zase úhledně srovnáš, kdoví proč.",
               en: "Electronics, still in the original packaging, plus somebody's coffee stash. Afterwards you square the crates up again, for some reason.",
             },
             effects: [
@@ -350,7 +350,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "V jedné bedně bylo něco pod tlakem. Teď je to všude a část toho ve vašich přístrojích.",
+              cs: "V jedné bedně bylo něco pod tlakem. Teď je to všude a část toho v tvých přístrojích.",
               en: "One crate held something under pressure. Now it is everywhere, and some of it is in your instruments.",
             },
             effects: [{ t: "moduleDamage", pct: 10, count: 1 }],
@@ -373,7 +373,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "V půli chodby pod vámi povolil rošt. Vracíte se s odřeným kolenem a bez chuti pokračovat.",
+              cs: "V půli chodby pod tebou povolil rošt. Vracíš se s odřeným kolenem a bez chuti pokračovat.",
               en: "Halfway down the corridor the grating gives way under you. You return with a scraped knee and no desire to go on.",
             },
             effects: [
@@ -420,7 +420,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Sejf je starý, ale poctivý. Klekáte si k němu a KIPP vám svítí přes rameno.",
+              cs: "Sejf je starý, ale poctivý. Klekáš si k němu a KIPP ti svítí přes rameno.",
               en: "The safe is old but honest. You kneel beside it while KIPP holds the light over your shoulder.",
             },
             effects: [
@@ -447,7 +447,7 @@ export const derelict: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Skafandr vám padne, jako by ho šili na vás. Na to raději nemyslíte a berete i jeho zásoby.",
+              cs: "Skafandr ti padne, jako by ho šili na tebe. Na to radši nemyslíš a bereš i jeho zásoby.",
               en: "The suit fits as if it had been made for you. You prefer not to think about that, and take its supplies as well.",
             },
             effects: [
@@ -459,7 +459,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Když skafandr zvednete, někde v lodi to cvakne a rozsvítí se světla. Odcházíte velmi rychlou chůzí.",
+              cs: "Když skafandr zvedneš, někde v lodi to cvakne a rozsvítí se světla. Odcházíš velmi rychlou chůzí.",
               en: "As you lift the suit, something clicks deep in the ship and the lights come on. You leave at a very brisk walk.",
             },
             effects: [
@@ -491,7 +491,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Stykovací uzly jsou stejné, jen ty její jsou méně odřené. Přibližujete se pomalu a KIPP nezvykle neradí.",
+              cs: "Stykovací uzly jsou stejné, jen ty její jsou méně odřené. Přibližuješ se pomalu a KIPP nezvykle neradí.",
               en: "The docking collars are identical, hers just less scuffed. You approach slowly, and KIPP, unusually, offers no advice.",
             },
             effects: [
@@ -518,7 +518,7 @@ export const derelict: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Díly pasují na první pokus, poprvé v dějinách téhle lodi. KIPP vás prosí, abyste na ni byli šetrní.",
+              cs: "Díly pasují na první pokus, poprvé v dějinách téhle lodi. KIPP tě prosí o šetrnost.",
               en: "The parts fit on the first try, a first in this ship's history. KIPP asks you to be gentle with her.",
             },
             effects: [
@@ -537,7 +537,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Třikrát zablikáte pozičními světly. Chvíli to vypadá, že jedno z jejích oken bliklo zpátky.",
+              cs: "Třikrát zablikáš pozičními světly. Chvíli to vypadá, že jedno z jejích oken bliklo zpátky.",
               en: "You flash the running lights three times. For a moment it looks as if one of her windows blinked back.",
             },
             effects: [{ t: "morale", n: 2 }],
@@ -553,7 +553,7 @@ export const derelict: EventDef[] = [
     chainOnly: true,
     title: { cs: "Hlas ze sesterské lodi", en: "A Voice on the Sister Ship" },
     text: {
-      cs: "Palubní systém sesterské lodi se probouzí na záložní baterii. „KIPPe, jsi to ty?“ ptá se hlas velmi podobný tomu vašemu. „Říkali, že se hned vrátí, a já už nevím, kolik je hodin.“",
+      cs: "Palubní systém sesterské lodi se probouzí na záložní baterii. „KIPPe, jsi to ty?“ ptá se hlas, který zní skoro jako on. „Říkali, že se hned vrátí, a já už nevím, kolik je hodin.“",
       en: "The sister ship's system wakes on backup power. “KIPP, is that you?” asks a voice very much like your own ship's. “They said they would be right back, and I have lost track of the time.”",
     },
     choices: [
@@ -566,7 +566,7 @@ export const derelict: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "„Čtyřicet let,“ řekne KIPP. Sesterská loď chvíli mlčí, pak poděkuje a předá vám všechna svá data, než se sama vypne.",
+              cs: "„Čtyřicet let,“ řekne KIPP. Sesterská loď chvíli mlčí, pak poděkuje a předá ti všechna svá data, než se sama vypne.",
               en: "“Forty years,” says KIPP. The sister ship is quiet for a while, then thanks KIPP and hands over all her data before shutting herself down.",
             },
             effects: [{ t: "log" }, { t: "rp", secs: 90 }, { t: "morale", n: -2 }, { t: "flag", key: "sister_told_truth" }],
@@ -581,7 +581,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "KIPP jí poví, že posádka je na cestě. Je to poprvé, co ho slyšíte lhát, a jde mu to až moc dobře.",
+              cs: "KIPP jí poví, že posádka je na cestě. Je to poprvé, co ho slyšíš lhát, a jde mu to až moc dobře.",
               en: "KIPP tells her the crew is on its way. It is the first time you have heard KIPP lie, and it comes far too easily.",
             },
             effects: [
@@ -634,7 +634,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Srovnáváte rotaci se stanicí. Hvězdy se točí, žaludek taky, stykovací uzel naštěstí ne.",
+              cs: "Srovnáváš rotaci se stanicí. Hvězdy se točí, žaludek taky, stykovací uzel naštěstí ne.",
               en: "You match the station's spin. The stars turn, your stomach turns, and the docking port, mercifully, does not.",
             },
             effects: [
@@ -684,7 +684,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Hodinu počítáte okna. Světlo pokaždé jedno vynechá a pokaždé jiné.",
+              cs: "Hodinu počítáš okna. Světlo pokaždé jedno vynechá a pokaždé jiné.",
               en: "You count windows for an hour. The light always skips one, and never the same one.",
             },
             effects: [{ t: "rp", secs: 40 }],
@@ -701,7 +701,7 @@ export const derelict: EventDef[] = [
     when: { depthMin: 10 },
     title: { cs: "Plovoucí muzeum", en: "The Floating Museum" },
     text: {
-      cs: "Výletní loď přestavěná na muzeum kosmonautiky, už desítky let bez návštěvníků. Automatický průvodce vás vítá jako miliontého hosta. Počítadlo se zjevně zaseklo.",
+      cs: "Výletní loď přestavěná na muzeum kosmonautiky, už desítky let bez návštěvníků. Automatický průvodce tě vítá jako miliontého hosta. Počítadlo se zjevně zaseklo.",
       en: "A cruise ship converted into a spaceflight museum, without a visitor in decades. The automated guide welcomes you as its one millionth guest. The counter is evidently stuck.",
     },
     choices: [
@@ -725,7 +725,7 @@ export const derelict: EventDef[] = [
           {
             weight: 2,
             text: {
-              cs: "Spustil se alarm a průvodce vás pronásleduje s výkladem o dějinách zabezpečení. U východu platíte pokutu do kasičky.",
+              cs: "Spustil se alarm a průvodce tě pronásleduje s výkladem o dějinách zabezpečení. U východu platíš pokutu do kasičky.",
               en: "An alarm goes off and the guide pursues you with a lecture on the history of security. At the exit you pay a fine into the donation box.",
             },
             effects: [
@@ -745,7 +745,7 @@ export const derelict: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Obchod se suvenýry funguje na důvěru. Necháváte kredity v misce a berete si sběratelskou kartu.",
+              cs: "Obchod se suvenýry funguje na důvěru. Necháváš kredity v misce a bereš si sběratelskou kartu.",
               en: "The gift shop runs on the honour system. You leave credits in the bowl and take a collectible card.",
             },
             effects: [{ t: "card" }],
@@ -761,7 +761,7 @@ export const derelict: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Prohlídka trvá dvě hodiny a končí u modelu remorkéru vaší třídy. Popiska zní: „Spolehlivý, pokud je udržován.“",
+              cs: "Prohlídka trvá dvě hodiny a končí u modelu remorkéru tvojí třídy. Popiska zní: „Spolehlivý, pokud je udržován.“",
               en: "The tour takes two hours and ends at a model of a tug of your class. The label reads: “Reliable, if maintained.”",
             },
             effects: [
@@ -794,7 +794,7 @@ export const derelict: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Pracujete rychle a dýcháte mělce. Úlovek svítí i přes olověnou bednu, což je prý v pořádku.",
+              cs: "Pracuješ rychle a dýcháš mělce. Úlovek svítí i přes olověnou bednu, což je prý v pořádku.",
               en: "You work fast and breathe shallow. The haul glows even through the lead box, which is apparently fine.",
             },
             effects: [
@@ -806,7 +806,7 @@ export const derelict: EventDef[] = [
           {
             weight: 2,
             text: {
-              cs: "Stínění povolilo dřív, než jste dořekli „pro jistotu“. Dozimetr už necvaká, teď souvisle píská.",
+              cs: "Stínění povolilo dřív, než dozněla slova „pro jistotu“. Dozimetr už necvaká, teď souvisle píská.",
               en: "The shielding fails before you finish saying “just in case”. The dosimeter no longer clicks, it sings one long note.",
             },
             effects: [{ t: "failure", kind: "radiation" }],
@@ -821,7 +821,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Pancíř je tlustý na dlaň a navržený tak, aby se řezat nedal. Berete to jako výzvu.",
+              cs: "Pancíř je tlustý na dlaň a navržený tak, aby se řezat nedal. Bereš to jako výzvu.",
               en: "The armour is a hand thick and designed not to be cut. You take that as a challenge.",
             },
             effects: [
@@ -850,7 +850,7 @@ export const derelict: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Nevíte komu a nevíte za co, ale chvíli držíte ticho. KIPP si vrak zapíše a nic k tomu nedodá.",
+              cs: "Nevíš komu a nevíš za co, ale chvíli držíš ticho. KIPP si vrak zapíše a nic k tomu nedodá.",
               en: "You do not know to whom or what for, but you keep a moment of silence. KIPP logs the wreck and adds nothing.",
             },
             effects: [

@@ -9,7 +9,7 @@ export const pirates: EventDef[] = [
     when: { depthMin: 1, depthMax: 6 },
     title: { cs: "Přepadení, asi", en: "A Robbery, Probably" },
     text: {
-      cs: "Cestu vám zkřížil člun slepený ze tří jiných člunů. Z vysílačky se ozve mutující hlas: „Tohle je přepadení! Teda, jestli to nevadí.“",
+      cs: "Cestu ti zkřížil člun slepený ze tří jiných člunů. Z vysílačky se ozve mutující hlas: „Tohle je přepadení! Teda, jestli to nevadí.“",
       en: "A skiff assembled from three other skiffs cuts across your bow. A cracking young voice comes over the radio: “This is a robbery! I mean, if that is all right with you.”",
     },
     choices: [
@@ -22,7 +22,7 @@ export const pirates: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "KIPP pustil do éteru nahrávku dvanácti bitevních lodí. Piráti se omluvili a nechali vám tu výpalné.",
+              cs: "KIPP pustil do éteru nahrávku dvanácti bitevních lodí. Piráti se omluvili a nechali ti tu výpalné.",
               en: "KIPP plays a recording of twelve warships over the radio. The pirates apologise and leave you a protection fee.",
             },
             effects: [{ t: "credits", secs: 60 }],
@@ -65,7 +65,7 @@ export const pirates: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Míříte těsně vedle. Oni míří na vás, takže taky těsně vedle.",
+              cs: "Míříš těsně vedle. Oni míří na tebe, takže taky těsně vedle.",
               en: "You aim to miss. They aim at you, which also means a miss.",
             },
             effects: [
@@ -125,7 +125,7 @@ export const pirates: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Hodinu jim po vysílačce vysvětlujete svařování. Na oplátku dostáváte mapu jejich oblíbených vraků.",
+              cs: "Hodinu jim po vysílačce vysvětluješ svařování. Na oplátku dostáváš mapu jejich oblíbených vraků.",
               en: "You spend an hour teaching welding over the radio. In return you get a map of their favourite wrecks.",
             },
             effects: [
@@ -160,7 +160,7 @@ export const pirates: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Dostali jste účtenku psanou fixou. KIPP ji s vážnou tváří zakládá do daňových podkladů.",
+              cs: "Dostáváš účtenku psanou fixou. KIPP ji s vážnou tváří zakládá do daňových podkladů.",
               en: "You receive a receipt written in marker pen. KIPP files it under tax records with a straight face.",
             },
             effects: [{ t: "morale", n: 1 }],
@@ -184,7 +184,7 @@ export const pirates: EventDef[] = [
           {
             weight: 2,
             text: {
-              cs: "Známka propadla před čtyřiceti lety, což poznal i on. Platíte mýto a pokutu k tomu.",
+              cs: "Známka propadla před čtyřiceti lety, což poznal i on. Platíš mýto a pokutu k tomu.",
               en: "The pass expired forty years ago, and even he can tell. You pay the toll and a fine on top.",
             },
             effects: [{ t: "credits", secs: -90 }],
@@ -200,7 +200,7 @@ export const pirates: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Řetěz povolil dřív než vaše příď. Kus si ho vezete s sebou jako trofej.",
+              cs: "Řetěz povolil dřív než tvoje příď. Kus si ho vezeš s sebou jako trofej.",
               en: "The chain gives way before your bow does. You carry a length of it off as a trophy.",
             },
             effects: [
@@ -228,7 +228,7 @@ export const pirates: EventDef[] = [
     when: { depthMin: 5, rep: { faction: "rustborn", max: 20 } },
     title: { cs: "Nájezd Rezavých", en: "Rustborn Raiders" },
     text: {
-      cs: "Tři lodě Rezavých vás obkličují s grácií padajícího lešení. „Odevzdejte všechno, co se leskne,“ zní z vysílačky. „A co se neleskne, taky.“",
+      cs: "Tři lodě Rezavých tě obkličují s grácií padajícího lešení. „Odevzdejte všechno, co se leskne,“ zní z vysílačky. „A co se neleskne, taky.“",
       en: "Three Rustborn ships box you in with the grace of collapsing scaffolding. “Hand over everything shiny,” says the radio. “And everything that is not shiny, too.”",
     },
     choices: [
@@ -288,7 +288,7 @@ export const pirates: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Kašlete do vysílačky tak přesvědčivě, že KIPP nabízí čaj. Rezaví couvají a z dálky vám ještě hodí léky.",
+              cs: "Kašleš do vysílačky tak přesvědčivě, že KIPP nabízí čaj. Rezaví couvají a z dálky ti ještě hodí léky.",
               en: "You cough into the radio so convincingly that KIPP offers tea. The Rustborn back away and toss you medicine from a distance.",
             },
             effects: [{ t: "item", item: "nano_gel", n: 1 }],
@@ -325,7 +325,7 @@ export const pirates: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Rvete se s jejich dekodérem o každý zámek. Je to šachová partie, jen se u ní víc nadává.",
+              cs: "Rveš se s jejich dekodérem o každý zámek. Je to šachová partie, jen se u ní víc nadává.",
               en: "You fight their decoder for every lock. It is a chess match, only with more swearing.",
             },
             effects: [
@@ -370,7 +370,7 @@ export const pirates: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Komora si odfrkla a návštěva pokračuje vesmírem bez lodi. Jejich člun zůstal přicvaknutý k vašemu trupu.",
+              cs: "Komora si odfrkla a návštěva pokračuje vesmírem bez lodi. Jejich člun zůstal přicvaknutý k tvému trupu.",
               en: "The airlock sneezes and your visitors continue through space without a ship. Their skiff stays clamped to your hull.",
             },
             effects: [
@@ -398,7 +398,7 @@ export const pirates: EventDef[] = [
     when: { depthMin: 6 },
     title: { cs: "Inspektor neformálních daní", en: "Inspector of Informal Taxes" },
     text: {
-      cs: "Zastavila vás loď s majákem ukradeným ze sanitky. Muž v uniformě sešité z několika jiných uniforem oznamuje, že dlužíte daň z průletu, z existence a z prodlení.",
+      cs: "Zastavila tě loď s majákem ukradeným ze sanitky. Muž v uniformě sešité z několika jiných uniforem oznamuje, že dlužíš daň z průletu, z existence a z prodlení.",
       en: "A ship with a beacon stolen from an ambulance pulls you over. A man in a uniform sewn from several other uniforms informs you that you owe transit tax, existence tax and a late fee.",
     },
     choices: [
@@ -412,7 +412,7 @@ export const pirates: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Vystavil vám potvrzení s razítkem z brambory. KIPP ho považuje za nejvěrohodnější doklad na palubě.",
+              cs: "Vystavil ti potvrzení s razítkem z brambory. KIPP ho považuje za nejvěrohodnější doklad na palubě.",
               en: "He issues a receipt stamped with a carved potato. KIPP considers it the most credible document on board.",
             },
             effects: [{ t: "morale", n: 1 }],
@@ -428,7 +428,7 @@ export const pirates: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Žádáte o odklad, odvolání a kopii ve trojím vyhotovení. Inspektor bledne a prchá, Tichá kniha vám posílá pochvalu.",
+              cs: "Žádáš o odklad, odvolání a kopii ve trojím vyhotovení. Inspektor bledne a prchá, Tichá účtárna ti posílá pochvalu.",
               en: "You request a deferral, an appeal and copies in triplicate. The inspector goes pale and flees, and the Quiet Ledger sends a commendation.",
             },
             effects: [
@@ -439,7 +439,7 @@ export const pirates: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Inspektor má vlastní formuláře a jsou delší. Odlétáte lehčí o poplatek za zpracování.",
+              cs: "Inspektor má vlastní formuláře a jsou delší. Odlétáš lehčí o poplatek za zpracování.",
               en: "The inspector has forms of his own, and they are longer. You leave lighter by one processing fee.",
             },
             effects: [{ t: "credits", secs: -60 }],
@@ -454,7 +454,7 @@ export const pirates: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Oznamujete mu, že provádíte protikontrolu. Odpovídá střelbou, což je zřejmě odvolání.",
+              cs: "Oznamuješ mu, že provádíš protikontrolu. Odpovídá střelbou, což je zřejmě odvolání.",
               en: "You inform him this is a counter-inspection. He replies with gunfire, which is presumably an appeal.",
             },
             effects: [
@@ -482,7 +482,7 @@ export const pirates: EventDef[] = [
     when: { depthMin: 10 },
     title: { cs: "Babička Sekyra", en: "Granny Hatchet" },
     text: {
-      cs: "Pirátka, o které se vyprávělo už v dobách, kdy tahle loď měla záruku. Místo salvy vám posílá zprávu: „Střílet mě už nebaví. Umíš mariáš?“",
+      cs: "Pirátka, o které se vyprávělo už v dobách, kdy tahle loď měla záruku. Místo salvy ti posílá zprávu: „Střílet mě už nebaví. Umíš mariáš?“",
       en: "A pirate who was already a legend back when this ship had a warranty. Instead of a broadside she sends a message: “Shooting bores me now. Do you play cards?”",
     },
     choices: [
@@ -494,7 +494,7 @@ export const pirates: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Rozdává po vysílačce a podvádí tak elegantně, že je to vlastně pocta. KIPP vám radí, bohužel nahlas.",
+              cs: "Rozdává po vysílačce a podvádí tak elegantně, že je to vlastně pocta. KIPP ti radí, bohužel nahlas.",
               en: "She deals over the radio and cheats so gracefully it is almost a compliment. KIPP advises you, unfortunately out loud.",
             },
             effects: [
@@ -522,7 +522,7 @@ export const pirates: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Dvě hodiny vypráví o starých časech a o svých kolenou. Při odchodu vám nechá plány něčeho, co prý už nebude potřebovat.",
+              cs: "Dvě hodiny vypráví o starých časech a o svých kolenou. Při odchodu ti nechá plány něčeho, co prý už nebude potřebovat.",
               en: "For two hours she talks about the old days and her knees. On her way out she leaves you plans for something she says she will not need again.",
             },
             effects: [{ t: "blueprint" }, { t: "morale", n: 4 }],
@@ -537,7 +537,7 @@ export const pirates: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Nehoní vás. Jen za vámi pošle zprávu, že dnešní mládež nemá žádnou výdrž.",
+              cs: "Nehoní tě. Jen za tebou pošle zprávu, že dnešní mládež nemá žádnou výdrž.",
               en: "She does not give chase. She only sends a message after you, saying young people today have no stamina.",
             },
             effects: [{ t: "fuel", n: -2 }],
@@ -554,7 +554,7 @@ export const pirates: EventDef[] = [
     when: { depthMin: 12 },
     title: { cs: "Výpalné pro nebožtíka", en: "Ransom for a Dead Man" },
     text: {
-      cs: "Obklíčil vás roj pirátských dronů a žádá výkupné na účet, který zanikl i s majitelem před třiceti lety. Drony to nevědí. Nikdo jim to neřekl.",
+      cs: "Obklíčil tě roj pirátských dronů a žádá výkupné na účet, který zanikl i s majitelem před třiceti lety. Drony to nevědí. Nikdo jim to neřekl.",
       en: "A swarm of pirate drones surrounds you, demanding ransom to an account that died with its owner thirty years ago. The drones do not know. Nobody told them.",
     },
     choices: [
@@ -566,7 +566,7 @@ export const pirates: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Jejich kód je plný poznámek typu „opravit později“. Cítíte se tam jako doma.",
+              cs: "Jejich kód je plný poznámek typu „opravit později“. Cítíš se tam jako doma.",
               en: "Their code is full of comments like “fix later”. You feel right at home.",
             },
             effects: [
@@ -593,7 +593,7 @@ export const pirates: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Je jich hodně, jsou malé a berou to osobně. Usedáte k laseru.",
+              cs: "Je jich hodně, jsou malé a berou to osobně. Usedáš k laseru.",
               en: "There are many of them, they are small, and they take it personally. You sit down at the laser.",
             },
             effects: [
@@ -647,7 +647,7 @@ export const pirates: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Past má jednu slabinu: postavili ji lidé, kteří šetří na všem. Míříte na tu slabinu.",
+              cs: "Past má jednu slabinu: postavili ji lidé, kteří šetří na všem. Míříš na tu slabinu.",
               en: "The trap has one weakness: it was built by people who cut every corner. You aim for the corners.",
             },
             effects: [
@@ -677,7 +677,7 @@ export const pirates: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Ptáte se, co by tomu řekly jejich mámy. Po dlouhém tichu vás nechají jít a jeden z nich se omlouvá.",
+              cs: "Ptáš se, co by tomu řekly jejich mámy. Po dlouhém tichu tě nechají jít a jeden z nich se omlouvá.",
               en: "You ask what their mothers would say. After a long silence they let you go, and one of them apologises.",
             },
             effects: [
@@ -706,7 +706,7 @@ export const pirates: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Hodili jste jim pár beden a zmizeli, než je stihli spočítat. KIPP navrhuje příště nezvedat cizí telefony.",
+              cs: "Házíš jim pár beden a mizíš, než je stihnou spočítat. KIPP navrhuje příště nezvedat cizí telefony.",
               en: "You toss them a few crates and vanish before they finish counting. KIPP suggests not answering other people's calls next time.",
             },
             effects: [{ t: "loseCargo", pct: 12 }],

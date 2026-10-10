@@ -70,7 +70,7 @@ export const fauna: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "U čtyřicáté přísavky vám dochází jména a začínáte je číslovat. KIPP poznamenává, že přesně takhle to začalo i u něj.",
+              cs: "U čtyřicáté přísavky ti dochází jména a začínáš je číslovat. KIPP poznamenává, že přesně takhle to začalo i u něj.",
               en: "By the fortieth limpet you run out of names and switch to numbers. KIPP remarks that this is exactly how things started for it, too.",
             },
             effects: [
@@ -89,7 +89,7 @@ export const fauna: EventDef[] = [
     cooldown: 2400,
     title: { cs: "Kosmické krávy", en: "Space Cattle" },
     text: {
-      cs: "Na vašem asteroidu se pase stádo velkých pomalých tvorů. Přežvykují kámen s výrazem bytostí, které nikam nespěchají a nikdy nespěchaly.",
+      cs: "Na tvém asteroidu se pase stádo velkých pomalých tvorů. Přežvykují kámen s výrazem bytostí, které nikam nespěchají a nikdy nespěchaly.",
       en: "A herd of large, slow creatures is grazing on your asteroid. They chew rock with the expression of beings that are not in a hurry and never have been.",
     },
     choices: [
@@ -102,7 +102,7 @@ export const fauna: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Dělíte se o asteroid. Oni jedí zprava, vy zleva a uprostřed po nich zůstává hezky nadrcená ruda.",
+              cs: "Dělíte se o asteroid. Oni jedí zprava, ty zleva a uprostřed po nich zůstává hezky nadrcená ruda.",
               en: "You share the asteroid. They eat from the right, you from the left, and the middle is left as nicely crushed ore.",
             },
             effects: [
@@ -122,7 +122,7 @@ export const fauna: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Loď klakson nemá, a tak KIPP zařval na všech frekvencích. Stádo důstojně odplulo a asteroid je zase jen váš.",
+              cs: "Loď klakson nemá, a tak KIPP zařval na všech frekvencích. Stádo důstojně odplulo a asteroid je zase jen tvůj.",
               en: "The ship has no horn, so KIPP bellows on every frequency. The herd drifts off with dignity and the asteroid is yours again.",
             },
             effects: [{ t: "credits", secs: 40 }],
@@ -130,7 +130,7 @@ export const fauna: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Jeden z nich se lekl a couvl. Do vás.",
+              cs: "Jeden z nich se lekl a couvl. Do tebe.",
               en: "One of them is startled and backs up. Into you.",
             },
             effects: [{ t: "hull", pct: -4 }],
@@ -146,7 +146,7 @@ export const fauna: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Nevíte, co to je, ale je toho kýbl. Analyzátor hlásí „solanka, výborný ročník“.",
+              cs: "Nevíš, co to je, ale je toho kýbl. Analyzátor hlásí „solanka, výborný ročník“.",
               en: "You do not know what it is, but there is a bucket of it. The analyser reports “brine, an excellent vintage”.",
             },
             effects: [
@@ -157,7 +157,7 @@ export const fauna: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Kráva se na vás dlouze podívala. Už to nikdy nezkusíte.",
+              cs: "Kráva se na tebe dlouze podívala. Už to nikdy nezkusíš.",
               en: "The cow gives you a long look. You will never try that again.",
             },
             effects: [{ t: "morale", n: -1 }],
@@ -174,7 +174,7 @@ export const fauna: EventDef[] = [
     when: { depthMin: 2 },
     title: { cs: "Můry u lampy", en: "Moths at the Lamp" },
     text: {
-      cs: "Poziční světla přilákala hejno světlomilných tvorů, každý je velký jako dlaň. Narážejí do oken s tichým ťukáním a zjevně vás mají za velmi malé slunce.",
+      cs: "Poziční světla přilákala hejno světlomilných tvorů, každý je velký jako dlaň. Narážejí do oken s tichým ťukáním a zjevně tě mají za velmi malé slunce.",
       en: "The running lights have attracted a swarm of light-loving creatures, each the size of a hand. They bump against the windows with soft taps and clearly take you for a very small sun.",
     },
     choices: [
@@ -247,7 +247,7 @@ export const fauna: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Hodinu letíte v jejím stínu. Po dlouhé době nejste nejosamělejší věc v okolí a je to příjemné.",
+              cs: "Hodinu letíš v jejím stínu. Po dlouhé době nejsi nejosamělejší věc v okolí a je to příjemné.",
               en: "You fly in its shadow for an hour. For once you are not the loneliest thing around, and it feels good.",
             },
             effects: [
@@ -285,7 +285,7 @@ export const fauna: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Šupiny jsou velké jako dveře a lehké jako papír. Velryba si vás nevšímá, asi jako vy prachu.",
+              cs: "Šupiny jsou velké jako dveře a lehké jako papír. Velryba si tě nevšímá, asi jako ty prachu.",
               en: "The scales are as big as doors and as light as paper. The whale notices you about as much as you notice dust.",
             },
             effects: [
@@ -296,7 +296,7 @@ export const fauna: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Mávla ploutví, možná na pozdrav. Ve vaší váhové kategorii to vyjde nastejno jako facka.",
+              cs: "Mávla ploutví, možná na pozdrav. V tvojí váhové kategorii to vyjde nastejno jako facka.",
               en: "It waves a fin, possibly in greeting. In your weight class that amounts to a slap.",
             },
             effects: [{ t: "hull", pct: -8 }],
@@ -313,7 +313,7 @@ export const fauna: EventDef[] = [
     when: { depthMin: 5, feature: "nav" },
     title: { cs: "Rejnoci v brázdě", en: "Rays in the Wake" },
     text: {
-      cs: "Za zádí se seřadilo hejno plochých tvorů a veze se na vašem výfuku. Občas některý udělá přemet. KIPP jim začal dávat známky.",
+      cs: "Za zádí se seřadilo hejno plochých tvorů a veze se na tvém výfuku. Občas některý udělá přemet. KIPP jim začal dávat známky.",
       en: "A school of flat creatures has lined up astern, riding your exhaust. Now and then one does a somersault. KIPP has started giving them scores.",
     },
     choices: [
@@ -326,7 +326,7 @@ export const fauna: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Rejnoci jásají, pokud tedy rejnoci jásají. Na oplátku vás zavedou do proudu, o kterém mapy nevědí.",
+              cs: "Rejnoci jásají, pokud tedy rejnoci jásají. Na oplátku tě zavedou do proudu, o kterém mapy nevědí.",
               en: "The rays cheer, if rays can cheer. In return they lead you into a current the charts do not know about.",
             },
             effects: [
@@ -338,7 +338,7 @@ export const fauna: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Zábava spolkla víc paliva, než jste chtěli. Rejnoci dávají desítku, palivoměr nulu.",
+              cs: "Zábava spolkla víc paliva, než bylo v plánu. Rejnoci dávají desítku, palivoměr nulu.",
               en: "The fun swallows more fuel than you intended. The rays award a ten, the fuel gauge a zero.",
             },
             effects: [
@@ -358,7 +358,7 @@ export const fauna: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Jedí z manipulátoru jako kachny z ruky. Jeden vám za to nechal na okně něco lesklého.",
+              cs: "Jedí z manipulátoru jako kachny z ruky. Jeden ti za to nechal na okně něco lesklého.",
               en: "They eat from the manipulator arm like ducks from a hand. One of them leaves something shiny on the window in return.",
             },
             effects: [
@@ -377,7 +377,7 @@ export const fauna: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Vydrží za vámi půl dne a pak odbočí. V brázdě je po nich najednou nějak prázdno.",
+              cs: "Vydrží za tebou půl dne a pak odbočí. V brázdě je po nich najednou nějak prázdno.",
               en: "They stay with you for half a day and then turn off. The wake suddenly feels rather empty.",
             },
             effects: [{ t: "morale", n: 1 }],
@@ -394,7 +394,7 @@ export const fauna: EventDef[] = [
     when: { depthMin: 6 },
     title: { cs: "Vajíčka pod žebrem", en: "Eggs Under the Fin" },
     text: {
-      cs: "Při obhlídce trupu nacházíte pod chladicím žebrem shluk průsvitných vajec velkých jako pěst. Jsou teplá. KIPP poznamenává, že to žebro je asi jediné teplé a klidné místo na celé lodi.",
+      cs: "Při obhlídce trupu nacházíš pod chladicím žebrem shluk průsvitných vajec velkých jako pěst. Jsou teplá. KIPP poznamenává, že to žebro je asi jediné teplé a klidné místo na celé lodi.",
       en: "During a hull inspection you find a cluster of translucent eggs the size of fists beneath a cooling fin. They are warm. KIPP notes that the fin is probably the only warm, quiet spot on the whole ship.",
     },
     choices: [
@@ -407,7 +407,7 @@ export const fauna: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Žebro od teď obcházíte obloukem. V noci se na ně chodíte dívat s baterkou a KIPP dělá, že to nevidí.",
+              cs: "Žebro od teď obcházíš obloukem. V noci se na ně chodíš dívat s baterkou a KIPP dělá, že to nevidí.",
               en: "From now on you give the fin a wide berth. At night you visit them with a torch, and KIPP pretends not to notice.",
             },
             effects: [
@@ -445,7 +445,7 @@ export const fauna: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Žebro zase chladí naplno. KIPP pochválil výkon a pak s vámi dvě hodiny nemluvil.",
+              cs: "Žebro zase chladí naplno. KIPP pochválil výkon a pak s tebou dvě hodiny nemluvil.",
               en: "The fin cools at full power again. KIPP praises the output and then does not speak to you for two hours.",
             },
             effects: [
@@ -464,7 +464,7 @@ export const fauna: EventDef[] = [
     chainOnly: true,
     title: { cs: "Vylíhli se", en: "They Hatched" },
     text: {
-      cs: "Z vajec se vyklubalo šest tvorečků, kteří vypadají jako kříženec mloka a žárovky. Lezou po trupu a olizují svary. První, co v životě uviděli, byla vaše přilba.",
+      cs: "Z vajec se vyklubalo šest tvorečků, kteří vypadají jako kříženec mloka a žárovky. Lezou po trupu a olizují svary. První, co v životě uviděli, byla tvoje přilba.",
       en: "Six small creatures have hatched, each looking like a cross between a newt and a light bulb. They crawl over the hull licking the welds. The first thing they ever saw was your helmet.",
     },
     choices: [
@@ -477,7 +477,7 @@ export const fauna: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Olizují svary do hladka a drží se lodi jako klíšťata. Trup nikdy nevypadal líp a vy máte šest nových starostí.",
+              cs: "Olizují svary do hladka a drží se lodi jako klíšťata. Trup nikdy nevypadal líp a ty máš šest nových starostí.",
               en: "They lick the welds smooth and cling to the ship like ticks. The hull has never looked better, and you have six new worries.",
             },
             effects: [
@@ -511,7 +511,7 @@ export const fauna: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Rozlezli se po asteroidu a svítí vám na cestu, dokud nezmizíte z dohledu. KIPP tvrdí, že mu něco spadlo do senzoru.",
+              cs: "Rozlezli se po asteroidu a svítí ti na cestu, dokud nezmizíš z dohledu. KIPP tvrdí, že mu něco spadlo do senzoru.",
               en: "They spread across the asteroid and light your way until you are out of sight. KIPP claims something got into its sensor.",
             },
             effects: [
@@ -531,7 +531,7 @@ export const fauna: EventDef[] = [
     when: { depthMin: 7 },
     title: { cs: "Zahrada z trubic", en: "The Tube Garden" },
     text: {
-      cs: "Asteroid před vámi je porostlý dvoumetrovými červy, kteří se vlní v proudu sopečných plynů. Vypadá to jako korálový útes, kdyby ho navrhoval instalatér.",
+      cs: "Asteroid před tebou je porostlý dvoumetrovými červy, kteří se vlní v proudu sopečných plynů. Vypadá to jako korálový útes, kdyby ho navrhoval instalatér.",
       en: "The asteroid ahead is overgrown with two-metre worms swaying in a stream of volcanic gas. It looks like a coral reef, if a plumber had designed one.",
     },
     choices: [
@@ -544,7 +544,7 @@ export const fauna: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Trubice jdou řezat jako rebarbora. Dorůstají dřív, než je stihnete naložit.",
+              cs: "Trubice jdou řezat jako rebarbora. Dorůstají dřív, než je stihneš naložit.",
               en: "The tubes cut like rhubarb. They grow back before you finish loading them.",
             },
             effects: [
@@ -593,7 +593,7 @@ export const fauna: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Kreslíte, jak nejlíp umíte. KIPP výkres doplňuje popiskou „přibližně“.",
+              cs: "Kreslíš, jak nejlíp umíš. KIPP výkres doplňuje popiskou „přibližně“.",
               en: "You draw as best you can. KIPP captions the sketch “approximately”.",
             },
             effects: [
@@ -612,7 +612,7 @@ export const fauna: EventDef[] = [
     weight: 5,
     cooldown: 9000,
     when: { depthMin: 10, failure: "none" },
-    title: { cs: "Něco letí za vámi", en: "Something Is Following" },
+    title: { cs: "Něco letí za tebou", en: "Something Is Following" },
     text: {
       cs: "Už třetí den drží něco velkého stále stejný odstup za zádí. Nesvítí, nevysílá a na radaru vypadá jako díra ve hvězdách. KIPP tomu začal říkat „náš ctitel“.",
       en: "For three days something large has kept the same distance astern. It gives off no light and no signal, and on the radar it looks like a hole in the stars. KIPP has started calling it “our admirer”.",
@@ -627,7 +627,7 @@ export const fauna: EventDef[] = [
             weight: 3,
             good: true,
             text: {
-              cs: "Vypínáte všechno kromě dýchání. Tvor loď očichá, usoudí, že je to konzerva, a odpluje.",
+              cs: "Vypínáš všechno kromě dýchání. Tvor loď očichá, usoudí, že je to konzerva, a odpluje.",
               en: "You switch off everything but breathing. The creature sniffs the ship, concludes it is a tin can, and drifts off.",
             },
             effects: [

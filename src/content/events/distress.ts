@@ -8,7 +8,7 @@ export const distress: EventDef[] = [
     cooldown: 3000,
     title: { cs: "Volání bez volajícího", en: "A Call With No Caller" },
     text: {
-      cs: "Zachytili jste tísňové volání. Podle časové značky ho někdo odeslal před třiceti lety a baterie majáku od té doby poctivě opakuje poslední slovo: „…prosím.“",
+      cs: "Přijímač zachytil tísňové volání. Podle časové značky ho někdo odeslal před třiceti lety a baterie majáku od té doby poctivě opakuje poslední slovo: „…prosím.“",
       en: "You pick up a distress call. According to its timestamp it was sent thirty years ago, and the beacon's battery has faithfully repeated the last word ever since: “…please.”",
     },
     choices: [
@@ -21,7 +21,7 @@ export const distress: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Odpovídáte, že jste tady. Nikdo to neslyší, ale někdo to říct měl.",
+              cs: "Odpovídáš, že jsi tady. Nikdo to neslyší, ale někdo to říct měl.",
               en: "You reply that you are here. Nobody hears it, but somebody ought to have said it.",
             },
             effects: [{ t: "morale", n: 3 }],
@@ -55,7 +55,7 @@ export const distress: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Tichá kniha eviduje i ztracené. Za hodinu přijde potvrzení o přijetí, číslo jednací a zdvořilé poděkování.",
+              cs: "Tichá účtárna eviduje i ztracené. Za hodinu přijde potvrzení o přijetí, číslo jednací a zdvořilé poděkování.",
               en: "The Quiet Ledger keeps records of the lost as well. An hour later you receive an acknowledgement, a case number and polite thanks.",
             },
             effects: [
@@ -75,7 +75,7 @@ export const distress: EventDef[] = [
     when: { depthMin: 1, feature: "nav" },
     title: { cs: "Došla jim šťáva", en: "Out of Juice" },
     text: {
-      cs: "Nákladní loď lampářů visí u cesty s prázdnou nádrží. Pilotka se omlouvá, že ruší, a ptá se, jestli byste neměli trochu paliva. Platit prý nemá čím, jen dobrým slovem.",
+      cs: "Nákladní loď lampářů visí u cesty s prázdnou nádrží. Pilotka se omlouvá, že ruší, a ptá se, jestli by se u tebe nenašlo trochu paliva. Platit prý nemá čím, jen dobrým slovem.",
       en: "A Lamplighter hauler sits by the lane with an empty tank. The pilot apologises for the bother and asks whether you could spare some fuel. She cannot pay, she says, except in kind words.",
     },
     choices: [
@@ -88,7 +88,7 @@ export const distress: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Přečerpáváte jí pár kanystrů. Dobré slovo opravdu dostanete a je překvapivě dlouhé.",
+              cs: "Přečerpáváš jí pár kanystrů. Dobré slovo opravdu dostaneš a je překvapivě dlouhé.",
               en: "You pump a few cans across. You do get the kind words, and there are surprisingly many of them.",
             },
             effects: [
@@ -127,7 +127,7 @@ export const distress: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Říkáte, že sami máte málo. Je to pravda, a stejně to tak nezní.",
+              cs: "Říkáš, že je paliva málo i u tebe. Je to pravda, a stejně to tak nezní.",
               en: "You say you are running low yourself. It is true, and it still does not sound that way.",
             },
             effects: [
@@ -146,7 +146,7 @@ export const distress: EventDef[] = [
     chainOnly: true,
     title: { cs: "Dobré slovo se vrací", en: "A Kind Word Returns" },
     text: {
-      cs: "Dohání vás loď s lucernou na přídi. Pilotka, které jste dali palivo, o vás vyprávěla v cechu a cech usoudil, že dobré slovo je málo.",
+      cs: "Dohání tě loď s lucernou na přídi. Pilotka, která od tebe dostala palivo, o tobě vyprávěla v cechu a cech usoudil, že dobré slovo je málo.",
       en: "A ship with a lantern on its bow catches up with you. The pilot you gave fuel to has been talking about you at the guild, and the guild has decided that kind words are not enough.",
     },
     choices: [
@@ -180,7 +180,7 @@ export const distress: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Pilotka se zasměje a napíše vám doporučení. Lampáři teď vaše zboží vykupují, jako byste byli jejich.",
+              cs: "Pilotka se zasměje a napíše ti doporučení. Lampáři teď tvoje zboží vykupují jako od vlastních.",
               en: "The pilot laughs and writes you a recommendation. The Lamplighters now buy your goods as if you were one of their own.",
             },
             effects: [
@@ -242,7 +242,7 @@ export const distress: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Skener ukazuje dvě lodě se zahřátými zbraněmi. Posíláte jim srdečný pozdrav a letíte opačným směrem.",
+              cs: "Skener ukazuje dvě lodě se zahřátými zbraněmi. Posíláš jim srdečný pozdrav a letíš opačným směrem.",
               en: "The scanner shows two ships with their weapons warmed up. You send warm regards and fly the other way.",
             },
             effects: [
@@ -254,13 +254,13 @@ export const distress: EventDef[] = [
       },
       {
         id: "ignore",
-        label: { cs: "Dělat, že neslyšíte", en: "Pretend not to hear" },
+        label: { cs: "Dělat, že neslyšíš", en: "Pretend not to hear" },
         risk: 0,
         outcomes: [
           {
             weight: 1,
             text: {
-              cs: "Volání slábne za zádí. Buď jste se vyhnuli pasti, nebo někomu, kdo vás potřeboval, a to se už nedozvíte.",
+              cs: "Volání slábne za zádí. Buď to byla past, nebo někdo, kdo tě potřeboval, a to se už nedozvíš.",
               en: "The call fades astern. Either you dodged a trap or someone who needed you, and you will never find out which.",
             },
             effects: [{ t: "morale", n: -2 }],
@@ -289,7 +289,7 @@ export const distress: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Modul dosedl do nákladového prostoru. Zámek se otáčí zevnitř dřív, než na něj sáhnete.",
+              cs: "Modul dosedl do nákladového prostoru. Zámek se otáčí zevnitř dřív, než na něj sáhneš.",
               en: "The pod settles into the cargo bay. The lock turns from the inside before you can touch it.",
             },
             effects: [{ t: "chain", event: "stowaway_pod_occupant", delay: 5 }],
@@ -323,7 +323,7 @@ export const distress: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Cedulka je cedulka. Modul se převaluje dál a světlo bliká, řekli byste, spokojeně.",
+              cs: "Cedulka je cedulka. Modul se převaluje dál a světlo bliká, člověk by řekl, spokojeně.",
               en: "A sign is a sign. The pod tumbles on, and its light blinks in what you would call a contented way.",
             },
             effects: [{ t: "morale", n: 1 }],
@@ -340,7 +340,7 @@ export const distress: EventDef[] = [
     when: { depthMin: 5 },
     title: { cs: "Rozpadá se jim loď", en: "Their Ship Is Coming Apart" },
     text: {
-      cs: "Loď Rezavých ztrácí pláty jako strom listí. Velitelka prosí o pancéřování, o cokoli, klidně i o staré plechy. Na jejím trupu přitom visí díly, které by se hodily i vám.",
+      cs: "Loď Rezavých ztrácí pláty jako strom listí. Velitelka prosí o pancéřování, o cokoli, klidně i o staré plechy. Na jejím trupu přitom visí díly, které by se hodily i tobě.",
       en: "A Rustborn ship is shedding plates like a tree sheds leaves. The captain begs for plating, anything at all, even old sheet metal. Meanwhile her hull is hung with parts you could use yourself.",
     },
     choices: [
@@ -354,7 +354,7 @@ export const distress: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Vaše pláty mají na jejich lodi nejhezčí barvu ze všech. Rezaví na takové věci nezapomínají a na oplátku vám vnutí bednu dílů.",
+              cs: "Tvoje pláty mají na jejich lodi nejhezčí barvu ze všech. Rezaví na takové věci nezapomínají a na oplátku ti vnutí bednu dílů.",
               en: "Your plates are the best-looking ones on their ship. The Rustborn do not forget such things, and press a crate of parts on you in return.",
             },
             effects: [
@@ -373,7 +373,7 @@ export const distress: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Berete svářečku a jdete na jejich trup. Šest Rezavých vám kouká pod ruce a hlasitě hodnotí techniku.",
+              cs: "Bereš svářečku a jdeš na jejich trup. Šest Rezavých ti kouká pod ruce a hlasitě hodnotí techniku.",
               en: "You take your torch over to their hull. Six Rustborn watch your hands and review your technique out loud.",
             },
             effects: [
@@ -403,7 +403,7 @@ export const distress: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Počkali jste, až posádka odletí v člunech, a posbírali, co zbylo. Díly jsou dobré, jen se dnes radši vyhnete zrcadlu.",
+              cs: "Čekáš, až posádka odletí v člunech, a pak sbíráš, co zbylo. Díly jsou dobré, jen se dnes radši vyhneš zrcadlu.",
               en: "You wait until the crew leaves in their skiffs, then collect what remains. The parts are good, though you may want to avoid mirrors today.",
             },
             effects: [
@@ -425,7 +425,7 @@ export const distress: EventDef[] = [
     when: { depthMin: 7 },
     title: { cs: "Auditor v nesnázích", en: "Auditor in Distress" },
     text: {
-      cs: "Kapsli Tiché knihy unáší proud a její pasažér klidně vysílá: „Žádám o záchranu dle paragrafu dvanáct. Než začnete, vyplňte prosím formulář Z-7 ve dvou kopiích.“",
+      cs: "Kapsli Tiché účtárny unáší proud a její pasažér klidně vysílá: „Žádám o záchranu dle paragrafu dvanáct. Než začnete, vyplňte prosím formulář Z-7 ve dvou kopiích.“",
       en: "A Quiet Ledger capsule is being carried off by a current while its passenger calmly transmits: “I request rescue under section twelve. Before you begin, please complete form Z-7 in duplicate.”",
     },
     choices: [
@@ -467,7 +467,7 @@ export const distress: EventDef[] = [
             weight: 2,
             good: true,
             text: {
-              cs: "Vytáhli jste ho bez jediného razítka. Poděkoval a pak vám udělil napomenutí, naštěstí jen ústní.",
+              cs: "Vytahuješ ho bez jediného razítka. Poděkuje a pak ti udělí napomenutí, naštěstí jen ústní.",
               en: "You pull him out without a single stamp. He thanks you and then issues a reprimand, fortunately only a verbal one.",
             },
             effects: [
@@ -478,8 +478,8 @@ export const distress: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Záchranu označil za procesně neplatnou a žádá, abyste ho vrátili do proudu. Nevrátili jste ho.",
-              en: "He declares the rescue procedurally invalid and asks to be returned to the current. You do not return him.",
+              cs: "Záchranu označil za procesně neplatnou a žádá o vrácení do proudu. Žádosti se nevyhovuje.",
+              en: "He declares the rescue procedurally invalid and asks to be returned to the current. The request is denied.",
             },
             effects: [
               { t: "rep", faction: "ledger", n: -2 },
@@ -496,7 +496,7 @@ export const distress: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Pouštíte mu čekací melodii a hlášku, že jeho hovor je pro vás důležitý. Vydrží dvacet minut, než ho vyzvedne někdo jiný.",
+              cs: "Pouštíš mu čekací melodii a hlášku, že jeho hovor je pro tebe důležitý. Vydrží dvacet minut, než ho vyzvedne někdo jiný.",
               en: "You play him hold music and a message saying his call is important to you. He lasts twenty minutes before somebody else picks him up.",
             },
             effects: [
@@ -530,7 +530,7 @@ export const distress: EventDef[] = [
             weight: 1,
             good: true,
             text: {
-              cs: "Osmdesát lidí vám mává z oken. Děti vám nakreslily loď a mají ji hezčí, než je ve skutečnosti.",
+              cs: "Osmdesát lidí ti mává z oken. Děti nakreslily tvoji loď a mají ji hezčí, než je ve skutečnosti.",
               en: "Eighty people wave at you from the windows. The children have drawn your ship, and theirs is prettier than the real one.",
             },
             effects: [
@@ -551,7 +551,7 @@ export const distress: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Zaplatili vším, co měli. KIPP přepočítal zisk na jeden nádech a výsledek vám odmítl sdělit.",
+              cs: "Zaplatili vším, co měli. KIPP přepočítal zisk na jeden nádech a výsledek ti odmítl sdělit.",
               en: "They pay with everything they have. KIPP works out the profit per breath and declines to tell you the result.",
             },
             effects: [
@@ -570,7 +570,7 @@ export const distress: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Regenerátor je stejný typ jako váš, jen o dvacet let mladší. Ventily na něm ale mají vlastní hlavu.",
+              cs: "Regenerátor je stejný typ jako ten tvůj, jen o dvacet let mladší. Ventily na něm ale mají vlastní hlavu.",
               en: "The regenerator is the same model as yours, only twenty years younger. Its valves, however, have a mind of their own.",
             },
             effects: [
@@ -603,7 +603,7 @@ export const distress: EventDef[] = [
     when: { depthMin: 9 },
     title: { cs: "Dvě lodě, jedno lano", en: "Two Ships, One Tow Line" },
     text: {
-      cs: "Po srážce se ke hvězdě pomalu snášejí dvě lodě: obchodník lampářů s nákladem léků a rodinná bárka Rezavých. Vlečné lano máte jedno. KIPP odmítá radit a výjimečně si odpustí i vtip.",
+      cs: "Po srážce se ke hvězdě pomalu snášejí dvě lodě: obchodník lampářů s nákladem léků a rodinná bárka Rezavých. Vlečné lano máš jedno. KIPP odmítá radit a výjimečně si odpustí i vtip.",
       en: "After a collision two ships are slowly falling toward the star: a Lamplighter trader carrying medicine, and a Rustborn family barge. You have one tow line. KIPP declines to advise and, for once, skips the joke.",
     },
     choices: [
@@ -635,7 +635,7 @@ export const distress: EventDef[] = [
           {
             weight: 1,
             text: {
-              cs: "Rodina je v bezpečí a babička vám vnutila bednu dílů. Náklad léků shořel a cech si to zapsal.",
+              cs: "Rodina je v bezpečí a babička ti vnutila bednu dílů. Náklad léků shořel a cech si to zapsal.",
               en: "The family is safe and their grandmother forces a crate of parts on you. The medicine burned up, and the guild made a note of it.",
             },
             effects: [
