@@ -537,6 +537,8 @@ export interface ContentDB {
   shop: Record<string, ShopItemDef>;
   biomes: Record<BiomeId, BiomeDef>;
   quests: QuestTemplateDef[];
+  /** Effects granted while at least one of a megastructure item is owned. */
+  megaEffects: Record<ItemId, Effect[]>;
   /** Syllable tables for procedural names and crew name pools. */
   names: {
     systemA: string[];
