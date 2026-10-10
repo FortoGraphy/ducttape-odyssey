@@ -1,8 +1,9 @@
 // The app is signed with a free Apple ID through Sideloadly. Free provisioning cannot grant push,
 // iCloud, App Groups, Associated Domains or Sign in with Apple, and no background modes are wanted.
 // Other config plugins (expo-notifications sets aps-environment unconditionally) add some of these,
-// so this plugin must stay LAST in app.json "plugins" and removes them again.
-// scripts/ci/check-entitlements.mjs verifies the result after `expo prebuild`.
+// so this plugin removes them again. Mods registered first run last, so it must stay FIRST in
+// app.json "plugins". scripts/ci/check-native-config.mjs (any OS) and scripts/ci/check-entitlements.mjs
+// (after `expo prebuild`) both verify the result.
 const { withEntitlementsPlist, withInfoPlist } = require("expo/config-plugins");
 
 const FORBIDDEN_ENTITLEMENTS = [

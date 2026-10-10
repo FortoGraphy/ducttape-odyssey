@@ -25,13 +25,17 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
+      "./plugins/withFreeSigningSafe.js",
       "expo-router",
       "expo-sharing",
       [
         "expo-localization",
         {
           "supportedLocales": {
-            "ios": ["cs", "en"]
+            "ios": [
+              "cs",
+              "en"
+            ]
           }
         }
       ],
@@ -59,8 +63,7 @@
         {
           "enableBackgroundRemoteNotifications": false
         }
-      ],
-      "./plugins/withFreeSigningSafe.js"
+      ]
     ],
     "experiments": {
       "typedRoutes": true

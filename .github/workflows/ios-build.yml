@@ -34,6 +34,8 @@ jobs:
         run: npm test --if-present
       - name: Content validation
         run: npm run validate --if-present
+      - name: Native config (entitlements, background modes, bundle id)
+        run: node scripts/ci/check-native-config.mjs
 
   build:
     needs: checks
