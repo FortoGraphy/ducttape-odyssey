@@ -8,6 +8,7 @@ key used in src/ui/fonts.ts, and checked for full Czech glyph coverage.
 """
 from __future__ import annotations
 
+import json
 import shutil
 import sys
 from pathlib import Path
@@ -45,6 +46,7 @@ def set_name(font: TTFont, name_id: int, value: str) -> None:
 def build() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     failed = False
+    coverage: dict[str, list[int]] = {}
     for ps_name, src_name, pins, family, style, extra in FONTS:
         font = TTFont(SRC / src_name)
         if pins:
@@ -62,11 +64,19 @@ def build() -> int:
         cmap = font.getBestCmap()
         missing = [c for c in CZECH + BASIC + extra if ord(c) not in cmap]
         target = OUT / f"{ps_name}.ttf"
-        font.save(target)
+        if pins:
+            # Fixed timestamp so rebuilding does not change the committed files.
+            font["head"].modified = font["head"].created
+            font.save(target)
+        else:
+            shutil.copy(SRC / src_name, target)
+        coverage[ps_name] = sorted(cmap.keys())
         status = "ok" if not missing and ps_actual == ps_name else "FAIL"
         if status == "FAIL":
             failed = True
         print(f"{status:4s} {target.name:28s} ps={ps_actual:24s} {target.stat().st_size / 1024:6.0f} kB missing={''.join(missing) or '-'}")
+    # Read by scripts/validate to prove every character used in game text has a glyph.
+    (OUT / "coverage.json").write_text(json.dumps(coverage, separators=(",", ":")), encoding="utf-8")
     for lic in SRC.glob("OFL-*.txt"):
         shutil.copy(lic, OUT / lic.name)
     return 1 if failed else 0

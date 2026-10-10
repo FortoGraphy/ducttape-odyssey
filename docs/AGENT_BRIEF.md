@@ -30,6 +30,9 @@ orchestrator integrates your work. Quality bar: a polished commercial game, not 
 - IP hygiene: everything is original. No names, terms or assets from No Man's Sky (no "Atlas",
   "Sentinels", "Traveller", "Nanites", "Quicksilver", "Anomaly" as a proper noun...), no Teenage
   Engineering names/logos/product artwork, no other game or brand references.
+- Text characters: letters (incl. Czech), digits, basic punctuation, Czech quotes „ “, and … – × · • ° %.
+  No emoji and no symbols such as ✓ ★ ● ▲ ♥ (the pixel fonts have no glyphs for them: use the `Icon`
+  component). Arrows → ← ↑ ↓ exist only in the mono font.
 - No `console.log` left in app code (`console.warn` in catch blocks is fine). Scripts may print.
 - No new runtime dependencies. If you believe one is essential, explain why in your report.
 - Performance: nothing allocates per frame; per-frame values live in Reanimated shared values or
