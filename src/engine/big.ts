@@ -65,9 +65,21 @@ export function fromLog10(l: number): Big {
   return norm(Math.pow(10, l - e), e);
 }
 
+/** Plain value of a small Big with float dust removed (15 significant digits), so 2.3e1 is exactly 23. */
+function small(a: Big): number {
+  const v = a.m * pow10(a.e);
+  const scale = pow10(14 - a.e);
+  return Math.round(v * scale) / scale;
+}
+
 export function add(a: Big, b: Big): Big {
   if (a.m === 0) return { m: b.m, e: b.e };
   if (b.m === 0) return { m: a.m, e: a.e };
+  // Everyday magnitudes go through native arithmetic so whole numbers stay whole (23 - 3 is exactly 20).
+  if (a.e <= 12 && b.e <= 12 && a.e >= -6 && b.e >= -6) {
+    const scale = pow10(13 - (a.e > b.e ? a.e : b.e));
+    return norm(Math.round((small(a) + small(b)) * scale) / scale, 0);
+  }
   const d = a.e - b.e;
   if (d > PRECISION) return { m: a.m, e: a.e };
   if (d < -PRECISION) return { m: b.m, e: b.e };
