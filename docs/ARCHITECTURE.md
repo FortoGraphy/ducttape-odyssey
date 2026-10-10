@@ -112,7 +112,10 @@ instead. Only the orchestrator commits to git.
 | `src/render/skia/**`, `src/render/lite/**`, `src/render/Viewport.tsx`, `src/app/viewport.tsx`, `scripts/preview/**` | render |
 | `scripts/assets/**`, `scripts/blender/**`, `assets/**` (except `assets/audio`), `src/ui/icons.generated.ts`, `src/render/atlas.generated.ts`, `src/ui/portraits.generated.ts` | assets |
 | `scripts/audio/**`, `assets/audio/**`, `src/audio/**` | audio |
-| `src/minigames/<game>/**`, `src/minigames/host/**`, `src/i18n/locales/*/minigames.ts` | minigames-a/b/c |
+| `src/minigames/shared.tsx`, `src/store/**`, `src/platform/**` | orchestrator |
+| `src/minigames/{weld,wire,rhythm,host}/**`, `src/minigames/index.ts`, `src/app/minigames.tsx`, `src/i18n/locales/*/minigames.ts` | minigames-a |
+| `src/minigames/{valves,calibrate,tape}/**`, `src/app/mg-b.tsx` | minigames-b |
+| `src/minigames/{defense,dock,hack}/**`, `src/app/mg-c.tsx`, `tests/minigames/**` | minigames-c |
 
 ## Commands
 
