@@ -53,6 +53,16 @@ export const cosmeticList: CosmeticDef[] = [
   sprite("toy", "toy_duck", stamps(20), "Kachnička na palubce", "Dashboard Duck", "Dívá se dopředu a mlčí. Nejlepší navigátor, jakého jsi kdy měl.", "Looks ahead and says nothing. The best navigator you ever had."),
   sprite("toy", "toy_globe", chapter(7), "Sněžítko s remorkérem", "Tug Snow Globe", "Uvnitř je malá loď v bouři třpytek. Nápadně podobná té tvojí.", "A tiny ship inside a glitter storm. Looks suspiciously like yours."),
   sprite("toy", "toy_cat", stamps(75), "Mávající kočka", "Waving Cat", "Mává pro štěstí. Baterie jí nikdy nedojde a nikdo neví proč.", "Waves for luck. Its battery never runs out and nobody knows why."),
+
+  // Rewards of achievements (src/content/story/achievements.ts); granted by the engine, never bought.
+  cosmetic("sticker", "ach_sticker_1", "ach_sticker_1", { achievement: "ach_salvage_2500" }, "Nálezné", "Finders Keepers", "Samolepka pro ty, kdo seberou všechno, co se vznáší.", "A sticker for people who pick up anything that floats."),
+  cosmetic("sticker", "ach_sticker_2", "ach_sticker_2", { achievement: "ach_tapeUsed_1000" }, "Drží to páska", "Held by Tape", "Oficiální uznání nosné funkce lepicí pásky.", "Official recognition of tape as a structural material."),
+  cosmetic("sticker", "ach_sticker_3", "ach_sticker_3", { achievement: "ach_codex_500" }, "Vše zapsáno", "All Catalogued", "Pět set záznamů a pořád žádný rejstřík.", "Five hundred entries and still no index."),
+  cosmetic("sticker", "ach_sticker_4", "ach_sticker_4", { achievement: "ach_warps_1" }, "Vyřízeno", "Closed: Resolved", "Razítko, na které vesmír čekal čtyřicet let.", "The stamp the universe waited forty years for."),
+  cosmetic("paint", "ach_paint_1", "yellow", { achievement: "ach_craftsT4_5" }, "Stavbyvedoucí žlutá", "Foreman Yellow", "Barva lidí, kteří ukazují na věci a říkají, kam mají přijít.", "The colour of people who point at things and say where they go."),
+  cosmetic("paint", "ach_paint_2", "bone2", { achievement: "ach_modulesPristine_10" }, "Výstavní bílá", "Showroom White", "Čistá tak, že se bojíš na ni sáhnout. Vydrží týden.", "So clean you are afraid to touch it. It will last a week."),
+  cosmetic("paint", "ach_paint_3", "lime", { achievement: "ach_minigamesPerfect_100" }, "Bezchybná limetka", "Flawless Lime", "Pro ruce, které se netřesou. Nebo se třesou ve správném rytmu.", "For hands that do not shake. Or shake in the right rhythm."),
+  cosmetic("paint", "ach_paint_4", "violet3", { achievement: "ach_depthMax_40" }, "Světlo jádra", "Core Light", "Odstín, který má obloha tam, kde končí mapa.", "The shade the sky has where the map runs out."),
 ];
 
 export const cosmetics: Record<CosmeticId, CosmeticDef> = byId(cosmeticList);

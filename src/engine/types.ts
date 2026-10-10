@@ -537,6 +537,10 @@ export interface ContentDB {
   shop: Record<string, ShopItemDef>;
   biomes: Record<BiomeId, BiomeDef>;
   quests: QuestTemplateDef[];
+  /** Ending choices for the Priority 1 ticket (chapter 12). */
+  endings: { id: string; title: L10n; text: L10n; epilogue: L10n }[];
+  /** Flavour for the endless Backlog tickets. */
+  backlogTickets: { id: string; title: L10n; text: L10n }[];
   /** Effects granted while at least one of a megastructure item is owned. */
   megaEffects: Record<ItemId, Effect[]>;
   /** Syllable tables for procedural names and crew name pools. */
