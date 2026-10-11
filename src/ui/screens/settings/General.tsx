@@ -183,7 +183,7 @@ export function AudioGroup() {
         </Row>
       </SettingRow>
       <Lcd padding={8}>
-        <LcdText size="sm">{t("audio.silentNote")}</LcdText>
+        <LcdText size="s">{t("audio.silentNote")}</LcdText>
       </Lcd>
     </Col>
   );
