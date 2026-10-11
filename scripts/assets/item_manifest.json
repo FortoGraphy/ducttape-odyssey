@@ -1,0 +1,1592 @@
+{
+ "source": "content",
+ "items": [
+  {
+   "id": "scrap",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "common"
+   ]
+  },
+  {
+   "id": "ice",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "common"
+   ]
+  },
+  {
+   "id": "silicates",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "common"
+   ]
+  },
+  {
+   "id": "carbon",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "common"
+   ]
+  },
+  {
+   "id": "hydrogen",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "common"
+   ]
+  },
+  {
+   "id": "ferrite",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "common"
+   ]
+  },
+  {
+   "id": "brine",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "common"
+   ]
+  },
+  {
+   "id": "sulfur",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "uncommon"
+   ]
+  },
+  {
+   "id": "organics",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "uncommon"
+   ]
+  },
+  {
+   "id": "conductite",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "uncommon"
+   ]
+  },
+  {
+   "id": "helium3",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "uncommon"
+   ]
+  },
+  {
+   "id": "lumite",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "rare"
+   ]
+  },
+  {
+   "id": "xenon",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "rare"
+   ]
+  },
+  {
+   "id": "voidglass",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "rare"
+   ]
+  },
+  {
+   "id": "strange_dust",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "exotic"
+   ]
+  },
+  {
+   "id": "antimatter",
+   "tier": 0,
+   "category": "raw",
+   "tags": [
+    "exotic"
+   ]
+  },
+  {
+   "id": "alloy",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "water",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "glass",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "fuel",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "polymer",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "slag",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "oxygen",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "wire",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "ceramic",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "coolant",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "steel",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "graphite",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "silicon",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "solder",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "fiber",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "salt",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "acid",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "resin",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "rubber",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "fertilizer",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "biogel",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "thermite",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "cryofluid",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "ion_gas",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "phosphor",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "darkglass",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "am_vial",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "quiet_dust",
+   "tier": 1,
+   "category": "refined",
+   "tags": []
+  },
+  {
+   "id": "circuit",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "actuator",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "plating",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "lens",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "power_cell",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "tubing",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "bearing",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "girder",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "heatsink",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "coil",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "valve",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "canister",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "nozzle",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "capacitor",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "gasket",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "filter",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "insulation",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "glow_tube",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "lightguide",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "motor",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "pump",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "sensor",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "processor",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "servo",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "gyroscope",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "antenna",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "radiator",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "emitter",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "composite",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "battery_pack",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "ion_chamber",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "manipulator",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "bioreactor",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "quantum_chip",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "field_coil",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "fusion_cell",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "nanoweave",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "logic_core",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "am_cell",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "void_lens",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "grav_plate",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "warp_coil",
+   "tier": 2,
+   "category": "component",
+   "tags": []
+  },
+  {
+   "id": "mod_laser_mk1",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "laser"
+   ],
+   "family": "laser",
+   "mk": 1
+  },
+  {
+   "id": "mod_laser_mk2",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "laser"
+   ],
+   "family": "laser",
+   "mk": 2
+  },
+  {
+   "id": "mod_laser_mk3",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "laser"
+   ],
+   "family": "laser",
+   "mk": 3
+  },
+  {
+   "id": "mod_laser_mk4",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "laser"
+   ],
+   "family": "laser",
+   "mk": 4
+  },
+  {
+   "id": "mod_laser_mk5",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "laser"
+   ],
+   "family": "laser",
+   "mk": 5
+  },
+  {
+   "id": "mod_engine_mk1",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "engine"
+   ],
+   "family": "engine",
+   "mk": 1
+  },
+  {
+   "id": "mod_engine_mk2",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "engine"
+   ],
+   "family": "engine",
+   "mk": 2
+  },
+  {
+   "id": "mod_engine_mk3",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "engine"
+   ],
+   "family": "engine",
+   "mk": 3
+  },
+  {
+   "id": "mod_engine_mk4",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "engine"
+   ],
+   "family": "engine",
+   "mk": 4
+  },
+  {
+   "id": "mod_engine_mk5",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "engine"
+   ],
+   "family": "engine",
+   "mk": 5
+  },
+  {
+   "id": "mod_shield_mk1",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "shield"
+   ],
+   "family": "shield",
+   "mk": 1
+  },
+  {
+   "id": "mod_shield_mk2",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "shield"
+   ],
+   "family": "shield",
+   "mk": 2
+  },
+  {
+   "id": "mod_shield_mk3",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "shield"
+   ],
+   "family": "shield",
+   "mk": 3
+  },
+  {
+   "id": "mod_shield_mk4",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "shield"
+   ],
+   "family": "shield",
+   "mk": 4
+  },
+  {
+   "id": "mod_shield_mk5",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "shield"
+   ],
+   "family": "shield",
+   "mk": 5
+  },
+  {
+   "id": "mod_scanner_mk1",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "scanner"
+   ],
+   "family": "scanner",
+   "mk": 1
+  },
+  {
+   "id": "mod_scanner_mk2",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "scanner"
+   ],
+   "family": "scanner",
+   "mk": 2
+  },
+  {
+   "id": "mod_scanner_mk3",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "scanner"
+   ],
+   "family": "scanner",
+   "mk": 3
+  },
+  {
+   "id": "mod_scanner_mk4",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "scanner"
+   ],
+   "family": "scanner",
+   "mk": 4
+  },
+  {
+   "id": "mod_scanner_mk5",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "scanner"
+   ],
+   "family": "scanner",
+   "mk": 5
+  },
+  {
+   "id": "mod_reactor_mk1",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "reactor"
+   ],
+   "family": "reactor",
+   "mk": 1
+  },
+  {
+   "id": "mod_reactor_mk2",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "reactor"
+   ],
+   "family": "reactor",
+   "mk": 2
+  },
+  {
+   "id": "mod_reactor_mk3",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "reactor"
+   ],
+   "family": "reactor",
+   "mk": 3
+  },
+  {
+   "id": "mod_reactor_mk4",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "reactor"
+   ],
+   "family": "reactor",
+   "mk": 4
+  },
+  {
+   "id": "mod_reactor_mk5",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "reactor"
+   ],
+   "family": "reactor",
+   "mk": 5
+  },
+  {
+   "id": "mod_cargo_mk1",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "cargo"
+   ],
+   "family": "cargo",
+   "mk": 1
+  },
+  {
+   "id": "mod_cargo_mk2",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "cargo"
+   ],
+   "family": "cargo",
+   "mk": 2
+  },
+  {
+   "id": "mod_cargo_mk3",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "cargo"
+   ],
+   "family": "cargo",
+   "mk": 3
+  },
+  {
+   "id": "mod_cargo_mk4",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "cargo"
+   ],
+   "family": "cargo",
+   "mk": 4
+  },
+  {
+   "id": "mod_cargo_mk5",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "cargo"
+   ],
+   "family": "cargo",
+   "mk": 5
+  },
+  {
+   "id": "mod_repair_mk1",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "repair"
+   ],
+   "family": "repair",
+   "mk": 1
+  },
+  {
+   "id": "mod_repair_mk2",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "repair"
+   ],
+   "family": "repair",
+   "mk": 2
+  },
+  {
+   "id": "mod_repair_mk3",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "repair"
+   ],
+   "family": "repair",
+   "mk": 3
+  },
+  {
+   "id": "mod_repair_mk4",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "repair"
+   ],
+   "family": "repair",
+   "mk": 4
+  },
+  {
+   "id": "mod_repair_mk5",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "repair"
+   ],
+   "family": "repair",
+   "mk": 5
+  },
+  {
+   "id": "mod_life_mk1",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "life"
+   ],
+   "family": "life",
+   "mk": 1
+  },
+  {
+   "id": "mod_life_mk2",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "life"
+   ],
+   "family": "life",
+   "mk": 2
+  },
+  {
+   "id": "mod_life_mk3",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "life"
+   ],
+   "family": "life",
+   "mk": 3
+  },
+  {
+   "id": "mod_life_mk4",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "life"
+   ],
+   "family": "life",
+   "mk": 4
+  },
+  {
+   "id": "mod_life_mk5",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "life"
+   ],
+   "family": "life",
+   "mk": 5
+  },
+  {
+   "id": "mod_lucky_dice",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "scanner",
+    "special"
+   ],
+   "family": "scanner",
+   "mk": 2
+  },
+  {
+   "id": "mod_tow_hook",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "engine",
+    "special"
+   ],
+   "family": "engine",
+   "mk": 2
+  },
+  {
+   "id": "mod_coffee_machine",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "life",
+    "special"
+   ],
+   "family": "life",
+   "mk": 3
+  },
+  {
+   "id": "mod_bulkhead",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "shield",
+    "special"
+   ],
+   "family": "shield",
+   "mk": 3
+  },
+  {
+   "id": "mod_night_watch",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "repair",
+    "special"
+   ],
+   "family": "repair",
+   "mk": 3
+  },
+  {
+   "id": "mod_drone_bay",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "cargo",
+    "special"
+   ],
+   "family": "cargo",
+   "mk": 3
+  },
+  {
+   "id": "mod_prism_array",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "laser",
+    "special"
+   ],
+   "family": "laser",
+   "mk": 4
+  },
+  {
+   "id": "mod_overclocker",
+   "tier": 3,
+   "category": "module",
+   "tags": [
+    "reactor",
+    "special"
+   ],
+   "family": "reactor",
+   "mk": 4
+  },
+  {
+   "id": "collector_array",
+   "tier": 4,
+   "category": "mega",
+   "tags": []
+  },
+  {
+   "id": "deep_drill",
+   "tier": 4,
+   "category": "mega",
+   "tags": []
+  },
+  {
+   "id": "orbital_foundry",
+   "tier": 4,
+   "category": "mega",
+   "tags": []
+  },
+  {
+   "id": "signal_dish",
+   "tier": 4,
+   "category": "mega",
+   "tags": []
+  },
+  {
+   "id": "archive_vault",
+   "tier": 4,
+   "category": "mega",
+   "tags": []
+  },
+  {
+   "id": "kipp_backup",
+   "tier": 4,
+   "category": "mega",
+   "tags": []
+  },
+  {
+   "id": "shipyard",
+   "tier": 4,
+   "category": "mega",
+   "tags": []
+  },
+  {
+   "id": "wormhole_gate",
+   "tier": 4,
+   "category": "mega",
+   "tags": []
+  },
+  {
+   "id": "hull_frame_hauler",
+   "tier": 4,
+   "category": "mega",
+   "tags": [
+    "frame"
+   ]
+  },
+  {
+   "id": "hull_frame_prospector",
+   "tier": 4,
+   "category": "mega",
+   "tags": [
+    "frame"
+   ]
+  },
+  {
+   "id": "hull_frame_clipper",
+   "tier": 4,
+   "category": "mega",
+   "tags": [
+    "frame"
+   ]
+  },
+  {
+   "id": "hull_frame_bulwark",
+   "tier": 4,
+   "category": "mega",
+   "tags": [
+    "frame"
+   ]
+  },
+  {
+   "id": "hull_frame_ark",
+   "tier": 4,
+   "category": "mega",
+   "tags": [
+    "frame"
+   ]
+  },
+  {
+   "id": "hull_frame_colossus",
+   "tier": 4,
+   "category": "mega",
+   "tags": [
+    "frame"
+   ]
+  },
+  {
+   "id": "duct_tape",
+   "tier": 1,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "repair"
+  },
+  {
+   "id": "spare_parts",
+   "tier": 2,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "repair"
+  },
+  {
+   "id": "nano_gel",
+   "tier": 2,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "repair"
+  },
+  {
+   "id": "weld_rod",
+   "tier": 1,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "repair"
+  },
+  {
+   "id": "hull_foam",
+   "tier": 1,
+   "category": "consumable",
+   "tags": [
+    "hull"
+   ],
+   "consumable": "repair"
+  },
+  {
+   "id": "fuel_cell",
+   "tier": 2,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "fuel"
+  },
+  {
+   "id": "fuel_drum",
+   "tier": 2,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "fuel"
+  },
+  {
+   "id": "coffee",
+   "tier": 1,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "coffee"
+  },
+  {
+   "id": "espresso",
+   "tier": 1,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "coffee"
+  },
+  {
+   "id": "comfort_food",
+   "tier": 1,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "boost"
+  },
+  {
+   "id": "beacon",
+   "tier": 2,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "beacon"
+  },
+  {
+   "id": "overclock_chip",
+   "tier": 2,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "boost"
+  },
+  {
+   "id": "drone_oil",
+   "tier": 1,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "boost"
+  },
+  {
+   "id": "flare",
+   "tier": 1,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "boost"
+  },
+  {
+   "id": "brain_snack",
+   "tier": 1,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "boost"
+  },
+  {
+   "id": "lucky_sock",
+   "tier": 1,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "boost"
+  },
+  {
+   "id": "salvage_magnet",
+   "tier": 2,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "boost"
+  },
+  {
+   "id": "jump_primer",
+   "tier": 2,
+   "category": "consumable",
+   "tags": [],
+   "consumable": "boost"
+  },
+  {
+   "id": "art_rubber_duck",
+   "tier": 2,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_warranty_card",
+   "tier": 2,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_mixtape",
+   "tier": 2,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_snow_globe",
+   "tier": 2,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_right_sock",
+   "tier": 2,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_music_box",
+   "tier": 2,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_fossil_bolt",
+   "tier": 3,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_captains_mug",
+   "tier": 3,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_star_chart",
+   "tier": 3,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_silent_bell",
+   "tier": 3,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_left_glove",
+   "tier": 3,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_endless_top",
+   "tier": 3,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_manual_vol7",
+   "tier": 4,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_glass_seed",
+   "tier": 4,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_tin_robot",
+   "tier": 4,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_queue_ticket",
+   "tier": 4,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_black_box",
+   "tier": 4,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "art_tuning_fork",
+   "tier": 4,
+   "category": "artifact",
+   "tags": []
+  },
+  {
+   "id": "probe_kit",
+   "tier": 2,
+   "category": "special",
+   "tags": []
+  },
+  {
+   "id": "data_core",
+   "tier": 2,
+   "category": "special",
+   "tags": []
+  },
+  {
+   "id": "outpost_kit",
+   "tier": 3,
+   "category": "special",
+   "tags": []
+  }
+ ],
+ "cosmetics": [
+  {
+   "id": "paint_factory",
+   "kind": "paint",
+   "value": "steel2"
+  },
+  {
+   "id": "paint_rust",
+   "kind": "paint",
+   "value": "rust1"
+  },
+  {
+   "id": "paint_bone",
+   "kind": "paint",
+   "value": "bone1"
+  },
+  {
+   "id": "paint_teal",
+   "kind": "paint",
+   "value": "teal2"
+  },
+  {
+   "id": "paint_cobalt",
+   "kind": "paint",
+   "value": "cobalt1"
+  },
+  {
+   "id": "paint_hazard",
+   "kind": "paint",
+   "value": "orange"
+  },
+  {
+   "id": "paint_red",
+   "kind": "paint",
+   "value": "red1"
+  },
+  {
+   "id": "paint_violet",
+   "kind": "paint",
+   "value": "violet2"
+  },
+  {
+   "id": "paint_mint",
+   "kind": "paint",
+   "value": "mint"
+  },
+  {
+   "id": "trail_plain",
+   "kind": "trail",
+   "value": "bone0"
+  },
+  {
+   "id": "trail_amber",
+   "kind": "trail",
+   "value": "amber"
+  },
+  {
+   "id": "trail_cobalt",
+   "kind": "trail",
+   "value": "cobalt2"
+  },
+  {
+   "id": "trail_violet",
+   "kind": "trail",
+   "value": "violet3"
+  },
+  {
+   "id": "trail_yellow",
+   "kind": "trail",
+   "value": "yellow"
+  },
+  {
+   "id": "trail_lime",
+   "kind": "trail",
+   "value": "lime"
+  },
+  {
+   "id": "trail_red",
+   "kind": "trail",
+   "value": "red1"
+  },
+  {
+   "id": "sticker_patch",
+   "kind": "sticker",
+   "value": "sticker_patch"
+  },
+  {
+   "id": "sticker_warranty",
+   "kind": "sticker",
+   "value": "sticker_warranty"
+  },
+  {
+   "id": "sticker_kipp",
+   "kind": "sticker",
+   "value": "sticker_kipp"
+  },
+  {
+   "id": "sticker_flying",
+   "kind": "sticker",
+   "value": "sticker_flying"
+  },
+  {
+   "id": "sticker_fragile",
+   "kind": "sticker",
+   "value": "sticker_fragile"
+  },
+  {
+   "id": "sticker_hands_off",
+   "kind": "sticker",
+   "value": "sticker_hands_off"
+  },
+  {
+   "id": "sticker_engineer",
+   "kind": "sticker",
+   "value": "sticker_engineer"
+  },
+  {
+   "id": "sticker_gold_star",
+   "kind": "sticker",
+   "value": "sticker_gold_star"
+  },
+  {
+   "id": "toy_dice",
+   "kind": "toy",
+   "value": "toy_dice"
+  },
+  {
+   "id": "toy_bobble",
+   "kind": "toy",
+   "value": "toy_bobble"
+  },
+  {
+   "id": "toy_cactus",
+   "kind": "toy",
+   "value": "toy_cactus"
+  },
+  {
+   "id": "toy_duck",
+   "kind": "toy",
+   "value": "toy_duck"
+  },
+  {
+   "id": "toy_globe",
+   "kind": "toy",
+   "value": "toy_globe"
+  },
+  {
+   "id": "toy_cat",
+   "kind": "toy",
+   "value": "toy_cat"
+  },
+  {
+   "id": "ach_sticker_1",
+   "kind": "sticker",
+   "value": "ach_sticker_1"
+  },
+  {
+   "id": "ach_sticker_2",
+   "kind": "sticker",
+   "value": "ach_sticker_2"
+  },
+  {
+   "id": "ach_sticker_3",
+   "kind": "sticker",
+   "value": "ach_sticker_3"
+  },
+  {
+   "id": "ach_sticker_4",
+   "kind": "sticker",
+   "value": "ach_sticker_4"
+  },
+  {
+   "id": "ach_paint_1",
+   "kind": "paint",
+   "value": "yellow"
+  },
+  {
+   "id": "ach_paint_2",
+   "kind": "paint",
+   "value": "bone2"
+  },
+  {
+   "id": "ach_paint_3",
+   "kind": "paint",
+   "value": "lime"
+  },
+  {
+   "id": "ach_paint_4",
+   "kind": "paint",
+   "value": "violet3"
+  }
+ ],
+ "hulls": [
+  "tug",
+  "hauler",
+  "prospector",
+  "clipper",
+  "bulwark",
+  "ark",
+  "colossus"
+ ]
+}

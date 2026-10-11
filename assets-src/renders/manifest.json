@@ -1,0 +1,766 @@
+{
+ "ss": 4,
+ "groups": {
+  "ship_tug": {
+   "size": [
+    64,
+    48
+   ],
+   "center": [
+    -4.0,
+    3.5
+   ],
+   "frames": [
+    "ship_tug_00",
+    "ship_tug_01",
+    "ship_tug_02",
+    "ship_tug_03",
+    "ship_tug_04",
+    "ship_tug_05",
+    "ship_tug_06",
+    "ship_tug_07",
+    "ship_tug_08",
+    "ship_tug_09",
+    "ship_tug_10",
+    "ship_tug_11",
+    "ship_tug_12",
+    "ship_tug_13",
+    "ship_tug_14",
+    "ship_tug_15"
+   ],
+   "anchors": {
+    "engine": [
+     -27.5,
+     0.8
+    ],
+    "laser": [
+     19.0,
+     -7.2
+    ],
+    "center": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "ship_hauler": {
+   "size": [
+    80,
+    36
+   ],
+   "center": [
+    -4.0,
+    0.0
+   ],
+   "frames": [
+    "ship_hauler_00",
+    "ship_hauler_01",
+    "ship_hauler_02",
+    "ship_hauler_03",
+    "ship_hauler_04",
+    "ship_hauler_05",
+    "ship_hauler_06",
+    "ship_hauler_07",
+    "ship_hauler_08",
+    "ship_hauler_09",
+    "ship_hauler_10",
+    "ship_hauler_11",
+    "ship_hauler_12",
+    "ship_hauler_13",
+    "ship_hauler_14",
+    "ship_hauler_15"
+   ],
+   "anchors": {
+    "engine": [
+     -37.5,
+     0.0
+    ],
+    "laser": [
+     30.0,
+     -3.0
+    ],
+    "center": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "ship_prospector": {
+   "size": [
+    72,
+    52
+   ],
+   "center": [
+    2.0,
+    1.0
+   ],
+   "frames": [
+    "ship_prospector_00",
+    "ship_prospector_01",
+    "ship_prospector_02",
+    "ship_prospector_03",
+    "ship_prospector_04",
+    "ship_prospector_05",
+    "ship_prospector_06",
+    "ship_prospector_07",
+    "ship_prospector_08",
+    "ship_prospector_09",
+    "ship_prospector_10",
+    "ship_prospector_11",
+    "ship_prospector_12",
+    "ship_prospector_13",
+    "ship_prospector_14",
+    "ship_prospector_15"
+   ],
+   "anchors": {
+    "engine": [
+     -31.5,
+     1.0
+    ],
+    "laser": [
+     32.5,
+     1.5
+    ],
+    "center": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "ship_clipper": {
+   "size": [
+    72,
+    40
+   ],
+   "center": [
+    3.0,
+    0.0
+   ],
+   "frames": [
+    "ship_clipper_00",
+    "ship_clipper_01",
+    "ship_clipper_02",
+    "ship_clipper_03",
+    "ship_clipper_04",
+    "ship_clipper_05",
+    "ship_clipper_06",
+    "ship_clipper_07",
+    "ship_clipper_08",
+    "ship_clipper_09",
+    "ship_clipper_10",
+    "ship_clipper_11",
+    "ship_clipper_12",
+    "ship_clipper_13",
+    "ship_clipper_14",
+    "ship_clipper_15"
+   ],
+   "anchors": {
+    "engine": [
+     -25.5,
+     0.0
+    ],
+    "laser": [
+     29.5,
+     -2.2
+    ],
+    "center": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "ship_bulwark": {
+   "size": [
+    72,
+    40
+   ],
+   "center": [
+    -2.0,
+    0.0
+   ],
+   "frames": [
+    "ship_bulwark_00",
+    "ship_bulwark_01",
+    "ship_bulwark_02",
+    "ship_bulwark_03",
+    "ship_bulwark_04",
+    "ship_bulwark_05",
+    "ship_bulwark_06",
+    "ship_bulwark_07",
+    "ship_bulwark_08",
+    "ship_bulwark_09",
+    "ship_bulwark_10",
+    "ship_bulwark_11",
+    "ship_bulwark_12",
+    "ship_bulwark_13",
+    "ship_bulwark_14",
+    "ship_bulwark_15"
+   ],
+   "anchors": {
+    "engine": [
+     -33.5,
+     0.0
+    ],
+    "laser": [
+     27.5,
+     -1.0
+    ],
+    "center": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "ship_ark": {
+   "size": [
+    84,
+    52
+   ],
+   "center": [
+    -1.0,
+    0.0
+   ],
+   "frames": [
+    "ship_ark_00",
+    "ship_ark_01",
+    "ship_ark_02",
+    "ship_ark_03",
+    "ship_ark_04",
+    "ship_ark_05",
+    "ship_ark_06",
+    "ship_ark_07",
+    "ship_ark_08",
+    "ship_ark_09",
+    "ship_ark_10",
+    "ship_ark_11",
+    "ship_ark_12",
+    "ship_ark_13",
+    "ship_ark_14",
+    "ship_ark_15"
+   ],
+   "anchors": {
+    "engine": [
+     -37.5,
+     0.0
+    ],
+    "laser": [
+     33.5,
+     0.0
+    ],
+    "center": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "ship_colossus": {
+   "size": [
+    88,
+    56
+   ],
+   "center": [
+    -3.0,
+    0.0
+   ],
+   "frames": [
+    "ship_colossus_00",
+    "ship_colossus_01",
+    "ship_colossus_02",
+    "ship_colossus_03",
+    "ship_colossus_04",
+    "ship_colossus_05",
+    "ship_colossus_06",
+    "ship_colossus_07",
+    "ship_colossus_08",
+    "ship_colossus_09",
+    "ship_colossus_10",
+    "ship_colossus_11",
+    "ship_colossus_12",
+    "ship_colossus_13",
+    "ship_colossus_14",
+    "ship_colossus_15"
+   ],
+   "anchors": {
+    "engine": [
+     -42.5,
+     -1.0
+    ],
+    "laser": [
+     34.5,
+     -1.0
+    ],
+    "center": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "ship_relic": {
+   "size": [
+    64,
+    48
+   ],
+   "center": [
+    -3.0,
+    0.0
+   ],
+   "frames": [
+    "ship_relic_00",
+    "ship_relic_01",
+    "ship_relic_02",
+    "ship_relic_03",
+    "ship_relic_04",
+    "ship_relic_05",
+    "ship_relic_06",
+    "ship_relic_07",
+    "ship_relic_08",
+    "ship_relic_09",
+    "ship_relic_10",
+    "ship_relic_11",
+    "ship_relic_12",
+    "ship_relic_13",
+    "ship_relic_14",
+    "ship_relic_15"
+   ],
+   "anchors": {
+    "engine": [
+     -30.0,
+     0.0
+    ],
+    "laser": [
+     24.5,
+     0.0
+    ],
+    "center": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "hero_tug": {
+   "size": [
+    150,
+    110
+   ],
+   "center": [
+    -8.0,
+    6.0
+   ],
+   "frames": [
+    "hero_tug"
+   ],
+   "anchors": {}
+  },
+  "drone_hauler": {
+   "size": [
+    28,
+    24
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "drone_hauler_0",
+    "drone_hauler_1",
+    "drone_hauler_2",
+    "drone_hauler_3"
+   ],
+   "anchors": {}
+  },
+  "drone_probe": {
+   "size": [
+    28,
+    24
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "drone_probe_0",
+    "drone_probe_1",
+    "drone_probe_2",
+    "drone_probe_3"
+   ],
+   "anchors": {}
+  },
+  "drone_salvager": {
+   "size": [
+    28,
+    24
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "drone_salvager_0",
+    "drone_salvager_1",
+    "drone_salvager_2",
+    "drone_salvager_3"
+   ],
+   "anchors": {}
+  },
+  "drone_fixer": {
+   "size": [
+    28,
+    24
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "drone_fixer_0",
+    "drone_fixer_1",
+    "drone_fixer_2",
+    "drone_fixer_3"
+   ],
+   "anchors": {}
+  },
+  "station_0": {
+   "size": [
+    96,
+    96
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "station_0"
+   ],
+   "anchors": {}
+  },
+  "station_1": {
+   "size": [
+    64,
+    80
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "station_1"
+   ],
+   "anchors": {}
+  },
+  "station_2": {
+   "size": [
+    96,
+    72
+   ],
+   "center": [
+    0,
+    6
+   ],
+   "frames": [
+    "station_2"
+   ],
+   "anchors": {}
+  },
+  "station_3": {
+   "size": [
+    72,
+    96
+   ],
+   "center": [
+    0,
+    4
+   ],
+   "frames": [
+    "station_3"
+   ],
+   "anchors": {}
+  },
+  "asteroid_0": {
+   "size": [
+    25,
+    25
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "asteroid_0"
+   ],
+   "anchors": {}
+  },
+  "asteroid_1": {
+   "size": [
+    31,
+    31
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "asteroid_1"
+   ],
+   "anchors": {}
+  },
+  "asteroid_2": {
+   "size": [
+    38,
+    38
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "asteroid_2"
+   ],
+   "anchors": {}
+  },
+  "asteroid_3": {
+   "size": [
+    45,
+    45
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "asteroid_3"
+   ],
+   "anchors": {}
+  },
+  "asteroid_4": {
+   "size": [
+    55,
+    55
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "asteroid_4"
+   ],
+   "anchors": {}
+  },
+  "asteroid_5": {
+   "size": [
+    65,
+    65
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "asteroid_5"
+   ],
+   "anchors": {}
+  },
+  "meteor_0": {
+   "size": [
+    20,
+    20
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "meteor_0"
+   ],
+   "anchors": {}
+  },
+  "meteor_1": {
+   "size": [
+    20,
+    20
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "meteor_1"
+   ],
+   "anchors": {}
+  },
+  "meteor_2": {
+   "size": [
+    20,
+    20
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "meteor_2"
+   ],
+   "anchors": {}
+  },
+  "meteor_3": {
+   "size": [
+    20,
+    20
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "meteor_3"
+   ],
+   "anchors": {}
+  },
+  "salvage_crate": {
+   "size": [
+    24,
+    24
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "salvage_crate"
+   ],
+   "anchors": {}
+  },
+  "salvage_pod": {
+   "size": [
+    24,
+    24
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "salvage_pod"
+   ],
+   "anchors": {}
+  },
+  "salvage_wreck": {
+   "size": [
+    28,
+    28
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "salvage_wreck"
+   ],
+   "anchors": {}
+  },
+  "salvage_crystal": {
+   "size": [
+    24,
+    28
+   ],
+   "center": [
+    0,
+    2
+   ],
+   "frames": [
+    "salvage_crystal"
+   ],
+   "anchors": {}
+  },
+  "tow": {
+   "size": [
+    64,
+    40
+   ],
+   "center": [
+    -4,
+    3
+   ],
+   "frames": [
+    "tow_0",
+    "tow_1",
+    "tow_2",
+    "tow_3"
+   ],
+   "anchors": {}
+  },
+  "pirate": {
+   "size": [
+    64,
+    40
+   ],
+   "center": [
+    -2,
+    1
+   ],
+   "frames": [
+    "pirate_0",
+    "pirate_1",
+    "pirate_2",
+    "pirate_3"
+   ],
+   "anchors": {}
+  },
+  "derelict_0": {
+   "size": [
+    96,
+    64
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "derelict_0"
+   ],
+   "anchors": {}
+  },
+  "derelict_1": {
+   "size": [
+    96,
+    80
+   ],
+   "center": [
+    0.0,
+    0.0
+   ],
+   "frames": [
+    "derelict_1"
+   ],
+   "anchors": {}
+  },
+  "derelict_2": {
+   "size": [
+    96,
+    56
+   ],
+   "center": [
+    -2,
+    2
+   ],
+   "frames": [
+    "derelict_2"
+   ],
+   "anchors": {}
+  },
+  "probe": {
+   "size": [
+    24,
+    28
+   ],
+   "center": [
+    0,
+    1
+   ],
+   "frames": [
+    "probe_0",
+    "probe_1"
+   ],
+   "anchors": {}
+  }
+ }
+}
