@@ -4,16 +4,19 @@ Updated after every milestone so work can resume after a context reset. Newest s
 
 ## Now
 
-- **Usage limit hit around 00:20 (2026-10-11)**: all 13 running agents died; resumed at 05:38.
-- **Merged and verified**: engine core/world/meta (470 tests green, whole project typechecks), content
-  (economy, events, story), UI kit, audio, validators (`npm run validate` OK), platform layer, game
-  store, dev harness + presets, integration smoke (`npx tsx scripts/sim/smoke.ts`).
-- **Resumed agents (running)**: shell (critical path: `src/app/_layout.tsx`, `index.tsx`,
-  `src/ui/shell`), screens ship / craft+grid / nav / crew / meta / log+settings
-  (`src/ui/screens/<tab>`), render finish, assets finish, minigames a/b finish, sim-qa (bots, pacing,
-  balance, fuzz, soak). Minigames C finished (defense, dock, hack).
-- Briefs: `docs/AGENT_BRIEF.md`, `docs/AGENT_BRIEF_UI.md`; ownership table in `docs/ARCHITECTURE.md`.
-- Phase 0 gate passed earlier: CI run 38082829110 built both IPAs with the spike screen.
+- **All phases merged.** Final CI run 38115093227 is green for both IPAs (full Skia + lite):
+  https://github.com/FortoGraphy/ducttape-odyssey/actions/runs/38115093227
+- Local gates all pass: `npx tsc --noEmit`, `npx vitest run` (481), `npx expo lint` (0 errors),
+  `npm run validate`, `npm run sim` (5 seeds), `npm run fuzz` (0 softlocks), `npm run soak`,
+  `npx expo-doctor`, lite/skia bundle checks, native config check.
+- Tagged `v1.0.0`. Waiting for the on-device check by Honza (checklist in docs/MORNING.md).
+
+## Not done (budget ran out after the usage-limit interruption)
+
+- Independent QA reviewer pass, dedicated juice pass, full Czech/English read-through.
+- Late-game balance: active/idle ratio after 2 h is 8-12x (target 3-8x); rebuild/reboot pacing unsimulated.
+- Drag-to-place in the tech grid; cosmetic paint on atlas ship sprites; per-tier mini-game hints.
+- Nothing has run on a device.
 
 ## Done
 

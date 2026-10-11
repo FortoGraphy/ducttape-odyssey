@@ -5,7 +5,8 @@
 Hra **Duct Tape Odyssey** je složená, hratelná od začátku do prestiže a postavená jako dvě IPA.
 
 - **Build:** <https://github.com/FortoGraphy/ducttape-odyssey/actions/runs/38115093227>
-  (stav běhu a artefakty najdeš tam; výsledek doplním dole v sekci 7)
+  **zelený**, oba artefakty jsou ke stažení (plný 27 MB, lite 26 MB). Obě IPA mám stažené i lokálně
+  v `build/ipa/`.
 - **Co nainstalovat jako první:** `DuctTapeOdyssey-release` (plná verze se Skia).
   Když spadne hned po startu, spusť ji ještě jednou (po dvou pádech naběhne nouzový režim). Když
   nepomůže ani to, nainstaluj `DuctTapeOdyssey-release-lite`. Obě mají stejné Bundle ID a sdílejí save.
@@ -83,4 +84,7 @@ Když něco z toho nesedí, napiš mi číslo bodu a co jsi viděl.
 
 ## 7. Stav buildu
 
-Doplním po doběhnutí běhu 38115093227.
+Běh 38115093227 (commit `c6af973`): **checks, build (skia) i build (lite) zelené.**
+Staženou plnou IPA jsem rozbalil a zkontroloval: Bundle ID `cz.johny.ducttape`, verze 1.0.0, jen
+na výšku, žádné background modes ani entitlementy, 7 fontů, 64 zvuků, JS bundle 7,7 MB, rozbalená
+78 MB. Tag `v1.0.0` spouští ještě jeden build ze stejného kódu (plus oprava jednoho popisku).
