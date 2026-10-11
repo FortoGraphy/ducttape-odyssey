@@ -102,6 +102,9 @@ export const portraits = {
       require("../../assets/portraits/hair_34.png"),
       require("../../assets/portraits/hair_35.png"),
       require("../../assets/portraits/hair_36.png"),
+      require("../../assets/portraits/hair_37.png"),
+      require("../../assets/portraits/hair_38.png"),
+      require("../../assets/portraits/hair_39.png"),
     ],
     eyes: [
       require("../../assets/portraits/eyes_0.png"),
@@ -117,6 +120,9 @@ export const portraits = {
       require("../../assets/portraits/eyes_10.png"),
       require("../../assets/portraits/eyes_11.png"),
       require("../../assets/portraits/eyes_12.png"),
+      require("../../assets/portraits/eyes_13.png"),
+      require("../../assets/portraits/eyes_14.png"),
+      require("../../assets/portraits/eyes_15.png"),
     ],
     mouth: [
       require("../../assets/portraits/mouth_0.png"),
@@ -160,7 +166,7 @@ export const portraits = {
 export const portraitLayers = ["bg", "suit", "head", "hair", "eyes", "mouth", "acc"] as const;
 export type PortraitLayer = (typeof portraitLayers)[number];
 
-const COUNTS: readonly number[] = [12, 14, 29, 37, 13, 12, 20];
+const COUNTS: readonly number[] = [12, 14, 29, 40, 16, 12, 20];
 // Chance that a layer shows nothing (index 0 is the empty part): bald, no accessory.
 const NONE: readonly number[] = [0.0, 0.0, 0.0, 0.08, 0.0, 0.0, 0.4];
 

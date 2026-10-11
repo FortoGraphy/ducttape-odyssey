@@ -1,12 +1,13 @@
 """One-command asset pipeline for Duct Tape Odyssey.
 
-    python scripts/assets/build_all.py [--skip-blender] [--fonts]
+    python scripts/assets/build_all.py [--skip-blender] [--fonts] [--audio]
 
 Steps: fonts (existing script, only when stale) -> item manifest (tsx, from the real content) ->
 Blender renders (4x, color + emissive) cached as strips in assets-src/renders -> palette sprites
 and atlases -> UI / item / cosmetic icons -> crew portrait layers -> app icon, splash, favicon ->
 event vignettes -> generated TypeScript -> checks. Idempotent; exits non-zero when a check fails.
 `--skip-blender` reuses the committed render cache (machines without Blender, CI).
+`--audio` also runs scripts/audio/build_audio.py --no-medley (off by default: about 2 minutes).
 """
 from __future__ import annotations
 
@@ -92,6 +93,20 @@ def step_fonts(force: bool) -> None:
         fail(f"build_fonts.py failed:\n{res.stdout}\n{res.stderr}")
     else:
         note(f"fonts: rebuilt {len(wanted)}")
+
+
+def step_audio() -> None:
+    script = ROOT / "scripts" / "audio" / "build_audio.py"
+    if not script.exists():
+        fail("scripts/audio/build_audio.py not found")
+        return
+    t0 = time.time()
+    res = subprocess.run([sys.executable, str(script), "--no-medley"], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    if res.returncode != 0:
+        tail = "\n".join((res.stdout + "\n" + res.stderr).splitlines()[-20:])
+        fail(f"build_audio.py failed (exit {res.returncode}):\n{tail}")
+    else:
+        note(f"audio: rebuilt in {time.time() - t0:.0f} s")
 
 
 def canonical_manifest() -> dict:
@@ -391,6 +406,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--skip-blender", action="store_true", help="reuse the render cache in assets-src/renders")
     ap.add_argument("--fonts", action="store_true", help="force a font rebuild")
+    ap.add_argument("--audio", action="store_true", help="also rebuild assets/audio (about 2 minutes)")
     args = ap.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
     t0 = time.time()
@@ -424,6 +440,8 @@ def main() -> int:
     run("icons", lambda: step_icons(manifest, frames))
     run("portraits", step_portraits)
     run("app icon", lambda: step_app(frames))
+    if args.audio:
+        run("audio", step_audio)
     run("checks", step_checks)
     stale = HERE / "placeholders.py"
     if stale.exists():
