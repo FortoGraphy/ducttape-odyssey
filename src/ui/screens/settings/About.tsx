@@ -10,7 +10,10 @@ import { useT } from "@/i18n";
 import { haptic, sfx } from "@/platform/feedback";
 import { act, useGame } from "@/store/game";
 import { useSettings } from "@/store/settings";
+import { goTo } from "@/store/ui";
 import { Col, Icon, Key, Lcd, MicroLabel, Row, Rule, toast, Txt } from "@/ui/kit";
+
+import { useShell } from "@/ui/shell/store";
 
 import { Field, KeyValue } from "./parts";
 
@@ -104,6 +107,18 @@ export function AboutGroup({ onOpenDebug }: { onOpenDebug: () => void }) {
         </Lcd>
       </Pressable>
       {debug ? <Key size="sm" icon="bug" label={t("debug.open")} tone="yellow" onPress={onOpenDebug} testID="debug-open" /> : null}
+
+      <Key
+        size="sm"
+        icon="book"
+        label={t("about.replayTutorial")}
+        onPress={() => {
+          useShell.getState().replayTutorial();
+          goTo("ship");
+          toast(t("about.tutorialRestarted"), "info");
+        }}
+        testID="replay-tutorial"
+      />
 
       <Rule label={t("about.names")} />
       <NameField which="name" />

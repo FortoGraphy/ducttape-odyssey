@@ -177,6 +177,8 @@ const settings = {
     noError: "Žádná. KIPP je sám překvapen.",
   },
   about: {
+    replayTutorial: "Přehrát tutoriál znovu",
+    tutorialRestarted: "KIPP to vysvětlí ještě jednou. Pomaleji.",
     renamed: "Přejmenováno. Papíry si přepiš sám.",
     engineer: "Jméno inženýra",
     ship: "Jméno lodi",

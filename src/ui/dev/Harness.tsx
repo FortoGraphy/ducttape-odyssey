@@ -35,6 +35,8 @@ export function DevHarness({ children }: { children: ReactNode }) {
       applyExtras(g, { failure, event });
     });
     startLoop();
+    // Preview-only: the game must exist before children mount, and it is created in this effect.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setReady(true);
     return () => stopLoop(false);
   }, [preset, lang, failure, event]);

@@ -177,6 +177,8 @@ const settings = {
     noError: "None. KIPP is as surprised as you are.",
   },
   about: {
+    replayTutorial: "Replay the tutorial",
+    tutorialRestarted: "KIPP will explain it again. Slower.",
     renamed: "Renamed. Update the paperwork yourself.",
     engineer: "Engineer's name",
     ship: "Ship's name",

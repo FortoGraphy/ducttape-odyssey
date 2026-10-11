@@ -260,11 +260,27 @@ export function shallowEqual<T>(a: T, b: T): boolean {
  */
 export function useGame<T>(selector: (g: Game) => T, isEqual: (a: T, b: T) => boolean = shallowEqual, every = 1): T {
   const sel = useRef(selector);
-  sel.current = selector;
   const eq = useRef(isEqual);
-  eq.current = isEqual;
   const [value, setValue] = useState<T>(() => selector(getGame()));
   const last = useRef(value);
+
+  // After every render: adopt the latest selector and re-check at once, so a selector whose inputs
+  // changed (another list row, another tab section) never shows a stale value until the next pulse.
+  const checkedAt = useRef(-1);
+  useEffect(() => {
+    sel.current = selector;
+    eq.current = isEqual;
+    const g = game;
+    // At most once per pulse: a selector that returns a fresh unequal value every call must not be
+    // able to turn this into a render loop.
+    if (!g || checkedAt.current === pulseCount) return;
+    checkedAt.current = pulseCount;
+    const next = selector(g);
+    if (!isEqual(last.current, next)) {
+      last.current = next;
+      setValue(next);
+    }
+  });
 
   useEffect(() => {
     const check = () => {
@@ -277,7 +293,6 @@ export function useGame<T>(selector: (g: Game) => T, isEqual: (a: T, b: T) => bo
         setValue(next);
       }
     };
-    check();
     return onPulse(check);
   }, [every]);
 

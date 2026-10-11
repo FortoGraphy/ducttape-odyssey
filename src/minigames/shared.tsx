@@ -1,6 +1,6 @@
 // Small shared toolkit so all nine mini-games look and behave like one family. Owned by the
 // orchestrator. Views + Reanimated only (works in "lite" builds and on web).
-import { createContext, useContext, useEffect, useRef } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { Pressable, Text, View, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
 import Animated, { Easing, cancelAnimation, useAnimatedStyle, useSharedValue, withTiming, type SharedValue } from "react-native-reanimated";
 
@@ -32,11 +32,14 @@ export const clamp01 = (v: number): number => (v < 0 ? 0 : v > 1 ? 1 : v);
  */
 export function useCountdown(seconds: number, onTimeout: () => void): { left: SharedValue<number>; stop(): void; startedAt: number } {
   const left = useSharedValue(1);
-  const startedAt = useRef(Date.now()).current;
+  const [startedAt] = useState(() => Date.now());
   const done = useRef(false);
   const cb = useRef(onTimeout);
-  cb.current = onTimeout;
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    cb.current = onTimeout;
+  });
 
   useEffect(() => {
     left.value = withTiming(0, { duration: seconds * 1000, easing: Easing.linear });
