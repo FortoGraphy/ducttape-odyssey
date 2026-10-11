@@ -31,3 +31,13 @@ Autonomous decisions made during the build, newest last. Format: decision, then 
 12. **Tests run on vitest in Node**, not jest-expo: the engine is pure TypeScript.
 13. **Mini-games never use Skia** (views + Reanimated + SVG) so they are identical in the lite build.
 14. **Saves use `expo-file-system`** (atomic temp + move, 3 rotating backups), not SQLite.
+15. **Viewport share 0.44 instead of 0.48, and the Ship tab is one scrolling list** (flow strip and
+    buy-mode row are the list header, mining is the first card). On an iPhone 13 mini the Control Deck
+    loses 34 pt to the home indicator; with pinned chrome there was room for half a deck card.
+16. **Codex is compacted on warp**: procedural entries of galaxies the ship has left are dropped unless
+    the player named them (counters and set rewards stay). The 7-day soak showed the save growing to
+    3 MB otherwise.
+17. **Balance was retuned by simulation** (see `docs/BALANCE.md`): with the first-draft numbers every
+    deck unlocked in 8 minutes and the core was reached in 47. Hyperdrive charge is now 240 s.
+18. **Usage limit**: wave 2 ran in "economy mode" (fewer verification iterations per agent) after the
+    account hit its limit at about 00:20 and all agents were lost until 05:38.

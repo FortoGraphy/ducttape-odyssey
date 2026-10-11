@@ -122,7 +122,7 @@ export const radius = { key: 7, well: 6, panel: 14, lcd: 5, pill: 999 } as const
 export const HIT = 44;
 
 /** Viewport takes this share of the screen height (rest is the Control Deck). */
-export const VIEWPORT_SHARE = 0.48;
+export const VIEWPORT_SHARE = 0.44;
 
 /**
  * Text styles. Sizes are fixed points: pass `allowFontScaling={false}` or `maxFontSizeMultiplier={1.15}`
