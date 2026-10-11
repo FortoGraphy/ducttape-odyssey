@@ -1,6 +1,6 @@
 // Hyperdrive controls: the compact bar pinned to the bottom of the Nav tab, the full jump
 // controls used inside sheets, and the drive sheet (fuel, refuel, charge, suggested route).
-import { memo, useCallback, useEffect, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 
 import { content } from "@/content";
@@ -16,9 +16,10 @@ import { driveStatus, effectiveTarget, HAZARD_ICON, refuelPlan, route, selectDri
 
 const num = (n: number): string => fmt(Math.round(n * 10) / 10);
 
-function useStatusText(d: DriveView, tg: TargetView, status: DriveStatus): string {
+function useStatusText(d: DriveView, tg: TargetView, status: DriveStatus, short = false): string {
   const t = useT("nav");
   const tr = useTr();
+  if (short) return t(`drive.short.${status}`, { time: fmtTime(d.cooldown), pct: fmtPct(d.charge), need: num(tg.cost), have: num(d.fuel) });
   switch (status) {
     case "failure":
       return t("drive.status.failure", { name: tr(content.failures[d.failure as keyof typeof content.failures]?.name) });
@@ -83,8 +84,6 @@ export const JumpControls = memo(function JumpControls({ depth, lane }: { depth:
   const risky = tg.has && tg.hazards > 0 && (tg.riskHull || tg.riskShield);
   const close = useNavUi((s) => s.close);
 
-  useEffect(() => setArmed(false), [depth, lane]);
-
   const onJump = useCallback(() => {
     if (risky && !armed) {
       setArmed(true);
@@ -114,7 +113,7 @@ export const JumpControls = memo(function JumpControls({ depth, lane }: { depth:
           <Txt variant="bodyBold" numberOfLines={2} style={styles.fill} color={status === "failure" || status === "noFuel" ? "bad" : status === "notLinked" ? "warn" : "ink"}>
             {text}
           </Txt>
-          <Txt variant="lcdM" color="ink" tabular>
+          <Txt variant="bodyBold" tabular>
             {readout}
           </Txt>
         </Row>
@@ -235,7 +234,7 @@ export function DriveSheet() {
       </Well>
 
       <Rule label={t("drive.title")} />
-      <JumpControls depth={target ? target.depth : -1} lane={target ? target.lane : -1} />
+      <JumpControls key={target ? target.depth * 16 + target.lane : -1} depth={target ? target.depth : -1} lane={target ? target.lane : -1} />
 
       {steps.length > 0 ? (
         <View style={styles.gapXs}>
@@ -284,7 +283,7 @@ export const JumpBar = memo(function JumpBar() {
     return e ? e.depth * 16 + e.lane : -1;
   });
   const { d, tg, status } = useDrive(target >= 0 ? { depth: target >> 4, lane: target & 15 } : null);
-  const text = useStatusText(d, tg, status);
+  const text = useStatusText(d, tg, status, true);
   const cooling = status === "cooldown";
   const bar = useSmooth(status === "jumping" ? 0 : cooling ? d.cooldownFrac : d.charge, 400);
   const per = useGame((g) => baseJumpCost(g), Object.is, 10);

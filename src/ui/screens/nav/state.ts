@@ -50,6 +50,8 @@ interface NavUi {
   picked: { depth: number; lane: number; from: string } | null;
   pick(depth: number, lane: number, from: string): void;
   sheets: SheetState[];
+  /** The sheet shown most recently; keeps its content mounted while the sheet slides away. */
+  last: SheetState | null;
   open(sheet: SheetState): void;
   push(sheet: SheetState): void;
   back(): void;
@@ -64,9 +66,10 @@ export const useNavUi = create<NavUi>((set) => ({
   picked: null,
   pick: (depth, lane, from) => set({ picked: { depth, lane, from } }),
   sheets: [],
-  open: (sheet) => set({ sheets: [sheet] }),
-  push: (sheet) => set((s) => ({ sheets: [...s.sheets, sheet] })),
-  back: () => set((s) => ({ sheets: s.sheets.slice(0, -1) })),
+  last: null,
+  open: (sheet) => set({ sheets: [sheet], last: sheet }),
+  push: (sheet) => set((s) => ({ sheets: [...s.sheets, sheet], last: sheet })),
+  back: () => set((s) => ({ sheets: s.sheets.slice(0, -1), last: s.sheets[s.sheets.length - 2] ?? s.last })),
   close: () => set({ sheets: [] }),
   result: null,
   setResult: (result) => set({ result }),
