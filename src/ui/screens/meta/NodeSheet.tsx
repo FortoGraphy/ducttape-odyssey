@@ -1,6 +1,7 @@
 // Detail sheet shared by research nodes and prestige upgrades: what it does now and at the next
 // level, what it costs, what it needs and what it unlocks, plus the buy key.
-import { useCallback, useRef } from "react";
+import type { TFunction } from "i18next";
+import { useCallback, useState } from "react";
 import { View, type GestureResponderEvent } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withSequence, withTiming } from "react-native-reanimated";
 
@@ -8,7 +9,7 @@ import { content } from "@/content";
 import * as B from "@/engine/big";
 import { getItem } from "@/engine/kernel";
 import { buyResearch, buyUpgrade, researchBlock, researchCost, researchLevel, upgradeBlock, upgradeCost, upgradeLevel } from "@/engine/meta";
-import type { ActionResult, Effect, FailReason, FeatureId, Game, RecipeId } from "@/engine/types";
+import type { ActionResult, Big, Effect, FailReason, FeatureId, Game, RecipeId } from "@/engine/types";
 import { useT, useTr } from "@/i18n";
 import { haptic, sfx } from "@/platform/feedback";
 import { act, getGame, useGame } from "@/store/game";
@@ -22,7 +23,7 @@ export const LAYER_ICON = { 1: "stamp", 2: "rivet", 3: "spark" } as const;
 
 interface CostLine {
   icon: string;
-  label: string;
+  /** Full texts with units: "25 RP", "3 stamps", "40× Alloy". */
   have: string;
   need: string;
   ok: boolean;
@@ -43,16 +44,17 @@ interface Model {
   buy: (g: Game) => ActionResult;
 }
 
-function build(g: Game, kind: NodeKind, id: string, tr: ReturnType<typeof useTr>, rpLabel: string, walletLabel: string): Model | null {
+function build(g: Game, kind: NodeKind, id: string, tr: ReturnType<typeof useTr>, t: TFunction): Model | null {
   if (kind === "research") {
     const def = content.research[id];
     if (!def) return null;
     const cost = researchCost(g, id);
-    const costs: CostLine[] = [{ icon: "rp", label: rpLabel, have: fmt(g.state.rp), need: fmt(cost.rp), ok: B.cmp(g.state.rp, cost.rp) >= 0 }];
+    const unit = t("research.unit");
+    const costs: CostLine[] = [{ icon: "rp", have: `${fmt(g.state.rp)} ${unit}`, need: `${fmt(cost.rp)} ${unit}`, ok: B.cmp(g.state.rp, cost.rp) >= 0 }];
     for (const item in cost.items ?? {}) {
       const need = cost.items?.[item] ?? 0;
       const have = getItem(g, item);
-      costs.push({ icon: item, label: itemName(item), have: fmt(have), need: fmt(need), ok: B.cmp(have, B.big(need)) >= 0 });
+      costs.push({ icon: item, have: fmt(have), need: `${fmt(need)}× ${itemName(item)}`, ok: B.cmp(have, B.big(need)) >= 0 });
     }
     return {
       name: tr(def.name),
@@ -74,6 +76,7 @@ function build(g: Game, kind: NodeKind, id: string, tr: ReturnType<typeof useTr>
   const p = g.state.prestige;
   const wallet = def.layer === 1 ? p.stamps : def.layer === 2 ? p.rivets : p.sparks;
   const cost = upgradeCost(g, id);
+  const money = (v: Big): string => t(`count.${LAYER_ICON[def.layer]}`, { count: Math.min(1e9, B.toNumber(v)), n: fmt(v) });
   return {
     name: tr(def.name),
     desc: tr(def.desc),
@@ -83,7 +86,7 @@ function build(g: Game, kind: NodeKind, id: string, tr: ReturnType<typeof useTr>
     effects: def.effects ?? [],
     requires: def.requires.map((r) => ({ name: tr(content.upgrades[r]?.name) || r, ok: upgradeLevel(g, r) > 0 })),
     block: upgradeBlock(g, id),
-    costs: [{ icon: LAYER_ICON[def.layer], label: walletLabel, have: fmt(wallet), need: fmt(cost), ok: B.cmp(wallet, cost) >= 0 }],
+    costs: [{ icon: LAYER_ICON[def.layer], have: money(wallet), need: money(cost), ok: B.cmp(wallet, cost) >= 0 }],
     recipes: [],
     feature: def.feature,
     buy: (game) => buyUpgrade(game, id),
@@ -98,9 +101,9 @@ export interface NodeSheetProps {
 
 export function NodeSheet({ kind, id: openId, onClose }: NodeSheetProps) {
   // The last node stays rendered while the sheet slides away.
-  const last = useRef(openId);
-  if (openId) last.current = openId;
-  const id = openId ?? last.current;
+  const [shown, setShown] = useState(openId);
+  if (openId && openId !== shown) setShown(openId);
+  const id = openId ?? shown;
   const t = useT("meta");
   const tr = useTr();
   const theme = useTheme();
@@ -111,12 +114,11 @@ export function NodeSheet({ kind, id: openId, onClose }: NodeSheetProps) {
   // Everything the sheet prints, folded into one string: the sheet re-renders when any of it moves.
   useGame((g) => {
     if (!openId) return "";
-    const m = build(g, kind, id, tr, "", "");
+    const m = build(g, kind, openId, tr, t);
     return m ? `${m.level}|${m.block}|${m.costs.map((c) => c.have + "/" + c.need).join(";")}` : "";
   }, undefined, 2);
 
-  const layer = kind === "upgrade" && id ? content.upgrades[id]?.layer : undefined;
-  const model = id ? build(getGame(), kind, id, tr, t("research.points"), layer ? t(`currency.${LAYER_ICON[layer]}`) : "") : null;
+  const model = id ? build(getGame(), kind, id, tr, t) : null;
 
   const onBuy = useCallback(
     (e: GestureResponderEvent) => {
@@ -160,7 +162,7 @@ export function NodeSheet({ kind, id: openId, onClose }: NodeSheetProps) {
           <Key
             testID="node-buy"
             label={maxed ? t("node.maxed") : kind === "research" ? t("node.research") : t("node.upgrade")}
-            sublabel={maxed ? undefined : `${model.costs[0].need} ${model.costs[0].label}`}
+            sublabel={maxed ? undefined : model.costs[0].need}
             icon={maxed ? "check" : model.costs[0].icon}
             tone="orange"
             size="lg"
@@ -181,7 +183,7 @@ export function NodeSheet({ kind, id: openId, onClose }: NodeSheetProps) {
             <Txt variant="bodyBold" testID="node-level">
               {t("node.level", { level: model.level, max: model.maxLevel })}
             </Txt>
-            {maxed ? <Badge label={t("node.maxed")} tone="good" /> : null}
+            {maxed ? <Badge label={t("node.maxed")} tone="good" /> : <MicroLabel size="label">{t("node.left", { count: model.maxLevel - model.level })}</MicroLabel>}
           </Row>
           <Txt variant="body" color="inkDim">
             {model.desc}
@@ -258,7 +260,7 @@ export function NodeSheet({ kind, id: openId, onClose }: NodeSheetProps) {
           <MicroLabel size="label">{t("node.cost")}</MicroLabel>
           {model.costs.map((c) => (
             <Row key={c.icon} gap="sm" justify="space-between">
-              <CostTag icon={c.icon} amount={`${c.need} ${c.label}`} affordable={c.ok} />
+              <CostTag icon={c.icon} amount={c.need} affordable={c.ok} />
               <Txt variant="label" color={c.ok ? "inkDim" : "bad"}>
                 {t("node.have", { have: c.have })}
               </Txt>

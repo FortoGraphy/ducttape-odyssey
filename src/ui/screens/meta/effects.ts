@@ -31,7 +31,8 @@ export function effectAt(e: Effect, level: number): number {
 
 export function fmtEffect(value: number): string {
   if (value >= 2) return `×${fmt(value)}`;
-  const digits = Math.abs((value - 1) * 100) % 1 > 0.05 ? 1 : 0;
+  const pct = Math.round(Math.abs(value - 1) * 1000) / 10;
+  const digits = pct % 1 !== 0 ? 1 : 0;
   return fmtBonus(value, digits);
 }
 

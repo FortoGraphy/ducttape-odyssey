@@ -103,7 +103,8 @@ const Socket = memo(function Socket({ id, icon, name, level, maxLevel, code, lef
         <Icon name={locked ? "lock" : icon} size={24} color="keyText" />
       </View>
       {canBuy ? <Led state="blink" color="orange" size={6} style={{ position: "absolute", top: 2, left: width / 2 + 14 }} /> : null}
-      <View style={{ height: 9, marginTop: 3, flexDirection: "row", gap: 2, alignItems: "center" }}>
+      {/* Cables run under the legend: it gets the well color so the print stays readable. */}
+      <View style={{ height: 11, marginTop: 2, paddingHorizontal: 3, flexDirection: "row", gap: 2, alignItems: "center", backgroundColor: theme.well, borderRadius: 2 }}>
         {maxLevel <= PIP_MAX ? (
           pips
         ) : (
@@ -112,9 +113,11 @@ const Socket = memo(function Socket({ id, icon, name, level, maxLevel, code, lef
           </MicroLabel>
         )}
       </View>
-      <MicroLabel align="center" numberOfLines={2} color={locked ? "inkDim" : "ink"} style={{ width: width - 2, letterSpacing: 0.2, lineHeight: 11, marginTop: 1 }}>
-        {name}
-      </MicroLabel>
+      <View style={{ maxWidth: width - 2, paddingHorizontal: 2, backgroundColor: theme.well, borderRadius: 2 }}>
+        <MicroLabel align="center" numberOfLines={2} color={locked ? "inkDim" : "ink"} style={{ letterSpacing: 0.2, lineHeight: 11 }}>
+          {name}
+        </MicroLabel>
+      </View>
     </Pressable>
   );
 });
