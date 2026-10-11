@@ -45,6 +45,8 @@ function populate(g: Game): void {
   s.cosmetics.trail = "trail_blue";
   s.stats.purchases = 321;
   discover(g, "planet:0:1:2:0");
+  // named entries survive the codex compaction that runs on every prestige
+  g.state.codex["planet:0:1:2:0"].name = "Home";
   g.dirty = true;
   rebuildMods(g);
   drain(g);

@@ -87,15 +87,19 @@ describe("codex", () => {
     expect(g.state.codex["planet:a"].name).toBeUndefined();
   });
 
-  it("recounts the category counters when a save is loaded", () => {
+  it("repairs counters that fell behind the entries when a save is loaded, and never lowers them", () => {
     const first = makeGame();
     for (let i = 0; i < 4; i++) first.g.api.discover(`system:${i}`);
     const state = JSON.parse(JSON.stringify(first.g.state));
-    state.stats.codex_system = 999;
+    state.stats.codex_system = 1;
     delete state.stats.codex;
     const g = createGame(content, metaSystems, state);
     expect(g.state.stats.codex_system).toBe(4);
     expect(g.state.stats.codex).toBe(4);
+    // entries of past galaxies are compacted on warp, so a counter above the entry count is valid
+    const compacted = JSON.parse(JSON.stringify(first.g.state));
+    compacted.stats.codex_system = 999;
+    expect(createGame(content, metaSystems, compacted).state.stats.codex_system).toBe(999);
   });
 });
 

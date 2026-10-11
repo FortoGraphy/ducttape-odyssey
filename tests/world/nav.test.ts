@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import * as B from "../../src/engine/big";
-import { addItem, getItem, getStat } from "../../src/engine/kernel";
+import { addItem, applyOffline, getItem, getStat } from "../../src/engine/kernel";
 import {
   baseJumpCost,
   chargeJump,
@@ -277,5 +277,21 @@ describe("route suggestion", () => {
     expect(routeToCore(g, 3).length).toBe(3);
     teleport(g, 40, 0);
     expect(routeToCore(g)).toEqual([]);
+  });
+});
+
+describe("hyperdrive charge while away", () => {
+  it("finishes a started charge during an absence and leaves an unstarted one alone (regression)", () => {
+    const { g } = makeGame();
+    applyOffline(g, 3600);
+    expect(g.state.nav.charge).toBe(0);
+    expect(chargeJump(g).ok).toBe(true);
+    applyOffline(g, chargeSeconds(g) / 2);
+    expect(g.state.nav.charge).toBeGreaterThan(0.45);
+    expect(g.state.nav.charge).toBeLessThan(0.6);
+    expect(isCharging(g)).toBe(true);
+    applyOffline(g, 3600);
+    expect(g.state.nav.charge).toBe(1);
+    expect(isCharging(g)).toBe(false);
   });
 });

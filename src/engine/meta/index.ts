@@ -29,7 +29,7 @@ export const metaSystems: SystemDef[] = [
 ];
 
 export { achievementProgress, checkAchievements, hasAchievement } from "./achievements";
-export { CODEX_CATEGORIES, CODEX_NAME_MAX, codexCategory, codexSummary, discover, renameCodex, sanitizeName } from "./codex";
+export { CODEX_CATEGORIES, CODEX_NAME_MAX, codexCategory, codexSummary, compactCodex, discover, renameCodex, sanitizeName } from "./codex";
 export type { CodexCategory, CodexCategorySummary } from "./codex";
 export { buyCosmetic, equipCosmetic, grantCosmetic, ownsCosmetic, syncCosmetics } from "./cosmetics";
 export { FEATURE_RULES, checkFeatures, contentGrants } from "./features";

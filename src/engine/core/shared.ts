@@ -48,6 +48,7 @@ export interface RecipeInfo {
   inputs: { item: ItemId; n: number; big: Big; mass: number }[];
   outputs: { item: ItemId; n: number; mass: number; module: boolean }[];
   primary: ItemId;
+  /** One unit per batch whatever the station's batch size: module recipes and megastructures. */
   isModule: boolean;
 }
 

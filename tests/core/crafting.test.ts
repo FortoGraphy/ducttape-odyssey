@@ -12,7 +12,7 @@ import {
   syncRates,
   toggleAutoRecipe,
 } from "../../src/engine/core";
-import { addItem } from "../../src/engine/kernel";
+import { addItem, applyOffline } from "../../src/engine/kernel";
 import type { ContentDB, Game } from "../../src/engine/types";
 import { content, levels, makeGame, num, run, system } from "./fixture";
 
@@ -187,6 +187,25 @@ describe("crafting", () => {
     const done = g.outbox.filter((e) => e.t === "craftDone" && e.recipe === "r_laser");
     expect(done.length).toBe(3);
     expect(done.every((e) => e.t === "craftDone" && e.quality !== undefined)).toBe(true);
+  });
+
+  it("megastructures are built one per batch however big the workshop batch is (regression)", () => {
+    const g = workshopGame();
+    levels(g, { workshop: 12, reactor: 12 }); // exp: 12 * 2 = 24 units per ordinary batch
+    syncRates(g);
+    expect(num(g.rates.craftBatch.workshop)).toBe(24);
+    g.api.unlockRecipe("r_gate");
+    addItem(g, "plating", 200);
+    queueCraft(g, "r_gate", 1);
+    run(g, 61);
+    expect(num(g.state.inv.mega_gate)).toBe(1);
+    expect(num(g.state.inv.plating)).toBe(195);
+    expect(g.state.craft.workshop.queue.length).toBe(0);
+    // the closed-form offline pass agrees
+    queueCraft(g, "r_gate", 1);
+    applyOffline(g, 3600);
+    expect(num(g.state.inv.mega_gate)).toBe(2);
+    expect(num(g.state.inv.plating)).toBe(190);
   });
 
   it("megastructures (mass 0) go to the inventory, grant their effects once and set the prestige flags", () => {

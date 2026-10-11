@@ -459,6 +459,16 @@ export const navSystem: SystemDef = {
   id: "world.nav",
   init: initNav,
   tick: tickNav,
+  offline(g, _credited, _eff, report) {
+    // a charge that was started keeps building while the app is closed: timers run for the whole absence
+    const nav = g.state.nav;
+    if (nav.jump !== null || g.state.flags[F.charging] !== 1 || jumpBlocked(g)) return;
+    nav.charge += Math.max(0, report.seconds) / chargeSeconds(g);
+    if (!(nav.charge < 1)) {
+      nav.charge = 1;
+      clearFlag(g, F.charging);
+    }
+  },
   prestige(g) {
     resetNav(g);
   },

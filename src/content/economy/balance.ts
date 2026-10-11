@@ -27,15 +27,15 @@ export const balance: Balance = {
   overheatLock: 5,
   overdriveMult: 3,
   overdriveSecs: 20,
-  salvageEvery: [18, 40],
+  salvageEvery: [25, 50],
   salvageMax: 5,
   eventEvery: [240, 540],
   eventMaxPerHour: 8,
   fuelPerJump: 6,
   fuelCap: 30,
-  jumpChargeSecs: 45,
-  jumpCooldownSecs: 60,
-  warpStampBase: 9,
+  jumpChargeSecs: 240,
+  jumpCooldownSecs: 120,
+  warpStampBase: 14.3,
   warpStampExp: 0.45,
   moduleUpgradeGrowth: 1.6,
 
@@ -45,7 +45,7 @@ export const balance: Balance = {
   craftSlotsMax: 4,
   workshopRepairPerLevel: 0.02,
   hangarDronesEvery: 4,
-  quartersCrewEvery: 5,
+  quartersCrewEvery: 3,
   haulerLiftBonus: 0.1,
   bridgeSellPerLevel: 0.02,
   bridgeOfflinePerLevel: 0.002,
@@ -56,15 +56,20 @@ export const balance: Balance = {
   keepComponent: 0.2,
   richnessRange: [0.8, 1.3],
   blackoutSupply: 0.2,
+  observatorySalvage: 0.1, // salvage rate added per unit of observatory output
 
   // ----- active play (GDD 2.3) -----
-  pulseCooldown: 20,
-  pulseReveal: [1, 3],
+  pulseCooldown: 25,
+  pulseReveal: [1, 2],
   salvageTtl: 45,
-  salvageIncomeSecs: [15, 40],
+  salvageIncomeSecs: [7, 14],
   droneSalvageEvery: 30,
   droneSalvageEff: 0.5,
   comboMax: 100,
+  comboSalvage: 6,
+  comboPulse: 4,
+  comboPurchase: 0.5,
+  comboCraft: 0.25,
   overdriveWear: 2,
 
   // ----- modules, wear, repair (GDD 3-4) -----
@@ -83,6 +88,7 @@ export const balance: Balance = {
   botGlitchChance: 0.04,
   botGlitchSecs: 1800,
   fuelTankPerLevel: 10, // shop upgrade `fuel_tank`
+  startHull: 72, // hull of a brand-new game: something to weld in the first minutes
 
   // ----- navigation and world (GDD 6-7) -----
   backtrackFuelFactor: 0.5,
@@ -107,6 +113,7 @@ export const balance: Balance = {
   coffeePerCrewMin: 1,
   moraleNoCoffeePerHour: -6,
   cardSlots: 2,
+  hireCostSecs: 300, // seconds of income for the first hire; each crew member aboard adds half of it
 
   // ----- meta (GDD 9-10) -----
   researchKeep: 0.25,

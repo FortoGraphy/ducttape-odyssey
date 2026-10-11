@@ -23,6 +23,10 @@ function buildInfo(g: Game, def: RecipeDef): RecipeInfo {
     if (module) isModule = true;
     outputs.push({ item, n: def.outputs[item], mass: massOf(items[item]), module });
   }
+  // megastructures are built one at a time like modules: a workshop batch of hundreds would ask for
+  // hundreds of times the inputs of something only ever needed once
+  const first = items[primary];
+  if (first && first.category === "mega" && massOf(first) <= 0) isModule = true;
   return { def, inputs, outputs, primary, isModule };
 }
 

@@ -123,6 +123,9 @@ export function applyPreset(g: Game, preset: PresetId): void {
     s.drones = { hauler: 2, probe: 1, salvager: 1, fixer: 0 };
     s.story.chapter = late ? 10 : 6;
     s.morale = 74;
+    // bunks come from the quarters deck: let the engine rebuild its caches before hiring
+    g.dirty = true;
+    tick(g);
     for (let i = 0; i < 4; i++) g.api.addCrew();
     const managed: DeckId[] = ["mining", "refinery", "lab"];
     s.crew.slice(0, 3).forEach((c, i) => {

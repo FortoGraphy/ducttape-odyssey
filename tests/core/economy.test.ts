@@ -211,3 +211,17 @@ describe("economy flow", () => {
     expect(num(g.state.credits)).toBeGreaterThan(c0 + 5);
   });
 });
+
+describe("starting hull", () => {
+  it("a new game starts at balance.startHull and a resumed one keeps its hull", async () => {
+    const { content } = await import("../../src/content");
+    const { newGame, resumeGame } = await import("../../src/engine");
+    const { deserialize, serialize } = await import("../../src/engine/core");
+    const g = newGame(content, 3, 1_700_000_000_000);
+    expect(g.state.hull.hp).toBe(content.balance.startHull);
+    tick(g);
+    g.state.hull.hp = 100;
+    const back = deserialize(serialize(g.state));
+    expect(back.ok && back.state ? resumeGame(content, back.state).state.hull.hp : -1).toBe(100);
+  });
+});

@@ -140,12 +140,34 @@ export const codexSystem: SystemDef = {
       counts[k] = (counts[k] ?? 0) + 1;
       total++;
     }
+    // Counters may exceed the entries on purpose: entries of past galaxies are compacted on warp.
     for (const category of CODEX_CATEGORIES) {
       const k = statKey(category);
-      if (counts[k]) s.stats[k] = counts[k];
-      else delete s.stats[k];
+      if ((counts[k] ?? 0) > (s.stats[k] ?? 0)) s.stats[k] = counts[k];
     }
-    if (total > 0) s.stats.codex = total;
+    if (total > (s.stats.codex ?? 0)) s.stats.codex = total;
     g.api.discover = (key) => discover(g, key);
   },
+  prestige(g) {
+    compactCodex(g);
+  },
 };
+
+/**
+ * Keeps the save small in endless play: procedural entries (planets, species, systems) of galaxies
+ * the ship has left are dropped unless the player named them. Counters and set rewards are kept.
+ */
+export function compactCodex(g: Game): number {
+  const s = g.state;
+  let removed = 0;
+  for (const key in s.codex) {
+    const cat = codexCategory(key);
+    if (cat === "artifact" || cat === "other" || s.codex[key].name) continue;
+    const galaxy = parseInt(key.slice(key.indexOf(":") + 1), 10);
+    if (Number.isFinite(galaxy) && galaxy !== s.nav.g) {
+      delete s.codex[key];
+      removed++;
+    }
+  }
+  return removed;
+}

@@ -121,7 +121,7 @@ const log = {
     fail_credits: "Na tohle nemáš dost razítek.",
     fail_max: "Na panel se vejdou jen čtyři nálepky. Jednu sundej.",
     fail_locked: "Tohle ještě nemáš.",
-    fail_other: "Nejde to. KIPP neví proč a tváří se, že ví.",
+    fail_generic: "Nejde to. KIPP neví proč a tváří se, že ví.",
   },
 } as const;
 

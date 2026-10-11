@@ -30,6 +30,8 @@ function sample(g: Game): string | null {
   ev.active = null;
   ev.nextAt = g.state.t;
   ev.hourCount = 0;
+  // the rolling-hour ring of recent starts is part of the cap this helper steps around
+  for (const key in g.state.flags) if (key.startsWith("w:evt:")) delete g.state.flags[key];
   tick(g, 0.1);
   const id = ev.active ? (ev.active as { id: string }).id : null;
   ev.active = null;
@@ -225,6 +227,39 @@ describe("rolling hour", () => {
     const proto = content.events.ev_luck;
     content.events = {};
     for (let i = 0; i < 14; i++) content.events["e" + i] = { ...proto, id: "e" + i, weight: 5, cooldown: 3600 };
+    const { g } = makeGame({ content });
+    setMod(g, "eventRate", 20);
+    g.state.events.nextAt = g.state.t;
+    const times: number[] = [];
+    let seen = 0;
+    const end = g.state.t + 6 * 3600;
+    while (g.state.t < end) {
+      tick(g, 0.1);
+      if (getStat(g, "events") > seen) {
+        seen = getStat(g, "events");
+        times.push(g.state.t);
+      }
+      if (g.state.events.active) {
+        chooseEvent(g, 0);
+        dismissEvent(g);
+      }
+      g.outbox.length = 0;
+    }
+    expect(times.length).toBeGreaterThan(40);
+    for (let i = 0; i < times.length; i++) {
+      let n = 0;
+      for (let j = i; j < times.length && times[j] - times[i] < 3600; j++) n++;
+      expect(n).toBeLessThanOrEqual(8);
+    }
+  });
+});
+
+describe("rolling hour with repeating events", () => {
+  it("counts every start, not every different event (regression: 9 in an hour when one event repeated)", () => {
+    const content = makeContent();
+    const proto = content.events.ev_luck;
+    content.events = {};
+    for (let i = 0; i < 3; i++) content.events["e" + i] = { ...proto, id: "e" + i, weight: 5, cooldown: 300 };
     const { g } = makeGame({ content });
     setMod(g, "eventRate", 20);
     g.state.events.nextAt = g.state.t;

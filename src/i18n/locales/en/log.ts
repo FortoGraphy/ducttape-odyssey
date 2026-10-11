@@ -121,7 +121,7 @@ const log = {
     fail_credits: "Not enough stamps for that.",
     fail_max: "The panel fits four stickers. Take one off.",
     fail_locked: "You do not have this yet.",
-    fail_other: "No. KIPP does not know why and pretends to.",
+    fail_generic: "No. KIPP does not know why and pretends to.",
   },
 } as const;
 

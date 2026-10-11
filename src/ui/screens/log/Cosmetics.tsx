@@ -126,7 +126,7 @@ export function CosmeticsSection() {
     (reason: FailReason) => {
       sfx("deny");
       haptic("error");
-      toast(t(`cosmetics.fail_${reason === "credits" || reason === "max" || reason === "locked" ? reason : "other"}`), "bad");
+      toast(t(`cosmetics.fail_${reason === "credits" || reason === "max" || reason === "locked" ? reason : "generic"}`), "bad");
     },
     [t],
   );

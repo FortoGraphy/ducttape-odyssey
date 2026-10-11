@@ -321,20 +321,24 @@ describe("economy: recipes", () => {
 
 describe("economy: decks", () => {
   it("follows GDD 2.1", () => {
-    const unlock: Record<string, number> = { lift: 0, cargo: 0, mining: 0, refinery: 60, reactor: 250, bridge: 900, fabricator: 4000, workshop: 12000, hangar: 40000, lab: 150000, quarters: 600000, observatory: 2.5e6, greenhouse: 1e7 };
+    // unlock costs and cost growth are the simulator's numbers (docs/BALANCE.md), not the first GDD draft
+    const unlock: Record<string, number> = { lift: 0, cargo: 0, mining: 0, refinery: 250, reactor: 1200, bridge: 50000, fabricator: 600000, workshop: 4e6, hangar: 1e7, lab: 3e7, quarters: 3e8, observatory: 2e10, greenhouse: 1e12 };
     for (const id of DECK_IDS) {
       const d = decks[id];
       expect(d.unlock.credits, id).toBe(unlock[id]);
       expect(d.icon, id).toBe(`deck_${id}`);
       expect(d.startLevel, id).toBe(["mining", "lift", "cargo"].includes(id) ? 1 : 0);
       expect(d.costGrowth, id).toBeGreaterThanOrEqual(1.07);
-      expect(d.costGrowth, id).toBeLessThanOrEqual(1.12);
+      expect(d.costGrowth, id).toBeLessThanOrEqual(1.14);
       expect(d.baseCost, id).toBeGreaterThan(0);
       for (const item of Object.keys(d.unlock.items ?? {})) expect(items[item], `${id}: ${item}`).toBeDefined();
     }
-    expect([decks.mining.base, decks.mining.curve, decks.mining.costGrowth]).toEqual([1, "exp", 1.07]);
-    expect([decks.lift.base, decks.lift.curve, decks.lift.costGrowth]).toEqual([1.2, "exp", 1.075]);
-    expect([decks.cargo.base, decks.cargo.curve, decks.cargo.costGrowth]).toEqual([400, "exp", 1.08]);
+    expect([decks.mining.base, decks.mining.curve, decks.mining.costGrowth]).toEqual([1, "exp", 1.1]);
+    expect([decks.lift.base, decks.lift.curve, decks.lift.costGrowth]).toEqual([3, "exp", 1.095]);
+    expect([decks.cargo.base, decks.cargo.curve, decks.cargo.costGrowth]).toEqual([400, "exp", 1.11]);
+    // unlock order by cost is unchanged
+    const order = ["refinery", "reactor", "bridge", "fabricator", "workshop", "hangar", "lab", "quarters", "observatory", "greenhouse"] as const;
+    for (let i = 1; i < order.length; i++) expect(decks[order[i]].unlock.credits, order[i]).toBeGreaterThan(decks[order[i - 1]].unlock.credits);
     expect([decks.reactor.base, decks.reactor.curve, decks.reactor.power]).toEqual([14, "lin", 0]);
     expect([decks.lab.base, decks.lab.curve]).toEqual([0.2, "exp"]);
     expect([decks.greenhouse.base, decks.greenhouse.curve]).toEqual([0.05, "exp"]);
@@ -556,7 +560,7 @@ describe("economy: world data", () => {
 });
 
 describe("economy: balance", () => {
-  it("defines every key of the Balance interface with the GDD values", () => {
+  it("defines every key of the Balance interface with the tuned values (docs/BALANCE.md)", () => {
     const expected: Partial<Balance> = {
       brokerFee: 0.6,
       hopperSeconds: 30,
@@ -578,15 +582,15 @@ describe("economy: balance", () => {
       overheatLock: 5,
       overdriveMult: 3,
       overdriveSecs: 20,
-      salvageEvery: [18, 40],
+      salvageEvery: [25, 50],
       salvageMax: 5,
       eventEvery: [240, 540],
       eventMaxPerHour: 8,
       fuelPerJump: 6,
       fuelCap: 30,
-      jumpChargeSecs: 45,
-      jumpCooldownSecs: 60,
-      warpStampBase: 9,
+      jumpChargeSecs: 240,
+      jumpCooldownSecs: 120,
+      warpStampBase: 14.3,
       warpStampExp: 0.45,
       moduleUpgradeGrowth: 1.6,
     };

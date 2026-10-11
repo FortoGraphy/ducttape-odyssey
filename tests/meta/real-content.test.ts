@@ -225,7 +225,8 @@ describe("shipped economy content", () => {
     expect(validMutators(g, mutatorIds.slice(0, 3))).toBe(false);
     for (let i = 0; i < mutatorIds.length; i++) {
       world.isCore = true;
-      g.state.lifetime = B.big(1e12);
+      // three orders of magnitude past the first stamp, wherever the balance puts it
+      g.state.lifetime = B.fromLog10(real.balance.warpStampBase + 3);
       const pair = [mutatorIds[i], mutatorIds[(i + 1) % mutatorIds.length]];
       const plain = 22 * g.mods.stampGain;
       // the mutators picked for the last galaxy pay out on this warp

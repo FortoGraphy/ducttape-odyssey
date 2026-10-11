@@ -245,4 +245,18 @@ describe("offline closed form", () => {
     for (let i = 0; i < 36000; i++) tick(live, 0.1);
     expect(num(off.state.credits)).toBeLessThan(num(live.state.credits) * 0.4);
   });
+
+  it("reports the credits earned whatever the size of the balance (regression: +0 on a 3e41 balance)", () => {
+    const [small, rich] = pair(() => {
+      const g = makeGame({ seed: 9 });
+      levels(g, { mining: 30, lift: 30, cargo: 12, reactor: 8 });
+      return g;
+    });
+    rich.state.credits = B.big(3e41);
+    const a = applyOffline(small, 6 * 3600);
+    const b = applyOffline(rich, 6 * 3600);
+    expect(num(a.credits)).toBeGreaterThan(0);
+    expect(relDiff(num(b.credits), num(a.credits))).toBeLessThan(1e-6);
+    expect(B.cmp(rich.state.credits, B.big(3e41))).toBeGreaterThanOrEqual(0);
+  });
 });

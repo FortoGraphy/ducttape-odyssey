@@ -89,13 +89,32 @@ function windowOpen(g: Game): boolean {
   return ev.hourCount < maxPerHour(g);
 }
 
-/** Different events that started within the last hour (a rolling count, from the per-event timestamps). */
-function recentEvents(g: Game): number {
-  const last = g.state.events.last;
+const RING = "w:evt:";
+
+/** Slot of the ring of recent event start times that is written next: it holds the oldest of the last `cap` starts. */
+function ringSlot(g: Game, cap: number): number {
+  const at = g.state.flags[RING + "at"];
+  return at >= 0 && at < cap ? Math.floor(at) : 0;
+}
+
+/**
+ * True when as many events as the cap allows started within the last hour. The hour window above is
+ * a fixed bucket; this is the rolling hour, so two buckets can never empty back to back.
+ */
+function hourFull(g: Game): boolean {
+  const cap = maxPerHour(g);
+  if (cap <= 0) return true;
   const t = g.state.t;
-  let n = 0;
-  for (const id in last) if (t - last[id] < HOUR && t >= last[id]) n++;
-  return n;
+  const oldest = g.state.flags[RING + ringSlot(g, cap)];
+  return oldest !== undefined && t >= oldest && t - oldest < HOUR;
+}
+
+function noteStart(g: Game): void {
+  const cap = Math.max(1, maxPerHour(g));
+  const flags = g.state.flags;
+  const i = ringSlot(g, cap);
+  flags[RING + i] = g.state.t;
+  flags[RING + "at"] = (i + 1) % cap;
 }
 
 function quiet(g: Game): boolean {
@@ -151,6 +170,7 @@ function fire(g: Game, def: EventDef): void {
   ev.last[def.id] = s.t;
   ev.seen[def.id] = (ev.seen[def.id] ?? 0) + 1;
   ev.hourCount++;
+  noteStart(g);
   stat(g, "events");
   stat(g, "event_" + def.type);
   emit(g, { t: "eventStarted", id: def.id });
@@ -190,7 +210,7 @@ function tickEvents(g: Game): void {
         chain.splice(i, 1);
         return;
       }
-      if (!windowOpen(g)) break;
+      if (!windowOpen(g) || hourFull(g)) break;
       chain.splice(i, 1);
       fire(g, def);
       return;
@@ -202,7 +222,7 @@ function tickEvents(g: Game): void {
     return;
   }
   // the hour window is a fixed bucket; this keeps two buckets from emptying back to back
-  if (recentEvents(g) >= maxPerHour(g)) {
+  if (hourFull(g)) {
     ev.nextAt = t + 60;
     return;
   }

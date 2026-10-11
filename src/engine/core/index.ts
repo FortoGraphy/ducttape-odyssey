@@ -54,6 +54,11 @@ const core: SystemDef = {
     const s = g.state;
     // the hopper is updated in place every tick, so it must be an object nobody else holds
     s.hopper = B.sanitize(s.hopper);
+    // a brand-new tug leaves the dock already dented (balance.startHull), so the first repair is the player's
+    if (s.t === 0 && s.played === 0 && s.hull.hp === 100) {
+      const start = g.content.balance?.startHull;
+      if (typeof start === "number" && start > 0 && start < 100) s.hull.hp = start;
+    }
     const items = g.content.items ?? {};
     c.fallbackRaw = items.scrap ? "scrap" : null;
     if (!c.fallbackRaw) {

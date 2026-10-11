@@ -354,16 +354,30 @@ interface Worn {
 
 /** Core `SystemDef.offline`: production, crafting, wear and bots for `seconds` at efficiency `eff`. */
 export function coreOffline(g: Game, seconds: number, eff: number, report: OfflineReport): void {
-  const s = g.state;
   const c = cc(g);
   c.report = report;
   resetActive(g, false);
   if (!(seconds > 0)) return;
+  // The balance is set aside while the absence is computed, so the report's total is exactly what
+  // was earned: a difference of two balances loses everything below the 15th digit of a big one.
+  const s = g.state;
+  const held = s.credits;
+  s.credits = { m: 0, e: 0 };
+  try {
+    offlinePass(g, c, seconds, eff, report);
+  } finally {
+    const earned = s.credits;
+    s.credits = B.add(held, earned);
+    report.credits = B.add(report.credits, earned);
+  }
+}
+
+function offlinePass(g: Game, c: CoreCache, seconds: number, eff: number, report: OfflineReport): void {
+  const s = g.state;
   const e = Math.max(0, Math.min(1, Number.isFinite(eff) ? eff : 0));
 
   if (c.rev !== g.rev || c.dirty) recomputeRates(g, c);
   sweepCargo(g, c);
-  const creditsBefore = B.clone(s.credits);
   const rpBefore = B.clone(s.rp);
   const before: Record<ItemId, Big> = {};
   for (const id in s.inv) before[id] = B.clone(s.inv[id]);
@@ -453,7 +467,6 @@ export function coreOffline(g: Game, seconds: number, eff: number, report: Offli
   c.seeded = false; // the smoothed income restarts from the analytic value on return
   X.clear(c.incomeAcc);
   sweepCargo(g, c);
-  report.credits = B.add(report.credits, B.subClamp(s.credits, creditsBefore));
   report.rp = B.add(report.rp, B.subClamp(s.rp, rpBefore));
   for (const id in s.inv) {
     const gain = before[id] ? B.sub(s.inv[id], before[id]) : B.clone(s.inv[id]);
