@@ -5,14 +5,15 @@ import { memo, useCallback, useEffect, useRef } from "react";
 import { View } from "react-native";
 import Animated, { Easing, ReduceMotion, cancelAnimation, useAnimatedStyle, useSharedValue, withRepeat, withTiming } from "react-native-reanimated";
 
-import { spawnSalvage } from "@/engine/core";
+import * as B from "@/engine/big";
+import { spawnSalvage, unlockCost } from "@/engine/core";
 import type { Game } from "@/engine/types";
 import { useT } from "@/i18n";
 import { haptic, sfx } from "@/platform/feedback";
 import { act, getGame, hasGame, onPulse, useGame } from "@/store/game";
 import { useSettings } from "@/store/settings";
 import { useUi } from "@/store/ui";
-import { Icon, Key, KeyRow, Led, MicroLabel, Txt, useReduceMotion, useTheme } from "@/ui/kit";
+import { Icon, Key, KeyRow, Led, MicroLabel, toast, Txt, useReduceMotion, useTheme } from "@/ui/kit";
 import { palette, radius, space } from "@/ui/theme";
 
 import { TUTORIAL_STEPS, useShell } from "../store";
@@ -33,6 +34,8 @@ export interface TutorialRects {
   craftTab: Rect;
   /** The card sits above this line (the top of the viewport's control row). */
   cardBottom: number;
+  /** Space to keep free on the right (the Control Deck in the side-by-side layout). */
+  cardRight?: number;
 }
 
 interface Baseline {
@@ -71,6 +74,8 @@ export function useTutorialStart(quiet: boolean): void {
   useEffect(() => {
     if (done || step >= 0 || !quiet || !hasGame()) return;
     const s = getGame().state;
+    // the sandbox has no tutorial and must not mark the story tutorial as done either
+    if (s.flags.sandbox > 0) return;
     if ((s.stats.purchases ?? 0) > 25 || s.decks.refinery.level > 0) useSettings.getState().set("tutorialDone", true);
     else useShell.getState().setTutorial(0);
   }, [done, step, quiet]);
@@ -147,6 +152,23 @@ export const Tutorial = memo(function Tutorial({ rects, visible }: { rects: Tuto
   useEffect(() => {
     if (done) next();
   }, [done, next]);
+  // The refinery step must be doable the moment it is shown: the deck costs more than a new player
+  // has, so KIPP covers the difference once. Without this the build key could only refuse.
+  useEffect(() => {
+    if (step !== 4 || !hasGame()) return;
+    const granted = act((g) => {
+      if (g.state.decks.refinery.level > 0 || g.state.flags.tutorialLoan) return false;
+      const cost = unlockCost(g, "refinery");
+      if (B.gte(g.state.credits, cost)) return false;
+      g.state.credits = B.mulN(cost, 1.05);
+      g.state.flags.tutorialLoan = 1;
+      return true;
+    });
+    if (granted) {
+      sfx("coin");
+      toast(t("tutorial.loan"), { tone: "good", icon: "coin" });
+    }
+  }, [step, t]);
 
   if (step < 0 || !visible) return null;
 
@@ -160,7 +182,7 @@ export const Tutorial = memo(function Tutorial({ rects, visible }: { rects: Tuto
   return (
     <>
       {target ? <Highlight rect={target} /> : null}
-      <View pointerEvents="box-none" style={{ position: "absolute", left: space.md, right: space.md, top: 0, height: rects.cardBottom, justifyContent: "flex-end" }}>
+      <View pointerEvents="box-none" style={{ position: "absolute", left: space.md, right: space.md + (rects.cardRight ?? 0), top: 0, height: rects.cardBottom, justifyContent: "flex-end" }}>
         <View testID="tutorial-card" accessibilityRole="alert" style={{ backgroundColor: theme.body, borderRadius: radius.panel - 4, borderTopWidth: 1, borderTopColor: theme.bodyHi, borderBottomWidth: 2, borderBottomColor: theme.bodyLo, padding: space.sm, gap: space.xs, boxShadow: `0px 3px 4px ${theme.shadow}` }}>
           <View pointerEvents="none" style={{ position: "absolute", left: caretLeft, width: 14, height: 14, backgroundColor: theme.body, transform: [{ rotate: "45deg" }], ...(up ? { top: -6 } : { bottom: -6 }) }} />
           <View style={{ flexDirection: "row", alignItems: "center", gap: space.sm }}>

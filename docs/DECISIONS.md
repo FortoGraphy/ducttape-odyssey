@@ -41,3 +41,13 @@ Autonomous decisions made during the build, newest last. Format: decision, then 
     deck unlocked in 8 minutes and the core was reached in 47. Hyperdrive charge is now 240 s.
 18. **Usage limit**: wave 2 ran in "economy mode" (fewer verification iterations per agent) after the
     account hit its limit at about 00:20 and all agents were lost until 05:38.
+19. **Main menu and two game modes** (requested after the first device test): Story (intro, tutorial,
+    gradual unlocks) and Sandbox (every feature, deck and recipe unlocked, nothing bought, normal
+    income, no tutorial or story windows). Each mode has its own save file, so they never overwrite
+    each other. The save played last is loaded behind the menu so "continue" is instant.
+20. **Android / Galaxy Z Fold 5**: APK built by `.github/workflows/android-build.yml` (arm64, signed with
+    the template debug key for sideloading). Wide windows (width >= 600 dp) show the viewport beside
+    the Control Deck instead of above it; the cover screen uses the phone layout. The Android back key
+    returns to the main menu.
+21. **Tutorial refinery step**: the deck costs 250 credits after the balance pass, far more than a new
+    player has, so the build key could only refuse. KIPP now lends the difference once at that step.

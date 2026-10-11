@@ -43,6 +43,9 @@ interface ShellStore {
   setTutorial(step: number): void;
   /** Hook for the settings screen: runs the coach tutorial again from the first step. */
   replayTutorial(): void;
+  /** The main menu is showing instead of the game (the engine loop is stopped meanwhile). */
+  menu: boolean;
+  setMenu(menu: boolean): void;
   /** App is in the foreground. */
   active: boolean;
   setActive(active: boolean): void;
@@ -72,6 +75,8 @@ export const useShell = create<ShellStore>((set) => ({
     useSettings.getState().set("tutorialDone", false);
     set({ tutorial: 0 });
   },
+  menu: true,
+  setMenu: (menu) => set({ menu }),
   active: true,
   setActive: (active) => set({ active }),
 }));

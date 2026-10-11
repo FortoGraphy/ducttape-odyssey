@@ -13,6 +13,7 @@ import { useSettings } from "@/store/settings";
 import { goTo } from "@/store/ui";
 import { Col, Icon, Key, Lcd, MicroLabel, Row, Rule, toast, Txt } from "@/ui/kit";
 
+import { backToMenu } from "@/ui/shell/session";
 import { useShell } from "@/ui/shell/store";
 
 import { Field, KeyValue } from "./parts";
@@ -82,6 +83,8 @@ export function AboutGroup({ onOpenDebug }: { onOpenDebug: () => void }) {
     }
   }, [onOpenDebug, t]);
 
+  const inGame = useShell((st) => !st.menu);
+
   return (
     <Col gap="xs">
       <Pressable onPress={onLogo} accessibilityRole="image" accessibilityLabel="Duct Tape Odyssey" testID="about-logo">
@@ -119,6 +122,8 @@ export function AboutGroup({ onOpenDebug }: { onOpenDebug: () => void }) {
         }}
         testID="replay-tutorial"
       />
+
+      {inGame ? <Key size="sm" icon="back" label={t("about.toMenu")} onPress={backToMenu} testID="to-menu" /> : null}
 
       <Rule label={t("about.names")} />
       <NameField which="name" />

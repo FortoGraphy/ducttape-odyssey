@@ -49,7 +49,9 @@ export function finalChapter(g: Game): number {
 function startChapter(g: Game, def: ChapterDef): void {
   const story = g.state.story;
   story.chapter = def.id;
-  for (let i = 0; i < def.intro.length && i < BEAT_BASE; i++) {
+  // Sandbox mode skips the storytelling: chapters still advance so objectives and unlocks keep working.
+  const quiet = g.state.flags.sandbox > 0;
+  for (let i = 0; !quiet && i < def.intro.length && i < BEAT_BASE; i++) {
     if (story.pending.length < PENDING_MAX) story.pending.push(def.id * BEAT_BASE + i);
   }
   if (def.unlocks) for (const f of def.unlocks) unlockFeature(g, f);

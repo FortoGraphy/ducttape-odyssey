@@ -12,6 +12,7 @@ import i18n from "@/i18n";
 import { bootDev, startLoop, stopLoop } from "@/store/game";
 import { applyExtras, applyPreset, PRESETS, type PresetId } from "@/store/presets";
 import { MicroLabel, NumberPopHost, ThemeProvider, ToastHost, type ThemeName } from "@/ui/kit";
+import { useShell } from "@/ui/shell/store";
 import { palette, VIEWPORT_SHARE } from "@/ui/theme";
 
 const one = (v: string | string[] | undefined): string | undefined => (Array.isArray(v) ? v[0] : v);
@@ -30,6 +31,8 @@ export function DevHarness({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     i18n.changeLanguage(lang);
+    // preview routes go straight into the game, never through the main menu
+    useShell.setState({ menu: false });
     bootDev(12345, (g) => {
       applyPreset(g, preset);
       applyExtras(g, { failure, event });

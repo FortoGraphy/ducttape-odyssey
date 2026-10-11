@@ -177,6 +177,7 @@ const settings = {
     noError: "None. KIPP is as surprised as you are.",
   },
   about: {
+    toMenu: "Back to the main menu",
     replayTutorial: "Replay the tutorial",
     tutorialRestarted: "KIPP will explain it again. Slower.",
     renamed: "Renamed. Update the paperwork yourself.",

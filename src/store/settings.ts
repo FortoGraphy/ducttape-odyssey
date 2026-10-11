@@ -32,6 +32,8 @@ export interface Settings {
   debug: boolean;
   perfHud: boolean;
   tutorialDone: boolean;
+  /** Mode of the save that was played last: the menu's "continue" opens it. */
+  lastMode: string;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -55,6 +57,7 @@ export const DEFAULT_SETTINGS: Settings = {
   debug: false,
   perfHud: false,
   tutorialDone: false,
+  lastMode: "story",
 };
 
 function load(): Settings {

@@ -177,6 +177,7 @@ const settings = {
     noError: "Žádná. KIPP je sám překvapen.",
   },
   about: {
+    toMenu: "Do hlavního menu",
     replayTutorial: "Přehrát tutoriál znovu",
     tutorialRestarted: "KIPP to vysvětlí ještě jednou. Pomaleji.",
     renamed: "Přejmenováno. Papíry si přepiš sám.",

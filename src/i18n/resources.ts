@@ -11,6 +11,7 @@ import cs_minigames from "./locales/cs/minigames";
 import cs_story from "./locales/cs/story";
 import cs_log from "./locales/cs/log";
 import cs_crew from "./locales/cs/crew";
+import cs_menu from "./locales/cs/menu";
 import en_common from "./locales/en/common";
 import en_ship from "./locales/en/ship";
 import en_craft from "./locales/en/craft";
@@ -23,11 +24,12 @@ import en_minigames from "./locales/en/minigames";
 import en_story from "./locales/en/story";
 import en_log from "./locales/en/log";
 import en_crew from "./locales/en/crew";
+import en_menu from "./locales/en/menu";
 
-export const NAMESPACES = ["common", "ship", "craft", "grid", "nav", "world", "meta", "settings", "minigames", "story", "log", "crew"] as const;
+export const NAMESPACES = ["common", "ship", "craft", "grid", "nav", "world", "meta", "settings", "minigames", "story", "log", "crew", "menu"] as const;
 export type Namespace = (typeof NAMESPACES)[number];
 
 export const resources = {
-  cs: { common: cs_common, ship: cs_ship, craft: cs_craft, grid: cs_grid, nav: cs_nav, world: cs_world, meta: cs_meta, settings: cs_settings, minigames: cs_minigames, story: cs_story, log: cs_log, crew: cs_crew },
-  en: { common: en_common, ship: en_ship, craft: en_craft, grid: en_grid, nav: en_nav, world: en_world, meta: en_meta, settings: en_settings, minigames: en_minigames, story: en_story, log: en_log, crew: en_crew },
+  cs: { common: cs_common, ship: cs_ship, craft: cs_craft, grid: cs_grid, nav: cs_nav, world: cs_world, meta: cs_meta, settings: cs_settings, minigames: cs_minigames, story: cs_story, log: cs_log, crew: cs_crew, menu: cs_menu },
+  en: { common: en_common, ship: en_ship, craft: en_craft, grid: en_grid, nav: en_nav, world: en_world, meta: en_meta, settings: en_settings, minigames: en_minigames, story: en_story, log: en_log, crew: en_crew, menu: en_menu },
 } as const;

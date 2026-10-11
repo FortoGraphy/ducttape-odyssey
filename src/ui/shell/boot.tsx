@@ -13,7 +13,7 @@ import { recordError, setSafeModePreference, suspendLaunchCheck } from "@/platfo
 import { configureFeedback } from "@/platform/feedback";
 import { clearScheduled, scheduleAll } from "@/platform/notifications";
 import { setRuntimeRenderOverride } from "@/render/mode";
-import { allowSaving, bootGame, getGame, hasGame, resumeLoop, startLoop, stopLoop, type BootResult } from "@/store/game";
+import { allowSaving, bootGame, getGame, hasGame, modeHasSave, resumeLoop, startLoop, stopLoop, type BootResult, type GameMode } from "@/store/game";
 import { getSettings, useSettings } from "@/store/settings";
 import { fonts } from "@/ui/fonts";
 import { Dialog, setReduceMotion, toast } from "@/ui/kit";
@@ -40,10 +40,12 @@ let booted: BootResult | null = null;
 /** Loads the save (or starts a new game) and starts the loop. Idempotent, never throws. */
 export function ensureBooted(): BootResult {
   if (booted) return booted;
-  const result = guard("game", () => bootGame(), { fresh: true, recoveredFromBackup: false, saveUnreadable: false, offline: null } as BootResult);
-  if (!hasGame()) guard("game retry", () => bootGame(), result);
+  // The save played last is loaded behind the main menu, so settings work there and "continue" is instant.
+  const last: GameMode = useSettings.getState().lastMode === "sandbox" && modeHasSave("sandbox") ? "sandbox" : "story";
+  const result = guard("game", () => bootGame(Date.now(), last), { fresh: true, recoveredFromBackup: false, saveUnreadable: false, offline: null } as BootResult);
+  if (!hasGame()) guard("game retry", () => bootGame(Date.now(), last), result);
   booted = result;
-  guard("loop", () => startLoop(), undefined);
+  if (!useShell.getState().menu) guard("loop", () => startLoop(), undefined);
   if (result.offline) useShell.getState().setOffline(result.offline);
   return result;
 }
@@ -110,7 +112,7 @@ export function useAppLifecycle(): void {
         useShell.getState().setActive(true);
         if (!isRealBoot()) return;
         guard("notifications clear", () => clearScheduled().catch(() => {}), undefined);
-        guard("resume", () => resumeLoop(), null);
+        if (!useShell.getState().menu) guard("resume", () => resumeLoop(), null);
       } else if (wasActive) {
         useShell.getState().setActive(false);
         guard("launch check", () => suspendLaunchCheck(), undefined);

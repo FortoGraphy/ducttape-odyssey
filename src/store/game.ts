@@ -8,7 +8,11 @@ import { deserialize, serialize } from "@/engine/core";
 import { clampAway, createStepper, OFFLINE_THRESHOLD, applyOffline, step, type Stepper } from "@/engine/kernel";
 import { readCandidates, writeWithBackups } from "@/platform/storage";
 
-const SAVE_FILE = "save.json";
+/** Two independent saves: the story run and the sandbox run never overwrite each other. */
+export type GameMode = "story" | "sandbox";
+const SAVE_FILES: Record<GameMode, string> = { story: "save.json", sandbox: "save-sandbox.json" };
+let mode: GameMode = "story";
+const saveFile = (): string => SAVE_FILES[mode];
 const PULSE_MS = 100;
 const AUTOSAVE_MS = 10_000;
 
@@ -42,12 +46,14 @@ function randomSeed(): number {
 }
 
 /** Loads the newest readable save (main, then backups) or starts a new game. Never throws. */
-export function bootGame(nowMs: number = Date.now()): BootResult {
+export function bootGame(nowMs: number = Date.now(), which: GameMode = mode): BootResult {
+  mode = which;
+  saveBlocked = false;
   const result: BootResult = { fresh: false, recoveredFromBackup: false, saveUnreadable: false, offline: null };
   let loaded: Game | null = null;
   let candidates: string[] = [];
   try {
-    candidates = readCandidates(SAVE_FILE);
+    candidates = readCandidates(saveFile());
     for (let i = 0; i < candidates.length && !loaded; i++) {
       try {
         const parsed = deserialize(candidates[i]);
@@ -106,6 +112,37 @@ export function getGame(): Game {
   return game;
 }
 
+export function getMode(): GameMode {
+  return mode;
+}
+
+/** True when a save (or one of its backups) exists for that mode. Never throws. */
+export function modeHasSave(which: GameMode): boolean {
+  try {
+    return readCandidates(SAVE_FILES[which]).length > 0;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Starts a brand-new game in the given mode and makes it the running game. `setup` shapes the fresh
+ * state before the first save (the sandbox unlocks everything there). The other mode's save is untouched.
+ */
+export function startNewGame(which: GameMode, setup?: (g: Game) => void, nowMs: number = Date.now()): Game {
+  if (timer) clearInterval(timer);
+  timer = null;
+  mode = which;
+  const g = newGame(content, randomSeed(), nowMs);
+  setup?.(g);
+  game = g;
+  stepper = createStepper(nowMs);
+  saveBlocked = false;
+  saveNow(nowMs);
+  firePulse();
+  return g;
+}
+
 export function hasGame(): boolean {
   return game !== null;
 }
@@ -120,7 +157,7 @@ export function saveNow(nowMs: number = Date.now()): boolean {
   try {
     game.state.wall = nowMs;
     lastSave = nowMs;
-    return writeWithBackups(SAVE_FILE, serialize(game.state), nowMs);
+    return writeWithBackups(saveFile(), serialize(game.state), nowMs);
   } catch (e) {
     console.warn("save failed", e);
     return false;

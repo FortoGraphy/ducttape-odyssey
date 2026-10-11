@@ -1,0 +1,85 @@
+name: Android build (APK)
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+concurrency:
+  group: android-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      EXPO_NO_TELEMETRY: "1"
+      EXPO_PUBLIC_RENDER: skia
+      GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Install JS dependencies
+        run: npm ci
+
+      - name: Ensure Skia prebuilt libraries (postinstall may be skipped by npm script policy)
+        run: |
+          if [ ! -d node_modules/@shopify/react-native-skia/libs/android ]; then
+            (cd node_modules/@shopify/react-native-skia && node scripts/install-libs.js)
+          fi
+          ls node_modules/@shopify/react-native-skia/libs/android
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Generate native Android project
+        run: npx expo prebuild --platform android --clean --no-install
+
+      - name: Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('package-lock.json', 'app.json') }}
+          restore-keys: gradle-${{ runner.os }}-
+
+      - name: Build release APK (arm64, signed with the template debug key so it installs by sideloading)
+        working-directory: android
+        run: |
+          set -o pipefail
+          ./gradlew assembleRelease -PreactNativeArchitectures=arm64-v8a --no-daemon --stacktrace 2>&1 | tee ../gradle.log | grep -E "^> Task :app:|BUILD|FAILURE|error:|What went wrong" || true
+          test -f app/build/outputs/apk/release/app-release.apk
+
+      - name: Package APK
+        run: |
+          set -e
+          APK="DuctTapeOdyssey-$(date +%Y%m%d-%H%M).apk"
+          cp android/app/build/outputs/apk/release/app-release.apk "$APK"
+          echo "APK=$APK" >> "$GITHUB_ENV"
+          ls -lh "$APK"
+          AAPT=$(ls "$ANDROID_HOME"/build-tools/*/aapt2 | sort -V | tail -1)
+          "$AAPT" dump badging "$APK" | grep -E "^package:|sdkVersion|targetSdkVersion|uses-permission|native-code|screen" || true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DuctTapeOdyssey-android
+          path: ${{ env.APK }}
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: gradle-log
+          path: gradle.log

@@ -176,9 +176,12 @@ export function canUnlockDeck(g: Game, id: DeckId): ActionResult {
   if (!def || !d) return fail("invalid");
   if (d.level > 0) return fail("max");
   const u = def.unlock;
-  if (u.chapter !== undefined && g.state.story.chapter < u.chapter) return fail("requirement");
-  if (u.deck && g.state.decks[u.deck.id].level < u.deck.level) return fail("requirement");
-  if (u.items) for (const item in u.items) if (!hasUnits(g, item, B.big(u.items[item]))) return fail("items");
+  // Sandbox mode: every deck can be built for its credit price alone.
+  if (!(g.state.flags.sandbox > 0)) {
+    if (u.chapter !== undefined && g.state.story.chapter < u.chapter) return fail("requirement");
+    if (u.deck && g.state.decks[u.deck.id].level < u.deck.level) return fail("requirement");
+    if (u.items) for (const item in u.items) if (!hasUnits(g, item, B.big(u.items[item]))) return fail("items");
+  }
   if (!canAfford(g, B.big(u.credits * g.mods.deckCost))) return fail("credits");
   return OK;
 }
@@ -196,7 +199,7 @@ export function unlockDeck(g: Game, id: DeckId): ActionResult {
   const def = g.content.decks[id];
   if (!spend(g, unlockCost(g, id))) return fail("credits");
   const items = def.unlock.items;
-  if (items) for (const item in items) consumeItem(g, item, B.big(items[item]));
+  if (items && !(g.state.flags.sandbox > 0)) for (const item in items) consumeItem(g, item, B.big(items[item]));
   g.state.decks[id].level = 1;
   stat(g, "deckLevels");
   const c = cc(g);

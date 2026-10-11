@@ -170,8 +170,15 @@ export function GameScreen({ safeMode = false }: GameScreenProps) {
     if (!failing && rescueOpen) useShell.getState().setRescueOpen(false);
   }, [failing, rescueOpen]);
 
-  const viewportHeight = Math.round(height * VIEWPORT_SHARE);
-  const compact = height < 700;
+  // Wide windows (unfolded foldables, tablets, landscape) put the viewport beside the Control Deck
+  // instead of above it: the deck keeps a phone-like width and gets the full height.
+  const wide = width >= 600 && width >= height * 0.75;
+  const deckW = wide ? Math.min(440, Math.max(380, Math.round(width * 0.5))) : width;
+  const viewW = wide ? width - deckW : width;
+  const viewportHeight = wide ? height : Math.round(height * VIEWPORT_SHARE);
+  const deckX = wide ? viewW : 0;
+  const deckY = wide ? 0 : viewportHeight;
+  const compact = !wide && height < 700;
 
   // Where the deck's parts ended up, for the tutorial's highlights (y is relative to the deck).
   const [lay, setLay] = useState({ goalsY: 0, goalsH: 0, contentY: 0, contentH: 0, tabsY: 0, tabsH: 0 });
@@ -186,29 +193,37 @@ export function GameScreen({ safeMode = false }: GameScreenProps) {
   const onContent = useMemo(() => measure("content"), [measure]);
   const onTabs = useMemo(() => measure("tabs"), [measure]);
   const rects = useMemo<TutorialRects>(() => {
-    const cell = (width - space.sm * 2 - space.xs * 7) / 8;
+    const cell = (deckW - space.sm * 2 - space.xs * 7) / 8;
     return {
-      viewport: { x: 4, y: insets.top + 4, w: width - 8, h: viewportHeight - insets.top - 8 },
-      goals: { x: 4, y: viewportHeight + lay.goalsY - 3, w: width - 8, h: lay.goalsH + 6 },
-      content: { x: 2, y: viewportHeight + lay.contentY, w: width - 4, h: lay.contentH },
-      craftTab: { x: space.sm + cell + space.xs - 3, y: viewportHeight + lay.tabsY - 2, w: cell + 6, h: lay.tabsH + 4 },
-      cardBottom: viewportHeight - 72,
+      viewport: { x: 4, y: insets.top + 4, w: viewW - 8, h: viewportHeight - insets.top - insets.bottom - 8 },
+      goals: { x: deckX + 4, y: deckY + lay.goalsY - 3, w: deckW - 8, h: lay.goalsH + 6 },
+      content: { x: deckX + 2, y: deckY + lay.contentY, w: deckW - 4, h: lay.contentH },
+      craftTab: { x: deckX + space.sm + cell + space.xs - 3, y: deckY + lay.tabsY - 2, w: cell + 6, h: lay.tabsH + 4 },
+      cardBottom: wide ? Math.round(height * 0.5) : viewportHeight - 72,
+      cardRight: wide ? deckW : 0,
     };
-  }, [width, viewportHeight, insets.top, lay]);
+  }, [deckW, deckX, deckY, viewW, wide, height, viewportHeight, insets.top, insets.bottom, lay]);
   const calm = !blocking && !modal && !showStory;
   useTutorialStart(calm && !failing);
 
   return (
-    <View style={{ flex: 1, backgroundColor: theme.backdrop }}>
-      <ViewportPane width={width} height={viewportHeight} safeMode={safeMode} />
+    <View style={{ flex: 1, flexDirection: wide ? "row" : "column", backgroundColor: theme.backdrop }}>
+      <ViewportPane width={viewW} height={viewportHeight} safeMode={safeMode} />
       {/* below the strip where toasts land, so a toast never swallows the tap on the rescue banner */}
-      <View pointerEvents="box-none" style={{ position: "absolute", top: insets.top + TOAST_ZONE, left: space.sm, right: space.sm, gap: space.xs }}>
+      <View pointerEvents="box-none" style={{ position: "absolute", top: insets.top + TOAST_ZONE, left: space.sm, right: (wide ? deckW : 0) + space.sm, gap: space.xs }}>
         {safeBanner ? <SafeModeBanner /> : null}
         <FailureBanner />
         {perfHud ? <PerfHud /> : null}
       </View>
 
-      <View style={{ flex: 1, backgroundColor: theme.body, borderTopWidth: 2, borderTopColor: theme.bodyHi, paddingTop: 6, paddingBottom: Math.max(insets.bottom, 6), gap: space.xs }}>
+      <View
+        style={[
+          { backgroundColor: theme.body, paddingBottom: Math.max(insets.bottom, 6), gap: space.xs },
+          wide
+            ? { width: deckW, borderLeftWidth: 2, borderLeftColor: theme.bodyHi, paddingTop: insets.top + 6, paddingRight: insets.right }
+            : { flex: 1, borderTopWidth: 2, borderTopColor: theme.bodyHi, paddingTop: 6 },
+        ]}
+      >
         <Screw size={7} angle={20} style={{ position: "absolute", top: 1, left: 2 }} />
         <Screw size={7} angle={-40} style={{ position: "absolute", top: 1, right: 2 }} />
         <View style={{ paddingHorizontal: space.sm }}>
