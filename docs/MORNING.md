@@ -1,53 +1,86 @@
 # Dobré ráno, Honzo
 
-(Průběžná verze. Finální shrnutí bude nahoře, až doběhne poslední build.)
+## 1. Co máš v ruce
 
-## Nejdřív to nepříjemné: v noci mi došel limit využití
+Hra **Duct Tape Odyssey** je složená, hratelná od začátku do prestiže a postavená jako dvě IPA.
 
-Kolem půlnoci narazil účet na **limit využití** (reset 0:20) a všech 13 paralelních agentů spadlo
-uprostřed práce. Znovu jsem se rozběhl až v **5:38**, když přišla tvoje zpráva „pokračuj“. Přišli
-jsme tak zhruba o pět hodin. Práce na disku zůstala, agenty jsem obnovil a jedou dál, ale hra
-**nebyla v 5:38 hotová**. Aktuální stav je níže a v `docs/PROGRESS.md`.
+- **Build:** <https://github.com/FortoGraphy/ducttape-odyssey/actions/runs/38115093227>
+  (stav běhu a artefakty najdeš tam; výsledek doplním dole v sekci 7)
+- **Co nainstalovat jako první:** `DuctTapeOdyssey-release` (plná verze se Skia).
+  Když spadne hned po startu, spusť ji ještě jednou (po dvou pádech naběhne nouzový režim). Když
+  nepomůže ani to, nainstaluj `DuctTapeOdyssey-release-lite`. Obě mají stejné Bundle ID a sdílejí save.
+- **Návod na instalaci:** [INSTALACE.md](INSTALACE.md)
 
-## Co je hotové a ověřené
+## 2. Poctivě: co se v noci stalo
 
-- **Build pipeline**: oba IPA (plný Skia + lite) se na GitHub Actions postavily zeleně už ve fázi 0
-  (<https://github.com/FortoGraphy/ducttape-odyssey/actions/runs/38082829110>, tehdy ještě se
-  zkušební obrazovkou). Kontrola entitlementů funguje (při prvním běhu chytila `aps-environment`).
-- **Engine** (čisté TypeScript, 470 testů zelených): ekonomika 13 palub, výtah a nákladový prostor,
-  crafting s frontami a kvalitou, technická mřížka se sousedstvím, opotřebení a opravy, aktivní hraní,
-  procedurální galaxie, navigace, planety, expedice, události, 8 poruchových stavů se záchranou,
-  posádka, karty, stanice a obchod, výzkum, 3 vrstvy prestiže, příběh, KIPP, achievementy, denní a
-  týdenní úkoly, offline výpočet v uzavřeném tvaru, ukládání s kontrolním součtem a exportním kódem.
-- **Obsah** (validátor bez chyb): 187 předmětů, 166 receptů, 82 výzkumů, 121 událostí, 12 kapitol,
-  60 deníků posádky, 298 hlášek KIPPa, 143 achievementů. Vše česky i anglicky.
-- **UI kit** (ovládací pult), **zvuk** (52 efektů, 6 hudebních scén), **grafika** (301 ikon, sprity
-  lodí z Blenderu, portréty posádky), **9 miniher** a **renderer** jsou na disku; poslední čtyři se
-  ještě dokončují a kontrolují.
+Kolem 0:20 narazil účet na **limit využití** a všech 13 paralelních agentů spadlo. Práce se
+rozběhla znovu až v 5:38 po tvé zprávě. Druhá vlna (herní obrazovky) proto jela v úsporném režimu:
+méně kol kontroly screenshotů na agenta. Hra je celá, ale neprošla samostatným QA průchodem
+nezávislým recenzentem ani závěrečným „juice“ kolem, které byly v plánu.
 
-## Co se právě dělá
+**Na telefonu neběželo vůbec nic.** Všechno je ověřené testy, simulací a webovým náhledem
+(375×812 @3x). Viz sekce 5.
 
-- Herní shell (spojení všeho do jedné obrazovky) a všechny záložky: Loď, Dílna/Síť, Mapa, Lidi,
-  Věda, Deník, Volby.
-- Simulátor ekonomiky (ladění tempa hry), fuzzer na zaseknutí, soak test.
-- Pak finální build obou IPA.
+## 3. Kontrolní seznam na telefonu (10 bodů, pár minut)
 
-## Co jsem v noci udělal na tvém počítači
+1. Appka naběhne a ukáže probouzecí intro („Dobré ráno“). Text má háčky a čárky.
+2. Nahoře je pixelartový výhled s lodí, mlhovinou a hvězdou, pixely jsou ostré a obraz plynulý.
+3. Tutoriál: KIPP tě provede 6 kroky (koupit Těžbu, podržet výhled, sebrat šrot, cíle, Rafinerie).
+4. Klávesy mají haptiku a cvaknutí; hraje tichá hudba (zkontroluj i tichý přepínač: má ji umlčet).
+5. Podržení výhledu těží rychleji a roste ukazatel tepla; klepnutí na poletující šrot přidá kredity.
+6. Koupě úrovně paluby: číslo na LCD naskočí, cena vzroste, kredity ubudou.
+7. Zavři appku na pár minut a otevři ji: objeví se **Lodní deník** s tím, co se nasbíralo offline.
+8. Servis → Uložená hra → Exportovat: kód se zkopíruje; Importovat ho přijme a ukáže shrnutí.
+9. Servis → Barva panelu: přepnutí den/noc; Jazyk: čeština/angličtina.
+10. Po ~5 minutách hraní: odemkne se Výroba, první událost s volbami, první minihra (jde i „Automaticky“).
 
-- **GitHub**: `gh` byl už přihlášený jako `FortoGraphy`, nic jsi potvrzovat nemusel. Repo:
-  <https://github.com/FortoGraphy/ducttape-odyssey> (public kvůli neomezeným macOS minutám).
-- **Blender**: měl jsi 5.2.x, winget ho upgradoval na **5.2.2 LTS** (nastavení zůstalo). Moje první
-  kontrola ho přehlédla, proto jsem instalaci vůbec spouštěl.
-- **Napájení**: nic jsem neměnil. Spánek na síti už jsi měl vypnutý; počítač držela vzhůru appka Claude.
-- **Python**: přibyl balíček `fonttools`. **npm**: `playwright` + Chromium (pro screenshoty).
+Když něco z toho nesedí, napiš mi číslo bodu a co jsi viděl.
 
-## Jednořádkové opravy, kdyby byly potřeba
+## 4. Co ve hře je (ověřeno automaticky)
 
-- `gh` token nemá scope `workflow`. Pushuju přes Git Credential Manager, takže to ničemu nevadí.
-  Kdybys chtěl pushovat workflow soubory i přes `gh`: `gh auth refresh -h github.com -s workflow`.
+- **Engine** (481 testů zelených): 13 palub, výtah a náklad, crafting s frontami a kvalitou,
+  technická mřížka se sousedstvím, opotřebení a opravy, aktivní hraní, procedurální galaxie,
+  navigace, planety, expedice, události, 8 poruchových stavů se záchranou, posádka, karty, stanice,
+  výzkum, 3 vrstvy prestiže, příběh, KIPP, achievementy, denní a týdenní úkoly, offline výpočet.
+- **Obsah** (`npm run validate` bez chyb): 187 předmětů, 166 receptů, 82 výzkumů, 121 událostí,
+  12 kapitol, 60 deníků posádky, 298 hlášek KIPPa, 143 achievementů, 9 miniher × 3 obtížnosti.
+  Vše česky i anglicky, každý znak má glyf ve fontu.
+- **Tempo** (`npm run sim`, 5 seedů): první nákup 1 s, druhá paluba 20 s, první minihra do minuty,
+  první skok ~5 min, první modul ~6 min, **první warp 2 h 52 min**, další warpy medián 2 dny.
+- **Žádné zaseknutí** (`npm run fuzz`): 514 stavů, 0 softlocků; z každé poruchy vede odtah i s nulou.
+- **Bez zpomalování** (`npm run soak`): 7 herních dní, konstantní cena ticku, žádný únik paměti.
+- **Build**: kontrola entitlementů (bez push, iCloudu, background modes), Bundle ID `cz.johny.ducttape`,
+  lite bundle prokazatelně bez Skia.
 
-## Co nejde ověřit bez telefonu
+## 5. Známá omezení a co nejde ověřit bez telefonu
 
-- Jestli plná (Skia) verze na iPhonu naběhne. Proto existuje lite IPA a nouzový režim.
-- Hudba a zvuky: jsou ověřené jen číselně (bezešvé smyčky, žádné ořezy), neslyšel jsem je.
-- Haptika, výkon 60 fps, chování tichého přepínače, notifikace.
+- **Start plné verze na iPhonu** (Skia, shadery, offscreen surface) je neověřený. Proto lite IPA,
+  nouzový režim a hlídač pádů.
+- **Zvuk jsem neslyšel.** Hudba a efekty jsou ověřené jen číselně (bezešvé smyčky, žádné ořezy).
+  Jestli je hudba příjemná, musíš posoudit ty. Jde vypnout v Servisu.
+- **60 fps, haptika, notifikace, sdílení souboru, tichý přepínač**: jen kód, žádné měření na zařízení.
+- **Místo na pultu:** na 13 mini zbývá obsahu záložky asi 215 bodů výšky. Výhled jsem proto zmenšil
+  ze 48 % na 44 % a záložka Loď je jeden rolovací seznam. Některé záložky jsou těsné.
+- **Balanc pozdní hry:** po 2 hodinách je aktivní hraní 8–12× výnosnější než idle (cíl byl 3–8×).
+  Tempo přestavby lodi a restartu vesmíru (2. a 3. vrstva prestiže) simulátor neprošel.
+- **Technická mřížka:** umisťování modulů je klepnutím s náhledem změn; tažení prstem není.
+- **Lite verze** kreslí zjednodušenou loď; barvy trupu z kosmetiky se v plné verzi zatím projeví
+  jen na záložní kresbě lodi, ne na spritu z Blenderu.
+- **Kodex** se při warpu zmenší: záznamy z opuštěné galaxie zůstanou jen ty, které sis pojmenoval
+  (počty a odměny zůstávají). Jinak by save rostl na megabajty.
+- **Denní a týdenní úkoly** se přepínají podle UTC, ne podle místní půlnoci.
+- Část screenshotů druhé vlny agenti vygenerovali, ale neprohlédli (kvůli úspornému režimu). Sám
+  jsem prošel všech 8 záložek, intro, noční téma a poruchový stav; chyby v konzoli žádné.
+
+## 6. Co jsem udělal na tvém počítači
+
+- **GitHub**: `gh` byl už přihlášený jako `FortoGraphy`. Repo je public:
+  <https://github.com/FortoGraphy/ducttape-odyssey>. Push jde přes Git Credential Manager, protože
+  `gh` token nemá scope `workflow` (kdybys ho chtěl: `gh auth refresh -h github.com -s workflow`).
+- **Blender**: winget upgradoval tvůj 5.2.x na **5.2.2 LTS** (nastavení zůstalo).
+- **Napájení**: beze změny (spánek na síti jsi měl vypnutý).
+- **Nainstalováno**: Python balíček `fonttools`; v projektu `playwright` + Chromium pro screenshoty.
+
+## 7. Stav buildu
+
+Doplním po doběhnutí běhu 38115093227.
