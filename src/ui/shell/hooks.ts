@@ -10,7 +10,9 @@ import { getGame, hasGame, onPulse } from "@/store/game";
  */
 export function usePulseValue(select: (g: Game) => number, glideMs = 110): SharedValue<number> {
   const sel = useRef(select);
-  sel.current = select;
+  useEffect(() => {
+    sel.current = select;
+  });
   const value = useSharedValue(hasGame() ? select(getGame()) : 0);
   useEffect(() => {
     let prev = NaN;

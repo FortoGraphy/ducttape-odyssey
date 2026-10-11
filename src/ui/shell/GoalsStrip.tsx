@@ -26,7 +26,7 @@ interface GoalView {
 }
 
 function eta(t: TFn, seconds: number, cost: string): string {
-  if (seconds <= 0) return t("goals.ready", { cost });
+  if (seconds < 1) return t("goals.ready", { cost });
   if (!Number.isFinite(seconds) || seconds > 359_999) return cost;
   return t("goals.costEta", { cost, time: fmtTime(seconds, 1) });
 }
@@ -39,11 +39,11 @@ function describe(goal: NearGoal, t: TFn): GoalView {
     }
     case "deckUnlock": {
       const p = goal.params;
-      return { icon: content.decks[p.deck]?.icon ?? "unlock", title: t("goals.deckUnlock", { deck: tr(content.decks[p.deck]?.name) }), sub: p.needsItems ? t("goals.needsItems", { cost: fmt(p.cost) }) : eta(t, p.seconds, fmt(p.cost)), tab: "ship", section: p.deck, tone: goal.progress >= 1 ? "mint" : "cobalt" };
+      return { icon: content.decks[p.deck]?.icon ?? "unlock", title: t("goals.deckUnlock", { deck: tr(content.decks[p.deck]?.name) }), sub: p.needsItems ? t("goals.needsItems", { cost: fmt(p.cost) }) : goal.progress >= 1 ? t("goals.build", { cost: fmt(p.cost) }) : eta(t, p.seconds, fmt(p.cost)), tab: "ship", section: p.deck, tone: goal.progress >= 1 ? "mint" : "cobalt" };
     }
     case "milestone": {
       const p = goal.params;
-      return { icon: content.decks[p.deck]?.icon ?? "star", title: t("goals.milestone", { deck: tr(content.decks[p.deck]?.name), level: p.level }), sub: t("goals.milestoneLeft", { count: p.left }), tab: "ship", section: p.deck, tone: "orange" };
+      return { icon: content.decks[p.deck]?.icon ?? "star", title: t("goals.milestone", { deck: tr(content.decks[p.deck]?.name) }), sub: t("goals.milestoneLeft", { level: p.level, left: p.left }), tab: "ship", section: p.deck, tone: "orange" };
     }
     case "craft":
       return { icon: goal.params.item, title: t("goals.craft", { item: itemName(goal.params.item) }), sub: goal.progress >= 1 ? t("goals.craftReady") : t("goals.craftMissing"), tab: "craft", section: goal.params.recipe, tone: goal.progress >= 1 ? "mint" : "cobalt" };
@@ -81,7 +81,7 @@ const GoalCell = memo(function GoalCell({ index }: { index: number }) {
   }, [view]);
   if (!goal || !view) return <View style={{ flex: 1 }} />;
   return (
-    <Pressable onPress={go} onPressIn={press.onPressIn} onPressOut={press.onPressOut} accessibilityRole="button" accessibilityLabel={`${view.title}. ${view.sub}`} hitSlop={{ top: 4, bottom: 4 }} style={{ flex: 1, minWidth: 0 }}>
+    <Pressable testID={`goal-${index}`} onPress={go} onPressIn={press.onPressIn} onPressOut={press.onPressOut} accessibilityRole="button" accessibilityLabel={`${view.title}. ${view.sub}`} hitSlop={{ top: 4, bottom: 4 }} style={{ flex: 1, minWidth: 0 }}>
       <Animated.View
         style={[
           { height: 40, borderRadius: radius.well, backgroundColor: theme.plate, borderTopWidth: 1, borderTopColor: theme.bodyHi, borderBottomWidth: 1, borderBottomColor: theme.rule, paddingHorizontal: 5, paddingTop: 3, overflow: "hidden" },
@@ -89,9 +89,9 @@ const GoalCell = memo(function GoalCell({ index }: { index: number }) {
         ]}
       >
         <View style={{ flexDirection: "row", alignItems: "center", gap: space.xs, flex: 1 }}>
-          <Icon name={view.icon} size={16} chip />
+          <Icon name={view.icon} size={16} />
           <View style={{ flex: 1, minWidth: 0 }}>
-            <Txt variant="label" numberOfLines={1} style={{ fontSize: 9.5, letterSpacing: 0.2 }}>
+            <Txt variant="label" numberOfLines={1} style={{ fontSize: 9, letterSpacing: 0 }}>
               {view.title}
             </Txt>
             <Txt variant="micro" color={view.tone === "red" ? "bad" : view.tone === "mint" ? "good" : "inkDim"} numberOfLines={1} style={{ letterSpacing: 0.2 }}>

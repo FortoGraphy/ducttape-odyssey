@@ -5,6 +5,7 @@ import { create } from "zustand";
 
 import type { OfflineReport } from "@/engine/types";
 import type { ViewportHandle } from "@/render/types";
+import { useSettings } from "@/store/settings";
 
 export interface KippEntry {
   key: number;
@@ -12,6 +13,7 @@ export interface KippEntry {
 }
 
 const KIPP_KEEP = 8;
+export const TUTORIAL_STEPS = 6;
 let kippKey = 1;
 
 interface ShellStore {
@@ -31,9 +33,16 @@ interface ShellStore {
   /** The ending prompt was postponed for this session. */
   endingLater: boolean;
   setEndingLater(later: boolean): void;
+  /** The epilogue of the ending just chosen is on screen. */
+  epilogue: boolean;
   /** A crew log arrived that the player has not opened the Log tab for yet. */
   newLog: boolean;
   setNewLog(flag: boolean): void;
+  /** Coach tutorial step (0..TUTORIAL_STEPS-1), or -1 when it is not running. */
+  tutorial: number;
+  setTutorial(step: number): void;
+  /** Hook for the settings screen: runs the coach tutorial again from the first step. */
+  replayTutorial(): void;
   /** App is in the foreground. */
   active: boolean;
   setActive(active: boolean): void;
@@ -54,8 +63,15 @@ export const useShell = create<ShellStore>((set) => ({
   setIntro: (intro) => set({ intro }),
   endingLater: false,
   setEndingLater: (endingLater) => set({ endingLater }),
+  epilogue: false,
   newLog: false,
   setNewLog: (newLog) => set({ newLog }),
+  tutorial: -1,
+  setTutorial: (tutorial) => set({ tutorial }),
+  replayTutorial: () => {
+    useSettings.getState().set("tutorialDone", false);
+    set({ tutorial: 0 });
+  },
   active: true,
   setActive: (active) => set({ active }),
 }));
