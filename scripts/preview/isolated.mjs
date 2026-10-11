@@ -14,7 +14,7 @@ if (!rootArg || !listenArg || !targetArg) {
 }
 const listen = Number(listenArg);
 const target = Number(targetArg);
-const ROOT = encodeURIComponent(rootArg.replace(/\/g, "/").replace(/\/$/, ""));
+const ROOT = encodeURIComponent(rootArg.replace(/\\/g, "/").replace(/\/$/, ""));
 
 http
   .createServer((req, res) => {
