@@ -84,7 +84,18 @@ Když něco z toho nesedí, napiš mi číslo bodu a co jsi viděl.
 
 ## 7. Stav buildu
 
-Běh 38115093227 (commit `c6af973`): **checks, build (skia) i build (lite) zelené.**
-Staženou plnou IPA jsem rozbalil a zkontroloval: Bundle ID `cz.johny.ducttape`, verze 1.0.0, jen
-na výšku, žádné background modes ani entitlementy, 7 fontů, 64 zvuků, JS bundle 7,7 MB, rozbalená
-78 MB. Tag `v1.0.0` spouští ještě jeden build ze stejného kódu (plus oprava jednoho popisku).
+Aktuální buildy (commit `ac394e1`: hlavní menu, režimy Příběh / Sandbox, oprava Rafinerie v
+tutoriálu, rozložení pro skládací telefony):
+
+- **iOS** běh 38117173785: checks, plná (Skia) i lite verze zelené.
+  <https://github.com/FortoGraphy/ducttape-odyssey/actions/runs/38117173785>
+- **Android** běh 38117171165: APK zelené (arm64, Galaxy Z Fold 5).
+  <https://github.com/FortoGraphy/ducttape-odyssey/actions/runs/38117171165>
+
+Stažené kopie jsou v `build/ipa/` a `build/apk/`. Rozbalením ověřeno: Bundle ID / balíček
+`cz.johny.ducttape`, verze 1.0.0, žádné background modes ani entitlementy (iOS), žádné oprávnění
+k mikrofonu či úložišti (Android).
+
+První iOS build (`c6af973`, bez menu) Honza nainstaloval a hra na iPhonu běží. Nalezená chyba:
+krok tutoriálu s Rafinerií nešel dokončit (stála víc, než měl hráč) — opraveno.
+Android zatím na žádném zařízení neběžel.
