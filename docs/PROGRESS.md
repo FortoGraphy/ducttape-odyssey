@@ -4,12 +4,16 @@ Updated after every milestone so work can resume after a context reset. Newest s
 
 ## Now
 
-- **Phase 0 gate PASSED**: CI run 38082829110 built both IPAs (full Skia + lite) green.
-  https://github.com/FortoGraphy/ducttape-odyssey/actions/runs/38082829110
-- **Wave 1 running** (10 background agents): engine-core, engine-world, engine-meta, content-economy,
-  content-events, content-narrative, ui-kit, render, assets, audio. Briefs: docs/AGENT_BRIEF.md +
-  the ownership table in docs/ARCHITECTURE.md. Only the orchestrator commits.
-- Orchestrator wrote meanwhile: platform/storage.ts, crashGuard.ts, notifications.ts, store/settings.ts.
+- **Usage limit hit around 00:20 (2026-10-11)**: all 13 running agents died; resumed at 05:38.
+- **Merged and verified**: engine core/world/meta (470 tests green, whole project typechecks), content
+  (economy, events, story), UI kit, audio, validators (`npm run validate` OK), platform layer, game
+  store, dev harness + presets, integration smoke (`npx tsx scripts/sim/smoke.ts`).
+- **Resumed agents (running)**: shell (critical path: `src/app/_layout.tsx`, `index.tsx`,
+  `src/ui/shell`), screens ship / craft+grid / nav / crew / meta / log+settings
+  (`src/ui/screens/<tab>`), render finish, assets finish, minigames a/b finish, sim-qa (bots, pacing,
+  balance, fuzz, soak). Minigames C finished (defense, dock, hack).
+- Briefs: `docs/AGENT_BRIEF.md`, `docs/AGENT_BRIEF_UI.md`; ownership table in `docs/ARCHITECTURE.md`.
+- Phase 0 gate passed earlier: CI run 38082829110 built both IPAs with the spike screen.
 
 ## Done
 
@@ -21,9 +25,10 @@ Updated after every milestone so work can resume after a context reset. Newest s
 
 ## Next
 
-1. Wave 1 agents in parallel: engine core/world/meta, content economy/events/narrative, UI kit, render, assets, audio.
-2. Wave 2: mini-games (after the kit), game shell and screens (after engine + kit), simulator/validators.
-3. Wave 3: integration, QA, balance, soak, screenshots, final builds, tag v1.0.0.
+1. Verify and commit each agent's result (run its checks, look at its screenshots).
+2. Integration: full web export, screenshots of the real game in every preset, fix what is off.
+3. CI build of both IPAs, then README, final MORNING.md, tag v1.0.0.
+4. If budget remains: fresh QA reviewer, juice pass, Czech/English read-through.
 
 ## Open risks
 
