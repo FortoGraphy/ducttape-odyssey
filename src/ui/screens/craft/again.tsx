@@ -1,7 +1,7 @@
 // "Make it again": the last three recipes that finished, one tap to queue each on repeat.
 // The engine keeps no history, so the list is collected from craftDone events while the app runs
 // and topped up from the per-recipe counters after a cold start.
-import { memo, useMemo, useSyncExternalStore } from "react";
+import { memo, useSyncExternalStore } from "react";
 import { View } from "react-native";
 
 import { content } from "@/content";
@@ -67,8 +67,9 @@ export const AgainStrip = memo(function AgainStrip() {
   const t = useT("craft");
   const tr = useTr();
   const live = useSyncExternalStore(subscribe, () => recent, () => recent);
-  const crafts = useGame((g) => g.state.stats.crafts ?? 0, Object.is, 10);
-  const list = useMemo(() => withHistory(getGame(), live), [live, crafts]);
+  // re-render when something finished, so the counters can fill the list after a cold start
+  useGame((g) => g.state.stats.crafts ?? 0, Object.is, 10);
+  const list = withHistory(getGame(), live);
   if (list.length === 0) return null;
   return (
     <View style={{ gap: space.xs, paddingTop: space.sm }}>

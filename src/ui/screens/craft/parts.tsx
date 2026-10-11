@@ -1,5 +1,5 @@
 // Small presentational pieces shared by the craft and grid screens.
-import { memo, useEffect, type ReactNode } from "react";
+import { memo, useEffect, useRef, type ReactNode } from "react";
 import { Image, Platform, View, type ImageSourcePropType, type ImageStyle, type StyleProp, type ViewStyle } from "react-native";
 import { Easing, ReduceMotion, useSharedValue, withTiming, type SharedValue } from "react-native-reanimated";
 
@@ -109,10 +109,14 @@ export function Fact({ label, value, color }: { label: string; value: string; co
  */
 export function usePulseValue(read: (g: Game) => number): SharedValue<number> {
   const v = useSharedValue(read(getGame()));
+  const latest = useRef(read);
+  useEffect(() => {
+    latest.current = read;
+  });
   useEffect(() => {
     let last = -1;
     const update = () => {
-      const next = read(getGame());
+      const next = latest.current(getGame());
       if (next === last) return;
       if (next < last) v.set(next);
       else v.set(withTiming(next, { duration: 110, easing: Easing.linear, reduceMotion: ReduceMotion.Never }));
@@ -120,8 +124,6 @@ export function usePulseValue(read: (g: Game) => number): SharedValue<number> {
     };
     update();
     return onPulse(update);
-    // `read` is recreated every render on purpose; the subscription only needs the latest closure
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [v]);
   return v;
 }
