@@ -1,12 +1,12 @@
 // Shared pieces of the Crew tab: effects in words, trait chips and their detail dialog, reputation
 // bars and standings, lock teasers and the list-signature hook every section uses.
-import { memo, useCallback, useMemo, useState, type ReactNode } from "react";
+import { memo, useCallback, useMemo, useState, useSyncExternalStore, type ReactNode } from "react";
 import { View, type StyleProp, type ViewStyle } from "react-native";
 
 import { content } from "@/content";
 import type { DeckId, Effect, FactionId, Game, StatKey, TraitId } from "@/engine/types";
 import { useLang, useT, useTr, type Lang } from "@/i18n";
-import { getGame, useGame } from "@/store/game";
+import { act, getGame, useGame } from "@/store/game";
 import { Badge, Card, Chip, Col, Dialog, formatDelta, Icon, MicroLabel, Row, Txt, useTheme } from "@/ui/kit";
 import { palette, space, type PaletteKey } from "@/ui/theme";
 
@@ -25,6 +25,9 @@ const LOWER_IS_BETTER: Partial<Record<StatKey, true>> = {
   deckCost: true,
 };
 
+/** 0.93 - 1 is -0.06999...: keep float dust out of the printed percentage. */
+const round3 = (n: number): number => Math.round(n * 1000) / 1000;
+
 export interface EffectLine {
   text: string;
   good: boolean;
@@ -38,8 +41,8 @@ export function effectLines(effects: readonly Effect[] | undefined, t: TFn, tr: 
     const target = e.deck ?? deck ?? null;
     const label = e.stat ? t(`stat.${e.stat}`) : target ? t("stat.deckOutput", { deck: tr(content.decks[target]?.name) }) : t("stat.managedDeck");
     const lower = e.stat ? LOWER_IS_BETTER[e.stat] === true : false;
-    if (e.add !== undefined && e.add !== 0) out.push({ text: `${label} ${formatDelta(e.add, lang)}`, good: lower ? e.add < 0 : e.add > 0 });
-    if (e.mul !== undefined && e.mul !== 1) out.push({ text: `${label} ${formatDelta(e.mul - 1, lang)}`, good: lower ? e.mul < 1 : e.mul > 1 });
+    if (e.add !== undefined && e.add !== 0) out.push({ text: `${label} ${formatDelta(round3(e.add), lang)}`, good: lower ? e.add < 0 : e.add > 0 });
+    if (e.mul !== undefined && e.mul !== 1) out.push({ text: `${label} ${formatDelta(round3(e.mul - 1), lang)}`, good: lower ? e.mul < 1 : e.mul > 1 });
   }
   return out;
 }
@@ -70,14 +73,35 @@ export function fmtDec(n: number, lang: Lang): string {
 
 // ---------- list signatures -----------------------------------------------------------
 
+let actVersion = 0;
+const actListeners = new Set<() => void>();
+const subscribeActs = (fn: () => void): (() => void) => {
+  actListeners.add(fn);
+  return () => actListeners.delete(fn);
+};
+const readActVersion = (): number => actVersion;
+
+/**
+ * `act` for this tab: runs the action and tells every list snapshot to rebuild now. Lists poll their
+ * signature only every few pulses, and a tap must not wait up to half a second to show its result.
+ */
+export function doAct<R>(fn: (g: Game) => R): R {
+  const result = act(fn);
+  actVersion++;
+  actListeners.forEach((l) => l());
+  return result;
+}
+
 /**
  * Lists are rebuilt from the game only when a cheap signature string changes. The signature is
- * evaluated every `every` pulses; the builder runs once per change.
+ * evaluated every `every` pulses; the builder also runs at once after a `doAct` and when `dep` (the
+ * prop or state the builder depends on) changes.
  */
-export function useSnapshot<T>(signature: (g: Game) => string, build: (g: Game) => T, every = 3): T {
+export function useSnapshot<T>(signature: (g: Game) => string, build: (g: Game) => T, every = 3, dep?: unknown): T {
   const sig = useGame(signature, Object.is, every);
+  const version = useSyncExternalStore(subscribeActs, readActVersion, readActVersion);
   // eslint-disable-next-line react-hooks/exhaustive-deps -- the signature stands in for the game state
-  return useMemo(() => build(getGame()), [sig]);
+  return useMemo(() => build(getGame()), [sig, dep, version]);
 }
 
 // ---------- traits --------------------------------------------------------------------

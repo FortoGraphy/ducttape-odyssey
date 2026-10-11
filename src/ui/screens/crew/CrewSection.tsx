@@ -1,5 +1,5 @@
 // Crew roster: morale and coffee, the people, and the assign / rename / dismiss flows.
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import { FlatList, Pressable, TextInput, View } from "react-native";
 
 import { content } from "@/content";
@@ -9,14 +9,14 @@ import { DECK_IDS, type CrewMember, type DeckId, type Game, type TraitId } from 
 import { assignCrew, coffeePerMinute, crewCap, crewMaxLevel, crewXpNeed, dismissCrew, findCrew, isInjured, managerBonus, moraleFactor, moralePerHour, renameCrew } from "@/engine/world";
 import { useLang, useT, useTr } from "@/i18n";
 import { haptic, sfx } from "@/platform/feedback";
-import { act, getGame, useGame } from "@/store/game";
+import { getGame, useGame } from "@/store/game";
 import { Portrait } from "@/ui/common/Portrait";
 import { fonts } from "@/ui/fonts";
 import { fmt, fmtPct, fmtTime } from "@/ui/format";
 import { Badge, Card, Col, Dialog, EmptyState, Icon, IconKey, Key, KeyRow, Meter, MicroLabel, ProgressBar, Row, Rule, Sheet, toast, Txt, useTheme, type BarZone } from "@/ui/kit";
 import { space } from "@/ui/theme";
 
-import { EffectList, effectLines, fmtDec, fmtMult, LockTeaser, Note, TraitChip, useSnapshot, useTraitDialog, type TFn } from "./shared";
+import { doAct, effectLines, EffectList, fmtDec, fmtMult, LockTeaser, Note, TraitChip, useSnapshot, useTraitDialog, type TFn } from "./shared";
 
 const MORALE_ZONES: readonly BarZone[] = [
   { from: 0, tone: "red" },
@@ -202,22 +202,22 @@ function buildRoster(g: Game): CrewRow[] {
   }));
 }
 
-function statusOf(row: CrewRow, t: TFn, tr: ReturnType<typeof useTr>, lang: "cs" | "en"): { icon: string; text: string; tone: "ink" | "inkDim" | "warn" | "bad" } {
+function statusOf(row: CrewRow, t: TFn, tr: ReturnType<typeof useTr>): { icon: string; text: string; tone: "ink" | "inkDim" | "warn" | "bad" } {
   if (row.away) return { icon: "planet", text: t("status.away"), tone: "warn" };
   if (row.injured) return { icon: "heart", text: t("status.sickbay"), tone: "bad" };
-  if (row.deck) return { icon: content.decks[row.deck].icon, text: t("status.manages", { deck: tr(content.decks[row.deck].name), bonus: `+${fmtDec(row.bonus * 100, lang)} %` }), tone: "ink" };
+  if (row.deck) return { icon: content.decks[row.deck].icon, text: t("status.manages", { deck: tr(content.decks[row.deck].name), bonus: `+${Math.round(row.bonus * 100)} %` }), tone: "ink" };
   return { icon: "deck_quarters", text: t("status.idle"), tone: "inkDim" };
 }
 
 const CrewCard = memo(function CrewCard({ row, onOpen, onTrait }: { row: CrewRow; onOpen: (uid: number) => void; onTrait: (id: TraitId) => void }) {
   const t = useT("crew") as TFn;
   const tr = useTr();
-  const lang = useLang();
   const open = useCallback(() => onOpen(row.uid), [onOpen, row.uid]);
-  const st = statusOf(row, t, tr, lang);
+  const st = statusOf(row, t, tr);
   return (
-    <Card padding={space.sm} gap={space.xs} onPress={open} accessibilityLabel={row.name} style={{ marginBottom: space.sm }}>
-      <Row gap="sm" align="flex-start" testID={`crew-${row.uid}`}>
+    <Card padding={space.sm} gap={space.xs} style={{ marginBottom: space.sm }}>
+      {/* The trait chips are buttons of their own, so only the upper part opens the detail. */}
+      <Pressable testID={`crew-${row.uid}`} onPress={open} onPressIn={() => haptic("tap")} accessibilityRole="button" accessibilityLabel={row.name} style={({ pressed }) => ({ flexDirection: "row", alignItems: "flex-start", gap: space.sm, opacity: pressed ? 0.7 : 1 })}>
         <Portrait seed={row.seed} size={48} />
         <Col gap={3} flex>
           <Row gap="sm">
@@ -234,7 +234,7 @@ const CrewCard = memo(function CrewCard({ row, onOpen, onTrait }: { row: CrewRow
             </Txt>
           </Row>
         </Col>
-      </Row>
+      </Pressable>
       <Row gap="xs" wrap>
         {row.traits.map((id) => (
           <TraitChip key={id} id={id} onOpen={onTrait} />
@@ -356,16 +356,19 @@ function CrewSheet({ uid, onClose }: { uid: number | null; onClose: () => void }
   const [confirm, setConfirm] = useState(false);
   // Keeps the last person on screen while the sheet slides away.
   const [shownUid, setShownUid] = useState<number | null>(uid);
-  if (uid !== null && uid !== shownUid) setShownUid(uid);
-
-  useEffect(() => {
-    if (uid !== null) setMode("info");
-  }, [uid]);
+  const [prevUid, setPrevUid] = useState<number | null>(uid);
+  if (uid !== prevUid) {
+    setPrevUid(uid);
+    if (uid !== null) {
+      setShownUid(uid);
+      setMode("info");
+    }
+  }
 
   const sig = useGame((g) => {
     const c = shownUid === null ? null : findCrew(g, shownUid);
     return c ? `${c.name}|${c.level}|${Math.floor(c.xp)}|${c.deck ?? ""}|${c.away ? 1 : 0}|${isInjured(g, c.uid) ? 1 : 0}|${Math.floor(g.state.morale)}` : "";
-  }, Object.is, 3);
+  }, Object.is);
   const info = useMemo(() => {
     const g = getGame();
     const c: CrewMember | null = shownUid === null ? null : findCrew(g, shownUid);
@@ -386,7 +389,7 @@ function CrewSheet({ uid, onClose }: { uid: number | null; onClose: () => void }
     (deck: DeckId) => {
       if (shownUid === null) return;
       const name = findCrew(getGame(), shownUid)?.name ?? "";
-      const res = act((g) => assignCrew(g, shownUid, deck));
+      const res = doAct((g) => assignCrew(g, shownUid, deck));
       if (res.ok) {
         sfx("moduleInstall");
         haptic("success");
@@ -405,12 +408,12 @@ function CrewSheet({ uid, onClose }: { uid: number | null; onClose: () => void }
   const busy = c.away;
 
   const unassign = () => {
-    act((g) => assignCrew(g, c.uid, null));
+    doAct((g) => assignCrew(g, c.uid, null));
     sfx("moduleInstall");
     toast(t("assign.unassigned", { name: c.name }), "info");
   };
   const saveName = () => {
-    const res = act((g) => renameCrew(g, c.uid, draft));
+    const res = doAct((g) => renameCrew(g, c.uid, draft));
     if (res.ok) {
       sfx("success");
       setMode("info");
@@ -420,7 +423,7 @@ function CrewSheet({ uid, onClose }: { uid: number | null; onClose: () => void }
     }
   };
   const dismiss = () => {
-    const res = act((g) => dismissCrew(g, c.uid));
+    const res = doAct((g) => dismissCrew(g, c.uid));
     setConfirm(false);
     if (res.ok) {
       toast(t("dismiss.done", { name: c.name }), "info");
@@ -461,7 +464,7 @@ function CrewSheet({ uid, onClose }: { uid: number | null; onClose: () => void }
               <Portrait seed={c.seed} size={40} />
               <Col gap={2} flex>
                 <Txt variant="bodyBold" color="good">
-                  {t("assign.bonus", { bonus: `+${fmtDec(info.bonus * 100, lang)} %` })}
+                  {t("assign.bonus", { bonus: `+${Math.round(info.bonus * 100)} %` })}
                 </Txt>
                 <Txt variant="label" color="inkDim" style={{ lineHeight: 15 }}>
                   {t("assign.bonusWhy", { level: c.level, morale: fmtPct(info.factor) })}
@@ -518,7 +521,7 @@ function CrewSheet({ uid, onClose }: { uid: number | null; onClose: () => void }
                   : info.injured
                     ? t("status.sickbay")
                     : c.deck
-                      ? t("status.manages", { deck: tr(content.decks[c.deck].name), bonus: `+${fmtDec(info.bonus * 100, lang)} %` })
+                      ? t("status.manages", { deck: tr(content.decks[c.deck].name), bonus: `+${Math.round(info.bonus * 100)} %` })
                       : t("status.idleLong")}
               </Txt>
             </Col>
@@ -561,7 +564,7 @@ function CrewSheet({ uid, onClose }: { uid: number | null; onClose: () => void }
 export default function CrewSection({ onFindStation }: { onFindStation: () => void }) {
   const t = useT("crew") as TFn;
   const unlocked = useGame((g) => g.state.features.crew === 1 || g.state.crew.length > 0);
-  const m = useGame(moraleInfo, undefined, 5);
+  const m = useGame(moraleInfo);
   const rows = useSnapshot(rosterSig, buildRoster, 3);
   const [selected, setSelected] = useState<number | null>(null);
   const [moraleOpen, setMoraleOpen] = useState(false);
