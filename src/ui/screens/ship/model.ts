@@ -109,17 +109,21 @@ export interface CardSel {
   out: string;
   /** Monotonic stand-in for the output, only its direction matters to the LCD roll. */
   outN: number;
-  cost: Big;
+  costText: string;
   levels: number;
   afford: boolean;
   msLevel: number;
   msProg: number;
+  /** Portrait seed of the manager, 0 = nobody. */
   manager: number;
+  /** Rarities of the equipped cards joined by "|". */
   cards: string;
   status: DeckStatus;
+  crewOn: boolean;
+  cardsOn: boolean;
 }
 
-export function selectCard(g: Game, id: DeckId, fmt: (v: Big) => string): Omit<CardSel, "cost"> & { costText: string } {
+export function selectCard(g: Game, id: DeckId, fmt: (v: Big) => string): CardSel {
   const d = g.state.decks[id];
   const out = shownOutput(g, id);
   const p = buyPreview(g, id);
@@ -140,6 +144,8 @@ export function selectCard(g: Game, id: DeckId, fmt: (v: Big) => string): Omit<C
     manager: seed,
     cards,
     status: deckStatus(g, id),
+    crewOn: g.state.features.crew === 1,
+    cardsOn: g.state.features.cards === 1,
   };
 }
 

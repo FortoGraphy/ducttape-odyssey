@@ -179,6 +179,7 @@ export function fmtRep(rep: number): string {
 /** A feature that is not unlocked yet: says what it is and how to get it. */
 export function LockTeaser({ icon, title, body, how, testID }: { icon: string; title: string; body: string; how: string; testID?: string }) {
   const theme = useTheme();
+  const tc = useT("common");
   return (
     <Card padding={space.lg} gap={space.sm} style={{ margin: space.xs }}>
       <View testID={testID} style={{ gap: space.sm }}>
@@ -187,7 +188,7 @@ export function LockTeaser({ icon, title, body, how, testID }: { icon: string; t
             <Icon name="lock" size={24} color="inkDim" />
           </View>
           <Col gap={2} flex>
-            <MicroLabel size="label">{useT("common")("locked")}</MicroLabel>
+            <MicroLabel size="label">{tc("locked")}</MicroLabel>
             <Txt variant="heading">{title}</Txt>
           </Col>
           <Icon name={icon} size={24} chip />
