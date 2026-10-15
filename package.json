@@ -1,6 +1,7 @@
 {
   "name": "ducttape-odyssey",
   "version": "1.0.0",
+  "license": "MIT",
   "main": "index",
   "dependencies": {
     "@expo/metro-runtime": "~57.0.16",

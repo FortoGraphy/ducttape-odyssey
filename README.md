@@ -67,3 +67,7 @@ src/audio     sound effects and music players
 src/platform  storage, crash guard, notifications, haptics
 scripts       assets (Blender, Pillow), audio (numpy), sim, validate, ci, preview
 ```
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
